@@ -1,8 +1,8 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { CatalogPage, MainPage, NoAccessPage, NotFoundPage, ProductPage, SignInPage, SignUpPage } from '../pages';
 
-const Routes = () => {
+const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
@@ -16,4 +16,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default AppRoutes;
