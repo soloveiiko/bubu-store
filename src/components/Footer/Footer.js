@@ -1,9 +1,49 @@
 import React from 'react';
+import SocialNetwork from '../SocialNetwork';
+import { navList } from '../Navbar/Navbar';
+import { NavLink } from 'react-router-dom';
+import Catalog from '../Catalog';
+import { liqpay, mastercard, visa } from '../../assets';
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container">Footer</div>
+      <div className="container">
+        <div className="contacts">
+          <div className="number">(063) 128-46-09</div>
+          <div className="email">bubu.shop2018@gmail.com</div>
+          <div className="address">
+            Одеса, вул. Михайлівська 8 <br />
+            (щодня з 10:00 до 20:00)
+          </div>
+          <SocialNetwork />
+        </div>
+        <div className="information">
+          <h2 className="headline">інформація</h2>
+          <ul className="information-list">
+            {navList.map((el) => (
+              <li key={el.key} className="information-item">
+                <NavLink to={el.link}>{el.name}</NavLink>
+              </li>
+            ))}
+            <li className="information-item">
+              <NavLink to="#">Політика конфеденційності</NavLink>
+            </li>
+          </ul>
+        </div>
+        <div className="catalog">
+          <h2 className="headline">каталог</h2>
+          <Catalog />
+        </div>
+        <div className="copyright">
+          <p>© Bubu 2022. Всі права захищені.</p>
+          <div className="cards">
+            <img src={mastercard} alt="Master Card" />
+            <img src={visa} alt="Visa" />
+            <img src={liqpay} alt="LIGPAY" />
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };

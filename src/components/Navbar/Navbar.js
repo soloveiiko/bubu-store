@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-const navList = [
+export const navList = [
   { key: 'aboutUs', name: 'Про нас', link: '#' },
   { key: 'contacts', name: 'Контакти', link: '#' },
   { key: 'delivery', name: 'Доставка і оплата', link: '#' },

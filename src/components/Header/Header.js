@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Catalog } from '../../components';
-import { mainLogo, instagram, facebook, youtube, user, ellipse, comparison, favorite, vector } from './../../assets';
-const socialNetworkList = [
-  { key: 'instagram', name: 'instagram', logo: instagram, link: '#' },
-  { key: 'youtube', name: 'youtube', logo: youtube, link: '#' },
-  { key: 'facebook', name: 'facebook', logo: facebook, link: '#' },
-];
+import { mainLogo, user, ellipse, comparison, favorite, vector } from './../../assets';
+import SocialNetwork from '../SocialNetwork';
+
 const langList = [
   { key: 'ukrainian', code: 'Укр' },
   { key: 'english', code: 'Англ' },
@@ -28,17 +25,7 @@ const Header = () => {
           <Navbar />
           <div className="tools">
             <div className="number">(063) 128-46-09</div>
-            <div className="social-network">
-              <ul className="social-network-list">
-                {socialNetworkList.map((el) => (
-                  <li key={el.key} className="social-network-item">
-                    <Link to={el.link}>
-                      <img src={el.logo} alt={el.name} />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <SocialNetwork />
             <div className="language">
               {langList.map((el) => (
                 <button key={el.key} className="language-item">
@@ -48,7 +35,7 @@ const Header = () => {
             </div>
             <div className="login">
               <img src={user} alt="login" />
-              <Link className="profile" to="/profile">
+              <Link className="profile" to="/signin">
                 Вхід
               </Link>
             </div>
