@@ -1,0 +1,90 @@
+@mixin button {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: $accent;
+  color: $white;
+  font-weight: 700;
+  font-size: 15px;
+}
+@mixin button-hover {
+  background-color: $red;
+}
+@mixin show-more {
+  padding: 20px;
+  border: 1px solid $accent;
+  border-radius: 5px;
+  background-color: $accent;
+  color: $accent;
+  font-weight: 700;
+  font-size: 15px;
+}
+@mixin show-more {
+  background-color: $lightpurple;
+}
+@mixin input {
+  padding: 20px;
+  border: 1px solid $lightgrey;
+  border-radius: 5px;
+  color: $gray;
+  font-weight: 300;
+  font-size: 15px;
+}
+@mixin input-clicked {
+  border-color: $gray;
+  color: #000000;
+}
+@mixin input-error {
+  border-color: $error;
+}
+@mixin headline {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+@mixin headline-mobile {
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+@mixin subtitle {
+  font-weight: 500;
+  font-size: 17px;
+}
+@mixin subtitle-mobile {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+// Small devices.
+@mixin xsm {
+  @media (min-width: #{$screen-xsm-min}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices.
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices.
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices.
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}

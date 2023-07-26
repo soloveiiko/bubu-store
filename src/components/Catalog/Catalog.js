@@ -14,10 +14,10 @@ const catalogList = [
 ];
 const Catalog = () => {
   return (
-    <ul>
+    <ul className="catalog-list">
       {catalogList.map((el) => (
-        <li key={el.key}>
-          <Link to={el.link}>{el.name}</Link>>
+        <li key={el.key} className="catalog-item">
+          <Link to={el.link}>{el.name}</Link>
         </li>
       ))}
     </ul>

@@ -1,0 +1,163 @@
+.header {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  background-color: $accent;
+  padding: 20px 0 0;
+  .top-block {
+    display: flex;
+    align-items: center;
+.logo {
+  margin-right: 30px;
+}
+    .tools {
+      display: flex;
+      align-items: center;
+      margin: 0 0 0 auto;
+      & > *:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+
+    .number {
+      color: $white;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .social-network-list {
+      display: flex;
+      align-items: center;
+
+      & > *:not(:last-child) {
+        margin-right: 20px;
+      }
+      a {
+        display: flex;
+      }
+    }
+
+    .language {
+      display: flex;
+
+      & > *:not(:last-child) {
+        margin-right: 20px;
+
+        &::after {
+          content: '|';
+          position: absolute;
+          top: 0;
+          right: -13px;
+        }
+      }
+
+      .language-item {
+        position: relative;
+        padding: 0;
+        border: none;
+        background: transparent;
+        font-family: 'Comfortaa', cursive;
+        font-size: 14px;
+        font-weight: 300;
+        color: $white;
+        cursor: pointer;
+        text-decoration: underline;
+
+        &.active {
+          font-weight: 700;
+          text-decoration: none;
+        }
+      }
+    }
+    .login {
+      display: flex;
+      align-items: center;
+      .profile {
+        color: $white;
+        text-decoration: underline;
+        margin-top: 4px;
+        margin-left: 8px;
+      }
+    }
+  }
+  .bottom-block {
+    display: flex;
+    margin-top: 15px;
+    .catalog-container {
+      display: flex;
+      align-items: flex-end;
+    }
+    .catalog-button {
+      @include subtitle;
+      display: flex;
+      align-items: center;
+      padding: 23px 30px;
+      margin: auto 0 0 0;
+      border: none;
+      border-radius: 20px 20px 0 0;
+      background-color: $lightpurple;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .catalog-logo {
+      position: relative;
+      padding: 1px 10px;
+      margin-right: 8px;
+      font-size: 0;
+      background-color: $accent;
+      &::before, &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        padding: 1px 10px;
+        background-color: $accent;
+      }
+      &::after{
+        top: 5px;
+      }
+      &::before{
+        top: -5px;
+      }
+    }
+    .search {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+      width: 100%;
+      input {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid $white;
+        border-radius: 10px;
+        color: $white;
+        font-size: 15px;
+        background-color: #FFFFFF26;
+        &::placeholder {
+          color: $white;
+        }
+      }
+      img{
+        position: absolute;
+        right: 45px;
+      }
+    }
+    .additions {
+      display: flex;
+      align-items: center;
+      &>* {
+        display: flex;
+        align-items: center;
+        img {
+          margin-right: 3px;
+        }
+        span {
+          color: $white;
+          font-size: 14px;
+        }
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}

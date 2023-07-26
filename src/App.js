@@ -6,7 +6,11 @@ function App() {
   return (
     <div className="bubu-store">
       <Header />
-      <AppRoutes />
+      <div className="content">
+        <div className="container">
+          <AppRoutes />
+        </div>
+      </div>
       <Footer />
     </div>
   );
