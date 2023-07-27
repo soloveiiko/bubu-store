@@ -5,41 +5,54 @@
   padding: 50px 0;
   .container {
     width: 100%;
+  }
+  .top-block {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: row;
+    height: 200px;
   }
   .contacts {
     border-radius: 20px;
     background-color: $red;
     padding: 30px;
+    margin-right: 100px;
     &>* {
     color: $white;
       &:not(:last-child) {
         margin-bottom: 12px;
       }
     }
-  }
-  .number {
-    font-size: 20px;
-    font-weight: 500;
-  }
-  .information, .catalog, .information-item, .catalog-item {
-    &>* {
-      color: $white;
+    .number {
+      font-size: 20px;
+      font-weight: 500;
     }
   }
-  .catalog {
-    width: 40%;
+  .information {
+    margin-right: 80px;
   }
+  .information, .catalog {
+    display: flex;
+    flex-direction: column;
+  }
+
   .information-list, .catalog-list{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    column-gap: 50px;
     row-gap: 15px;
+    flex-wrap: wrap;
+    height: 170px;
+    .information-item, .catalog-item {
+      a {
+        white-space: nowrap;
+            color: $white;
+      }
+    }
   }
   .headline {
     margin-bottom: 20px;
+    width: 100%;
+    color: $white;
   }
   .copyright {
     margin-top: 40px;

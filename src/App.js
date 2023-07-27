@@ -3,6 +3,10 @@ import { Footer, Header } from './components';
 import AppRoutes from './routes';
 
 function App() {
+  // const path = window.location.pathname;
+  // if (path === '/signin' && '/signup') {
+  //   return <AppRoutes />;
+  // }
   return (
     <div className="bubu-store">
       <Header />
