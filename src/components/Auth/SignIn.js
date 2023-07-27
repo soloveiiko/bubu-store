@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Inputs, { mixField, passwordField } from '../Inputs';
 import { Link } from 'react-router-dom';
+import { getUserDataAsync } from '../../redux/auth/action';
+import { useDispatch } from 'react-redux';
 
 const SignIn = () => {
   const [credentials, setCredentials] = useState({
     [passwordField.name]: '',
     [mixField.name]: '',
   });
-
+  const dispatch = useDispatch();
   const inputs = [mixField, passwordField];
   const onChangeInput = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -17,20 +19,31 @@ const SignIn = () => {
     const inputValue = credentials[mixField.name];
     const isNumber = /^[0-9()+\s-]*$/.test(inputValue);
     const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputValue);
-
+    let payload = {};
     if (isNumber) {
+      payload = {
+        phone: credentials[mixField.name],
+        email: '',
+        password: credentials[passwordField.name],
+      };
+      dispatch(getUserDataAsync(payload));
       console.log('its number');
     } else if (isEmail) {
+      payload = {
+        phone: '',
+        email: credentials[mixField.name],
+        password: credentials[passwordField.name],
+      };
+      dispatch(getUserDataAsync(payload));
       console.log('its email');
     } else {
       console.log('try again');
     }
+    console.log('Form submitted with values:', payload);
     setCredentials({
       [mixField.name]: '',
       [passwordField.name]: '',
     });
-    console.log('Form submitted with values:');
-    console.log(credentials);
   };
   return (
     <>

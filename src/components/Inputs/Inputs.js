@@ -1,8 +1,8 @@
-export const usernameField = {
-  name: 'username',
+export const nameField = {
+  name: 'name',
   type: 'text',
   placeholder: 'Імʼя',
-  errorMessage: 'Username is not valid!',
+  errorMessage: 'Name is not valid!',
   label: 'Імʼя',
   required: true,
   // pattern: '^[A-Za-z0-9]{3,16}$',

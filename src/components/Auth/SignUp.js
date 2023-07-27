@@ -1,28 +1,36 @@
 import React, { useState } from 'react';
-import Inputs, { usernameField, numberField, emailField, passwordField } from '../Inputs';
+import Inputs, { nameField, numberField, emailField, passwordField } from '../Inputs';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getUserDataAsync } from '../../redux/auth/action';
 const SignUp = () => {
   const [credentials, setCredentials] = useState({
-    [usernameField.name]: '',
+    [nameField.name]: '',
     [numberField.name]: '',
     [emailField.name]: '',
     [passwordField.name]: '',
   });
-
-  const inputs = [usernameField, numberField, emailField, passwordField];
+  const dispatch = useDispatch();
+  const inputs = [nameField, numberField, emailField, passwordField];
   const onChangeInput = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   const onSubmitForm = (e) => {
     e.preventDefault();
     setCredentials({
-      [usernameField.name]: '',
+      [nameField.name]: '',
       [numberField.name]: '',
       [emailField.name]: '',
       [passwordField.name]: '',
     });
-    console.log('Form submitted with values:');
-    console.log(credentials);
+    const payload = {
+      name: credentials[nameField.name],
+      phone: credentials[numberField.name],
+      email: credentials[emailField.name],
+      password: credentials[passwordField.name],
+    };
+    dispatch(getUserDataAsync(payload));
+    console.log('Form submitted with values:', payload);
   };
   return (
     <>
