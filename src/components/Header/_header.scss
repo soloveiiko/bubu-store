@@ -6,9 +6,9 @@
   .top-block {
     display: flex;
     align-items: center;
-.logo {
-  margin-right: 30px;
-}
+    .logo {
+      margin-right: 30px;
+    }
     .tools {
       display: flex;
       align-items: center;
@@ -17,16 +17,50 @@
         margin-right: 30px;
       }
     }
-
     .number {
       color: $white;
       font-size: 17px;
       font-weight: 500;
     }
-
   }
   .bottom-block {
     display: flex;
     margin-top: 15px;
+  }
+  .toggle-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    margin-right: 30px;
+    border: none;
+    cursor: pointer;
+
+    .toggle-item {
+      position: relative;
+      width: 100%;
+      padding: 1px 15px;
+      font-size: 0;
+      background-color: $white;
+      cursor: pointer;
+      margin: 0;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        background-color: $white;
+      }
+      &::before {
+        top: -7px;
+        padding: 1px 15px;
+      }
+      &::after {
+        top: 7px;
+        padding: 1px 7.5px;
+      }
+    }
   }
 }

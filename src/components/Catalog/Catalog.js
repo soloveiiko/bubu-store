@@ -5,7 +5,7 @@ import { catalogList } from '../../utils/data';
 const Catalog = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
-    setIsOpen((prevState) => !prevState);
+    setIsOpen((isOpen) => !isOpen);
   };
   return (
     <div className={`catalog ${isOpen ? 'open' : ''}`}>
