@@ -1,16 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-export const navList = [
-  { key: 'aboutUs', name: 'Про нас', link: '#' },
-  { key: 'contacts', name: 'Контакти', link: '#' },
-  { key: 'delivery', name: 'Доставка і оплата', link: '#' },
-  { key: 'returns', name: 'Повернення і обмін', link: '#' },
-];
+import { navHeaderList } from '../../utils/data';
 const Navbar = () => {
   return (
     <nav className="main-menu">
       <ul className="menu-list">
-        {navList.map((el) => (
+        {navHeaderList.map((el) => (
           <li key={el.key} className="menu-item">
             <NavLink to={el.link}>{el.name}</NavLink>
           </li>

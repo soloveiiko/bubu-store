@@ -23,14 +23,12 @@ const SignIn = () => {
     if (isNumber) {
       payload = {
         phone: credentials[mixField.name],
-        email: '',
         password: credentials[passwordField.name],
       };
       dispatch(getUserDataAsync(payload));
       console.log('its number');
     } else if (isEmail) {
       payload = {
-        phone: '',
         email: credentials[mixField.name],
         password: credentials[passwordField.name],
       };

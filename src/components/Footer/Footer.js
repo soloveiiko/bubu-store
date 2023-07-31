@@ -1,9 +1,9 @@
 import React from 'react';
 import SocialNetwork from '../SocialNetwork';
-import { navList } from '../Navbar/Navbar';
 import { NavLink } from 'react-router-dom';
 import Catalog from '../Catalog';
 import { liqpay, mastercard, visa } from '../../assets';
+import { navFooterList } from '../../utils/data';
 
 const Footer = () => {
   return (
@@ -22,14 +22,11 @@ const Footer = () => {
           <div className="information">
             <h2 className="headline">інформація</h2>
             <ul className="information-list">
-              {navList.map((el) => (
+              {navFooterList.map((el) => (
                 <li key={el.key} className="information-item">
                   <NavLink to={el.link}>{el.name}</NavLink>
                 </li>
               ))}
-              <li className="information-item">
-                <NavLink to="#">Політика конфеденційності</NavLink>
-              </li>
             </ul>
           </div>
           <div className="catalog">

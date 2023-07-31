@@ -6,6 +6,7 @@ export const SIGN_UP_USER_ERROR = 'SIGN_UP_USER_ERROR';
 export const GET_USER_DATA = 'GET_USER_DATA';
 export const GET_USER_DATA_SUCCESS = 'GET_USER_DATA_SUCCESS';
 export const GET_USER_DATA_ERROR = 'GET_USER_DATA_ERROR';
+export const GET_AUTH_STATUS = 'GET_AUTH_STATUS';
 
 export const signUpUser = () => {
   return {
@@ -45,6 +46,13 @@ export const getUserDataError = (errorMessage) => {
   };
 };
 
+export const setAuthStatus = (isAuth) => {
+  return {
+    type: GET_AUTH_STATUS,
+    payload: isAuth,
+  };
+};
+
 export const signUpUserAsync = (userData) => {
   return (dispatch) => {
     dispatch(signUpUser());
@@ -53,6 +61,7 @@ export const signUpUserAsync = (userData) => {
       .then((response) => {
         const user = response.data;
         dispatch(signUpUserSuccess(user));
+        localStorage.setItem('user', response.data);
         console.log(user);
       })
       .catch((error) => {
@@ -69,6 +78,7 @@ export const getUserDataAsync = (userData) => {
       .then((response) => {
         const user = response.data;
         dispatch(getUserDataSuccess(user));
+        localStorage.setItem('user', user);
         console.log(user);
       })
       .catch((error) => {
@@ -77,3 +87,4 @@ export const getUserDataAsync = (userData) => {
       });
   };
 };
+// export const setAuthStatus = () => {};

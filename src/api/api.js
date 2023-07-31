@@ -18,3 +18,11 @@ export const authAPI = {
     return instance.post('users');
   },
 };
+export const commentsAPI = {
+  getComments() {
+    return instance.get('comments');
+  },
+  setComments() {
+    return instance.post('comments');
+  },
+};

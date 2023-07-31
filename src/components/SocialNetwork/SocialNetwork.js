@@ -1,11 +1,7 @@
 import React from 'react';
-import { facebook, instagram, youtube } from '../../assets';
 import { Link } from 'react-router-dom';
-export const socialNetworkList = [
-  { key: 'instagram', name: 'instagram', logo: instagram, link: '#' },
-  { key: 'youtube', name: 'youtube', logo: youtube, link: '#' },
-  { key: 'facebook', name: 'facebook', logo: facebook, link: '#' },
-];
+import { socialNetworkList } from '../../utils/data';
+
 const SocialNetwork = () => {
   return (
     <div className="social-network">

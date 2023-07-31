@@ -1,19 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Catalog } from '../../components';
-import { mainLogo, user, ellipse, comparison, favorite, vector } from './../../assets';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Catalog, Navbar } from '../../components';
+import { ellipse, mainLogo, user } from './../../assets';
 import SocialNetwork from '../SocialNetwork';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserDataAsync, setAuthStatus } from '../../redux/auth/action';
+import { langList, additionList } from '../../utils/data';
 
-const langList = [
-  { key: 'ukrainian', code: 'Укр' },
-  { key: 'english', code: 'Англ' },
-];
-const additionList = [
-  { key: 'comparison', className: 'comparison', logo: comparison, counter: 0 },
-  { key: 'favorite', className: 'favorite', logo: favorite, counter: 0 },
-  { key: 'vector', className: 'vector', logo: vector, counter: 0 },
-];
 const Header = () => {
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (isAuth) {
+      navigate('/');
+    }
+    const userLogged = localStorage.getItem('user');
+    if (userLogged) {
+      dispatch(setAuthStatus(true));
+      dispatch(getUserDataAsync());
+    }
+  }, [isAuth, dispatch]);
+
   return (
     <header className="header">
       <div className="container">
@@ -35,9 +43,15 @@ const Header = () => {
             </div>
             <div className="login">
               <img src={user} alt="login" />
-              <Link className="profile" to="/signin">
-                Вхід
-              </Link>
+              {!isAuth ? (
+                <Link className="profile" to="/signin">
+                  Вхід
+                </Link>
+              ) : (
+                <Link className="profile" to="/profile">
+                  Кабінет
+                </Link>
+              )}
             </div>
           </div>
         </div>

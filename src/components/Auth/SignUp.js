@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import Inputs, { nameField, numberField, emailField, passwordField } from '../Inputs';
+import Inputs, { emailField, nameField, numberField, passwordField } from '../Inputs';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getUserDataAsync } from '../../redux/auth/action';
+import { signUpUserAsync } from '../../redux/auth/action';
+
 const SignUp = () => {
   const [credentials, setCredentials] = useState({
     [nameField.name]: '',
@@ -29,7 +30,7 @@ const SignUp = () => {
       email: credentials[emailField.name],
       password: credentials[passwordField.name],
     };
-    dispatch(getUserDataAsync(payload));
+    dispatch(signUpUserAsync(payload));
     console.log('Form submitted with values:', payload);
   };
   return (

@@ -1,4 +1,5 @@
 import {
+  GET_AUTH_STATUS,
   GET_USER_DATA,
   GET_USER_DATA_ERROR,
   GET_USER_DATA_SUCCESS,
@@ -39,6 +40,11 @@ const authReducer = (state = initialState, action) => {
         isAuth: false,
         isLoading: false,
         error: payload,
+      };
+    case GET_AUTH_STATUS:
+      return {
+        ...state,
+        isAuth: action.payload,
       };
     default:
       return state;
