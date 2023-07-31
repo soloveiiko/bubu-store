@@ -1,0 +1,23 @@
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  width: 100%;
+  input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid $white;
+    border-radius: 10px;
+    color: $white;
+    font-size: 15px;
+    background-color: #FFFFFF26;
+    &::placeholder {
+      color: $white;
+    }
+  }
+  img{
+    position: absolute;
+    right: 45px;
+  }
+}

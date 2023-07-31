@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Inputs, { emailField, nameField, numberField, passwordField } from '../Inputs';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signUpUserAsync } from '../../redux/auth/action';
 
@@ -12,6 +12,7 @@ const SignUp = () => {
     [passwordField.name]: '',
   });
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const inputs = [nameField, numberField, emailField, passwordField];
   const onChangeInput = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -31,6 +32,7 @@ const SignUp = () => {
       password: credentials[passwordField.name],
     };
     dispatch(signUpUserAsync(payload));
+    navigate('/');
     console.log('Form submitted with values:', payload);
   };
   return (

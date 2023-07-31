@@ -1,4 +1,21 @@
-import { comparison, facebook, favorite, instagram, vector, youtube } from '../assets';
+import {
+  autochair,
+  car,
+  carriage,
+  chair,
+  clothes,
+  comparison,
+  facebook,
+  favorite,
+  feeding,
+  instagram,
+  newThings,
+  room,
+  soap,
+  toy,
+  vector,
+  youtube,
+} from '../assets';
 
 export const langList = [
   { key: 'ukrainian', code: 'Укр' },
@@ -23,16 +40,16 @@ export const additionList = [
   { key: 'vector', className: 'vector', logo: vector, counter: 0 },
 ];
 export const catalogList = [
-  { key: 'carriages', name: 'Дитячі коляски', link: '#' },
-  { key: 'room', name: 'Дитяча кімната', link: '#' },
-  { key: 'chairs', name: 'Стільці і шезлонги\n', link: '#' },
-  { key: 'feeding', name: 'Для годування', link: '#' },
-  { key: 'care', name: 'Гігієна і догляд', link: '#' },
-  { key: 'carseats', name: 'Автокрісла', link: '#' },
-  { key: 'transport', name: 'Дитячий транспорт', link: '#' },
-  { key: 'toys', name: 'Іграшки', link: '#' },
-  { key: 'clothes', name: 'Одяг', link: '#' },
-  { key: 'product', name: 'Новий товар', link: '#' },
+  { key: 'carriage', name: 'Дитячі коляски', link: '#', logo: carriage },
+  { key: 'room', name: 'Дитяча кімната', link: '#', logo: room },
+  { key: 'chair', name: 'Стільці і шезлонги', link: '#', logo: chair },
+  { key: 'feeding', name: 'Для годування', link: '#', logo: feeding },
+  { key: 'soap', name: 'Гігієна і догляд', link: '#', logo: soap },
+  { key: 'autochair', name: 'Автокрісла', link: '#', logo: autochair },
+  { key: 'car', name: 'Дитячий транспорт', link: '#', logo: car },
+  { key: 'toy', name: 'Іграшки', link: '#', logo: toy },
+  { key: 'clothes', name: 'Одяг', link: '#', logo: clothes },
+  { key: 'newThings', name: 'Новий товар', link: '#', logo: newThings },
 ];
 export const socialNetworkList = [
   { key: 'instagram', name: 'instagram', logo: instagram, link: '#' },

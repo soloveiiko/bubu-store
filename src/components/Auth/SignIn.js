@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Inputs, { mixField, passwordField } from '../Inputs';
-import { Link } from 'react-router-dom';
-import { getUserDataAsync } from '../../redux/auth/action';
 import { useDispatch } from 'react-redux';
+import Inputs, { mixField, passwordField } from '../Inputs';
+import { Link, useNavigate } from 'react-router-dom';
+import { getUserDataAsync } from '../../redux/auth/action';
 
 const SignIn = () => {
   const [credentials, setCredentials] = useState({
@@ -10,6 +10,7 @@ const SignIn = () => {
     [mixField.name]: '',
   });
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const inputs = [mixField, passwordField];
   const onChangeInput = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -26,6 +27,7 @@ const SignIn = () => {
         password: credentials[passwordField.name],
       };
       dispatch(getUserDataAsync(payload));
+      navigate('/');
       console.log('its number');
     } else if (isEmail) {
       payload = {
@@ -33,6 +35,7 @@ const SignIn = () => {
         password: credentials[passwordField.name],
       };
       dispatch(getUserDataAsync(payload));
+      navigate('/');
       console.log('its email');
     } else {
       console.log('try again');

@@ -4,7 +4,7 @@ import instagram from './logo/instagram.svg';
 import youtube from './logo/youtube.svg';
 import facebook from './logo/facebook.svg';
 import user from './logo/user.svg';
-import ellipse from './logo/ellipse.svg';
+import search from './logo/search.svg';
 import comparison from './logo/сomparison.svg';
 import favorite from './logo/favorite.svg';
 import vector from './logo/vector.svg';
@@ -13,6 +13,18 @@ import bottom from './background/bottom-login.jpg';
 import mastercard from './card/mastercard.jpg';
 import visa from './card/visa.jpg';
 import liqpay from './card/liqpay.jpg';
+
+import carriage from './catalog/carriage.svg';
+import room from './catalog/room.svg';
+import chair from './catalog/chair.svg';
+import feeding from './catalog/feeding.svg';
+import soap from './catalog/soap.svg';
+import autochair from './catalog/autochair.svg';
+import car from './catalog/car.svg';
+import toy from './catalog/toy.svg';
+import clothes from './catalog/clothes.svg';
+import newThings from './catalog/new.svg';
+
 export {
   mainLogo,
   accentLogo,
@@ -20,7 +32,7 @@ export {
   youtube,
   instagram,
   user,
-  ellipse,
+  search,
   comparison,
   favorite,
   vector,
@@ -29,4 +41,14 @@ export {
   mastercard,
   visa,
   liqpay,
+  carriage,
+  room,
+  chair,
+  feeding,
+  soap,
+  autochair,
+  car,
+  toy,
+  clothes,
+  newThings,
 };

@@ -1,12 +1,16 @@
 @import 'additional/variables';
 @import 'additional/mixins';
 @import 'additional/fonts';
+@import './../../pages/Auth/login';
 @import './../../components/Header/header';
 @import './../../components/Navbar/navbar';
-@import './../../components/Catalog/catalog';
-@import './../../components/Footer/footer';
 @import './../../components/SocialNetwork/social-network';
-@import './../../pages/Auth/login';
+@import './../../components/Languages/languages';
+@import './../../components/UserPanel/user-panel';
+@import './../../components/Catalog/catalog';
+@import './../../components/Search/search';
+@import './../../components/UserActions/user-action';
+@import './../../components/Footer/footer';
 html,
 body {
   position: relative;

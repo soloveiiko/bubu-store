@@ -1,9 +1,8 @@
 import React from 'react';
-import SocialNetwork from '../SocialNetwork';
-import { NavLink } from 'react-router-dom';
-import Catalog from '../Catalog';
+import { SocialNetwork } from '../../components';
+import { Link, NavLink } from 'react-router-dom';
 import { liqpay, mastercard, visa } from '../../assets';
-import { navFooterList } from '../../utils/data';
+import { catalogList, navFooterList } from '../../utils/data';
 
 const Footer = () => {
   return (
@@ -31,7 +30,15 @@ const Footer = () => {
           </div>
           <div className="catalog">
             <h2 className="headline">каталог</h2>
-            <Catalog />
+            <ul className="catalog-list">
+              {catalogList.map((el) => (
+                <li key={el.key} className="catalog-item">
+                  <Link to={el.link}>
+                    <span>{el.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className="copyright">

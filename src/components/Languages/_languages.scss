@@ -1,0 +1,32 @@
+.languages {
+  display: flex;
+
+  & > *:not(:last-child) {
+    margin-right: 20px;
+
+    &::after {
+      content: '|';
+      position: absolute;
+      top: 0;
+      right: -13px;
+    }
+  }
+
+  .language-item {
+    position: relative;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-family: 'Comfortaa', cursive;
+    font-size: 14px;
+    font-weight: 300;
+    color: $white;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &.active {
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+}

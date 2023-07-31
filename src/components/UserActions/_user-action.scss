@@ -1,0 +1,18 @@
+.user-action {
+  display: flex;
+  align-items: center;
+  &>* {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 3px;
+    }
+    span {
+      color: $white;
+      font-size: 14px;
+    }
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

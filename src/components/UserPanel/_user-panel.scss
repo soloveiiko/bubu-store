@@ -1,0 +1,10 @@
+.user-panel {
+  display: flex;
+  align-items: center;
+  .profile {
+    color: $white;
+    text-decoration: underline;
+    margin-top: 4px;
+    margin-left: 8px;
+  }
+}
