@@ -8,7 +8,6 @@
     top: 70px;
     left: 15px;
     width: calc(100% - 30px);
-    border-radius: 10px;
 
     &::placeholder {
       color: $gray;
@@ -31,67 +30,63 @@
 }
 
 @include md {
-  @media (min-width: #{$screen-md-min}) {
-    .search {
-      position: relative;
+  .search {
+    position: relative;
+    width: 100%;
+
+    input {
+      position: static;
       width: 100%;
+      padding: 7px 40px 7px 10px;
+      border: 1px solid $white;
+      color: $white;
+      font-size: 15px;
+      background-color: #FFFFFF26;
 
-      input {
-        position: static;
-        width: 100%;
-        padding: 7px 40px 7px 10px;
-        border: 1px solid $white;
+      &::placeholder {
         color: $white;
-        font-size: 15px;
-        background-color: #FFFFFF26;
-
-        &::placeholder {
-          color: $white;
-        }
-
-        //&:focus {
-        //  @include input-clicked;
-        //}
       }
 
-      .img-container {
-        position: absolute;
-        right: 10px;
-      }
+      //&:focus {
+      //  @include input-clicked;
+      //}
+    }
+
+    .img-container {
+      position: absolute;
+      right: 10px;
     }
   }
 }
 
 @include xl {
-  @media (min-width: #{$screen-xl-min}) {
-    .search {
-      position: relative;
-      display: flex;
-      align-items: center;
-      padding: 0 30px;
+  .search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    width: 100%;
+    max-width: 100%;
+
+    input {
       width: 100%;
-      max-width: 100%;
+      padding: 15px 45px 15px 15px;
+      border: 1px solid $white;
+      border-radius: 10px;
+      color: $white;
+      font-size: 15px;
+      background-color: #FFFFFF26;
 
-      input {
-        width: 100%;
-        padding: 15px 45px 15px 15px;
-        border: 1px solid $white;
-        border-radius: 10px;
+      &::placeholder {
         color: $white;
-        font-size: 15px;
-        background-color: #FFFFFF26;
-
-        &::placeholder {
-          color: $white;
-        }
       }
+    }
 
-      .img-container {
-        position: absolute;
-        right: 31px;
-        cursor: pointer;
-        padding: 15px;
-      }
+    .img-container {
+      position: absolute;
+      right: 31px;
+      cursor: pointer;
+      padding: 15px;
     }
   }
 }

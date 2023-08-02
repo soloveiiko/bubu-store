@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   column-gap: 10px;
-  &>* {
+
+  & > * {
     position: relative;
     display: flex;
     align-items: center;
@@ -23,26 +24,28 @@
     }
   }
 }
+
 @include xl {
-  @media (min-width: #{$screen-xl-min}) {
-    .user-action {
+  .user-action {
+    display: flex;
+    align-items: center;
+
+    & > * {
       display: flex;
       align-items: center;
-      &>* {
-        display: flex;
-        align-items: center;
-        margin-right: 30px;
+      margin-right: 30px;
 
-        img {
-          margin-right: 3px;
-        }
-        span {
-          color: $white;
-          font-size: 14px;
-        }
-        &:last-child {
-          margin-right: 10px;
-        }
+      img {
+        margin-right: 3px;
+      }
+
+      span {
+        color: $white;
+        font-size: 14px;
+      }
+
+      &:last-child {
+        margin-right: 10px;
       }
     }
   }

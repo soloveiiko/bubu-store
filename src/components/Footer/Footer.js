@@ -1,6 +1,6 @@
 import React from 'react';
 import { SocialNetwork } from '../../components';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { liqpay, mastercard, visa } from '../../assets';
 import { catalogList, navFooterList } from '../../utils/data';
 
@@ -10,12 +10,9 @@ const Footer = () => {
       <div className="container">
         <div className="top-block">
           <div className="contacts">
-            <div className="number">(063) 128-46-09</div>
-            <div className="email">bubu.shop2018@gmail.com</div>
-            <div className="address">
-              Одеса, вул. Михайлівська 8 <br />
-              (щодня з 10:00 до 20:00)
-            </div>
+            <div className="number headline">(063) 128-46-09</div>
+            <div className="email text">bubu.shop2018@gmail.com</div>
+            <div className="address text">Одеса, вул. Михайлівська 8 (щодня з 10:00 до 20:00)</div>
             <SocialNetwork />
           </div>
           <div className="information">
@@ -23,7 +20,9 @@ const Footer = () => {
             <ul className="information-list">
               {navFooterList.map((el) => (
                 <li key={el.key} className="information-item">
-                  <NavLink to={el.link}>{el.name}</NavLink>
+                  <Link className="text" to={el.link}>
+                    {el.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -34,7 +33,7 @@ const Footer = () => {
               {catalogList.map((el) => (
                 <li key={el.key} className="catalog-item">
                   <Link to={el.link}>
-                    <span>{el.name}</span>
+                    <span className="text">{el.name}</span>
                   </Link>
                 </li>
               ))}

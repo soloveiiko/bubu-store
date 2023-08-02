@@ -18,19 +18,17 @@
 }
 
 @include xl {
-  @media (min-width: #{$screen-xl-min}) {
-    .main-menu {
-      .menu-list {
-        display: flex;
+  .main-menu {
+    .menu-list {
+      display: flex;
 
-        & > *:not(:last-child) {
-          margin-right: 20px;
-        }
+      & > *:not(:last-child) {
+        margin-right: 20px;
       }
+    }
 
-      .menu-item a {
-        color: $white;
-      }
+    .menu-item a {
+      color: $white;
     }
   }
 }

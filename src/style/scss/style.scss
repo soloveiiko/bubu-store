@@ -11,6 +11,7 @@
 @import './../../components/Search/search';
 @import './../../components/UserActions/user-action';
 @import './../../components/Footer/footer';
+
 html,
 body {
   position: relative;
@@ -65,11 +66,17 @@ h5,
 h6 {
   margin: 0;
 }
+
 .headline {
   @include headline;
 }
+
 a {
   text-decoration: none;
+}
+
+.headline {
+  font-size: 18px;
 }
 
 ul,
@@ -77,9 +84,20 @@ li {
   list-style: none;
   padding: 0;
 }
+
+.text {
+  font-size: 14px;
+}
+
 @include md {
   html,
   body {
+    font-size: 15px;
+  }
+  .headline {
+    font-size: 20px;
+  }
+  .text {
     font-size: 15px;
   }
 }
