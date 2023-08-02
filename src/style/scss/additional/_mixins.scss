@@ -6,9 +6,11 @@
   font-weight: 700;
   font-size: 15px;
 }
+
 @mixin button-hover {
   background-color: $red;
 }
+
 @mixin show-more {
   padding: 20px;
   border: 1px solid $accent;
@@ -18,38 +20,57 @@
   font-weight: 700;
   font-size: 15px;
 }
+
 @mixin show-more {
   background-color: $lightpurple;
 }
-@mixin input {
+
+@mixin input-sm {
+  padding: 10px;
+  border: 1px solid $lightgrey;
+  border-radius: 5px;
+  color: $gray;
+  font-weight: 300;
+  font-size: 13px;
+  outline: none;
+}
+
+@mixin input-xl {
   padding: 20px;
   border: 1px solid $lightgrey;
   border-radius: 5px;
   color: $gray;
   font-weight: 300;
   font-size: 15px;
+  outline: none;
 }
+
 @mixin input-clicked {
   border-color: $gray;
   color: #000000;
 }
+
 @mixin input-error {
   border-color: $error;
 }
+
 @mixin headline {
   font-weight: 700;
   font-size: 20px;
   text-transform: uppercase;
 }
+
 @mixin headline-mobile {
   font-weight: 700;
   font-size: 18px;
   text-transform: uppercase;
 }
+
 @mixin subtitle {
   font-weight: 500;
   font-size: 17px;
 }
+
 @mixin subtitle-mobile {
   font-weight: 500;
   font-size: 16px;

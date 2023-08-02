@@ -4,10 +4,11 @@ import instagram from './logo/instagram.svg';
 import youtube from './logo/youtube.svg';
 import facebook from './logo/facebook.svg';
 import user from './logo/user.svg';
+import searchXl from './logo/search-bold.svg';
 import search from './logo/search.svg';
 import comparison from './logo/сomparison.svg';
 import favorite from './logo/favorite.svg';
-import vector from './logo/vector.svg';
+import cart from './logo/cart.svg';
 import top from './background/top-login.jpg';
 import bottom from './background/bottom-login.jpg';
 import mastercard from './card/mastercard.jpg';
@@ -35,7 +36,7 @@ export {
   search,
   comparison,
   favorite,
-  vector,
+  cart,
   top,
   bottom,
   mastercard,
@@ -51,4 +52,5 @@ export {
   toy,
   clothes,
   newThings,
+  searchXl,
 };

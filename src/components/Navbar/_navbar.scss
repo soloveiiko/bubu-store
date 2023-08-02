@@ -1,11 +1,36 @@
 .main-menu {
+  border-bottom: 1px solid #FFC5D6;
+  padding-bottom: 30px;
+
   .menu-list {
     display: flex;
-    &>*:not(:last-child) {
-      margin-right: 20px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+
+  .menu-item {
+    width: 100%;
+
+    a {
+      color: $white;
     }
   }
-  .menu-item a {
-    color: $white;
+}
+
+@include xl {
+  @media (min-width: #{$screen-xl-min}) {
+    .main-menu {
+      .menu-list {
+        display: flex;
+
+        & > *:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+
+      .menu-item a {
+        color: $white;
+      }
+    }
   }
 }

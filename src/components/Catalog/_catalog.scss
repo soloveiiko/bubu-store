@@ -1,22 +1,18 @@
 .header {
   .catalog {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    z-index: 10;
-    width: 300px;
     .catalog-button {
       @include subtitle;
       display: flex;
       align-items: center;
-      padding: 23px 30px;
-      margin: auto 0 0 0;
+      padding: 20px;
       width: 100%;
+      margin: 0 auto;
       border: none;
-      border-radius: 20px 20px 0 0;
+      border-radius: 20px;
       text-transform: uppercase;
       cursor: pointer;
       background-color: $lightpurple;
+
       .catalog-logo {
         position: relative;
         padding: 1px 10px;
@@ -41,34 +37,135 @@
         }
       }
     }
-    .catalog-container {
+
+    .subcatalog, .catalog-container {
       position: absolute;
-      top: 65px;
-      border-radius: 0 0 20px 20px;
+      top: 0;
+      left: 0;
+      padding: 20px 15px;
+      width: 100%;
+      height: 100vh;
       background-color: $white;
-      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.07);
+      z-index: 10;
     }
 
-    .catalog-list {
-      margin: 0 15px;
-      padding: 15px 0;
-      border-top: 1px solid $morelightgrey;
-      &>*:not(:last-child) {
+    .catalog-list, .subcatalog-list {
+      padding-top: 20px;
+
+      & > *:not(:last-child) {
         margin-bottom: 25px;
       }
     }
 
-    .catalog-item {
-      a {
-        display: flex;
-        align-items: center;
-        column-gap: 10px;
+    .catalog-item, .subcatalog-item {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      @include subtitle;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      padding: 0;
+    }
+
+    .catalog-arrow {
+      font-size: 16px;
+      margin: 0 3px 2px 0;
+
+      & > * {
+        color: $accent;
       }
     }
   }
-  .catalog.open {
-    .catalog-button {
-      background-color: $white;
+}
+
+@include xl {
+  @media (min-width: #{$screen-xl-min}) {
+    .header {
+      .catalog {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        z-index: 10;
+        width: 300px;
+
+        .catalog-button {
+          @include subtitle;
+          display: flex;
+          align-items: center;
+          padding: 23px 30px;
+          margin: auto 0 0 0;
+          width: 100%;
+          border: none;
+          border-radius: 20px 20px 0 0;
+          text-transform: uppercase;
+          cursor: pointer;
+          background-color: $lightpurple;
+
+          .catalog-logo {
+            position: relative;
+            padding: 1px 10px;
+            margin-right: 8px;
+            font-size: 0;
+            background-color: $accent;
+
+            &::before, &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              padding: 1px 10px;
+              background-color: $accent;
+            }
+
+            &::after {
+              top: 5px;
+            }
+
+            &::before {
+              top: -5px;
+            }
+          }
+        }
+
+        .catalog-container {
+          position: absolute;
+          top: 65px;
+          border-radius: 0 0 20px 20px;
+          background-color: $white;
+          box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.07);
+        }
+
+        .catalog-list {
+          margin: 0 15px;
+          padding: 15px 0;
+          border-top: 1px solid $morelightgrey;
+
+          & > *:not(:last-child) {
+            margin-bottom: 25px;
+          }
+        }
+
+        .catalog-item {
+          a {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+          }
+        }
+      }
+
+      .catalog.open {
+        .catalog-button {
+          background-color: $white;
+        }
+      }
     }
   }
 }

@@ -5,10 +5,12 @@ import { mainLogo } from './../../assets';
 
 const Header = () => {
   const [mobile, setMobile] = useState(false);
+  const [searchButton, setSearchButton] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       setMobile(window.innerWidth <= 1000);
+      setSearchButton(window.innerWidth < 768);
     };
     window.addEventListener('resize', handleResize);
     handleResize();
@@ -25,18 +27,25 @@ const Header = () => {
       {mobile ? (
         <div className="container">
           <div className="top-block">
-            <button className="toggle-menu-btn" onClick={toggleMenu}>
-              <span className="toggle-item"></span>
-            </button>
-            <Link to="/" className="logo">
-              <img src={mainLogo} alt="Bubu Store" />
-            </Link>
-            <Search />
-            <UserActions />
+            <div className="left-block">
+              <button className="toggle-menu-btn" onClick={toggleMenu}>
+                <span className="toggle-item"></span>
+              </button>
+              <Link to="/" className="logo">
+                <img src={mainLogo} alt="Bubu Store" />
+              </Link>
+            </div>
+            <div className="right-block">
+              {searchButton ? <Search isButton={true} /> : <Search />}
+              <UserActions />
+            </div>
           </div>
           {isOpen && (
             <div className="toggle-menu">
-              <Catalog />
+              <button className="close-toggle-menu" onClick={toggleMenu}>
+                &#9587;
+              </button>
+              <Catalog isMobile={mobile} toggleMenu={toggleMenu} />
               <Navbar />
               <div className="tools">
                 <div className="number">(063) 128-46-09</div>
@@ -62,7 +71,7 @@ const Header = () => {
             </div>
           </div>
           <div className="bottom-block">
-            <Catalog />
+            <Catalog isMobile={mobile} />
             <Search />
             <UserActions />
           </div>

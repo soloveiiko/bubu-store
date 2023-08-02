@@ -1,18 +1,49 @@
 .user-action {
   display: flex;
   align-items: center;
+  column-gap: 10px;
   &>* {
+    position: relative;
     display: flex;
     align-items: center;
-    img {
-      margin-right: 3px;
-    }
+    width: 29px;
+    height: 20px;
+
     span {
+      display: none;
+      position: absolute;
+      top: -2px;
+      right: -10px;
+      border-radius: 50px;
+      background-color: $discount;
+      padding: 1px 5px;
       color: $white;
       font-size: 14px;
+      line-height: 15px;
     }
-    &:not(:last-child) {
-      margin-right: 20px;
+  }
+}
+@include xl {
+  @media (min-width: #{$screen-xl-min}) {
+    .user-action {
+      display: flex;
+      align-items: center;
+      &>* {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+
+        img {
+          margin-right: 3px;
+        }
+        span {
+          color: $white;
+          font-size: 14px;
+        }
+        &:last-child {
+          margin-right: 10px;
+        }
+      }
     }
   }
 }
