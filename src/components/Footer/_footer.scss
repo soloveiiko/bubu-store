@@ -1,8 +1,8 @@
 .footer {
+  padding-bottom: 50px;
+  background-color: $accent;
   grid-column: 1/3;
   grid-row: 3/4;
-  background-color: $accent;
-  padding-bottom: 50px;
 
   .container {
     padding: 0;
@@ -11,8 +11,8 @@
   .top-block {
     display: flex;
     flex-direction: column;
-    gap: 40px 0;
     margin-bottom: 40px;
+    gap: 40px 0;
 
     & > * {
       width: 100%;
@@ -22,9 +22,9 @@
   .contacts {
     display: flex;
     flex-direction: column;
-    gap: 15px 0;
-    background-color: $red;
     padding: 35px 20px;
+    background-color: $red;
+    gap: 15px 0;
 
     .email, .address {
       color: $white;
@@ -34,9 +34,9 @@
   .information, .catalog {
     display: flex;
     flex-direction: column;
+    max-height: 200px;
     padding: 0 15px;
     gap: 20px;
-    max-height: 200px;
   }
 
   .headline, .catalog-item a span, .information-item a {
@@ -45,25 +45,25 @@
 
   .information-list, .catalog-list {
     display: flex;
+    align-content: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 15px 40px;
     height: 144px;
-    align-content: flex-start;
+    gap: 15px 40px;
   }
 
   .copyright {
     padding: 0 15px;
 
     p {
-      color: #F3A8BF;
       font-size: 14px;
+      color: #F3A8BF;
     }
 
     .cards {
       display: flex;
-      gap: 0 10px;
       margin-top: 10px;
+      gap: 0 10px;
 
       img {
         width: auto;
@@ -127,10 +127,10 @@
     }
 
     .contacts {
+      margin-right: 130px;
+      padding: 30px;
       border-radius: 20px;
       background-color: $red;
-      padding: 30px;
-      margin-right: 130px;
 
       .address {
         max-width: 250px;

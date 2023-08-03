@@ -9,44 +9,38 @@
     align-items: center;
     width: 29px;
     height: 20px;
+  }
 
-    span {
-      display: none;
-      position: absolute;
-      top: -2px;
-      right: -10px;
-      border-radius: 50px;
-      background-color: $discount;
-      padding: 1px 5px;
-      color: $white;
-      font-size: 14px;
-      line-height: 15px;
+  .counter {
+    font-size: 14px;
+    line-height: 15px;
+    position: absolute;
+    top: -2px;
+    right: -10px;
+    display: none;
+    padding: .5px 4px;
+    color: $white;
+    border: 1px solid $discount;
+    border-radius: 50px;
+    background-color: $discount;
+  }
+}
+
+@include md {
+  .user-action {
+    margin-right: 22px;
+    column-gap: 40px;
+
+    .counter {
+      position: static;
+      display: block;
+      margin-left: 2px;
     }
   }
 }
 
 @include xl {
   .user-action {
-    display: flex;
-    align-items: center;
-
-    & > * {
-      display: flex;
-      align-items: center;
-      margin-right: 30px;
-
-      img {
-        margin-right: 3px;
-      }
-
-      span {
-        color: $white;
-        font-size: 14px;
-      }
-
-      &:last-child {
-        margin-right: 10px;
-      }
-    }
+    column-gap: 45px;
   }
 }

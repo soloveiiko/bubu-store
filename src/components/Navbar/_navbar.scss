@@ -1,17 +1,16 @@
 .main-menu {
-  border-bottom: 1px solid #FFC5D6;
   padding-bottom: 30px;
+  border-bottom: 1px solid #FFC5D6;
 
   .menu-list {
     display: flex;
-    flex-wrap: wrap;
-    row-gap: 20px;
+    flex-direction: column;
+    gap: 20px 0;
   }
 
   .menu-item {
-    width: 100%;
-
     a {
+      white-space: nowrap;
       color: $white;
     }
   }
@@ -19,16 +18,12 @@
 
 @include xl {
   .main-menu {
+    padding-bottom: 0;
+    border: none;
+
     .menu-list {
-      display: flex;
-
-      & > *:not(:last-child) {
-        margin-right: 20px;
-      }
-    }
-
-    .menu-item a {
-      color: $white;
+      flex-direction: row;
+      gap: 0 20px;
     }
   }
 }

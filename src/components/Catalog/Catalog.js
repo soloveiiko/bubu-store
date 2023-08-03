@@ -58,18 +58,22 @@ const Catalog = (props) => {
           )}
         </>
       ) : (
-        <div className="catalog-container">
-          <ul className="catalog-list">
-            {catalogList.map((el) => (
-              <li key={el.key} className="catalog-item">
-                <Link to={el.link}>
-                  <img src={el.logo} alt={el.name} />
-                  <span>{el.name}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <>
+          {isOpenCatalog && (
+            <div className="catalog-container">
+              <ul className="catalog-list">
+                {catalogList.map((el) => (
+                  <li key={el.key} className="catalog-item">
+                    <Link to={el.link}>
+                      <img src={el.logo} alt={el.name} />
+                      <span>{el.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

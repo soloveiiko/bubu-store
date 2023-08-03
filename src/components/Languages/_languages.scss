@@ -1,28 +1,28 @@
 .languages {
   display: flex;
+  gap: 0 20px;
 
   & > *:not(:last-child) {
-    margin-right: 20px;
 
     &::after {
-      content: '|';
       position: absolute;
       top: 0;
       right: -13px;
+      content: '|';
     }
   }
 
   .language-item {
-    position: relative;
-    padding: 0;
-    border: none;
-    background: transparent;
     font-family: 'Comfortaa', cursive;
     font-size: 14px;
     font-weight: 300;
-    color: $white;
+    position: relative;
+    padding: 0;
     cursor: pointer;
     text-decoration: underline;
+    color: $white;
+    border: none;
+    background: transparent;
 
     &.active {
       font-weight: 700;

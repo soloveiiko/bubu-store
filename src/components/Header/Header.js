@@ -9,7 +9,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const handleResize = () => {
-      setMobile(window.innerWidth <= 1000);
+      setMobile(window.innerWidth <= 1199);
       setSearchButton(window.innerWidth < 768);
     };
     window.addEventListener('resize', handleResize);

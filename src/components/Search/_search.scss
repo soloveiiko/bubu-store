@@ -19,9 +19,13 @@
   }
 
   .img-container {
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 17px;
     height: 18px;
+    padding: 15px;
+    cursor: pointer;
 
     img {
       width: inherit;
@@ -35,12 +39,12 @@
     width: 100%;
 
     input {
+      font-size: 15px;
       position: static;
       width: 100%;
       padding: 7px 40px 7px 10px;
-      border: 1px solid $white;
       color: $white;
-      font-size: 15px;
+      border: 1px solid $white;
       background-color: #FFFFFF26;
 
       &::placeholder {
@@ -54,39 +58,21 @@
 
     .img-container {
       position: absolute;
-      right: 10px;
+      right: 2px;
     }
   }
 }
 
 @include xl {
   .search {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 0 30px;
-    width: 100%;
-    max-width: 100%;
 
     input {
-      width: 100%;
-      padding: 15px 45px 15px 15px;
-      border: 1px solid $white;
-      border-radius: 10px;
-      color: $white;
-      font-size: 15px;
-      background-color: #FFFFFF26;
-
-      &::placeholder {
-        color: $white;
-      }
+      padding: 10px 45px 10px 15px;
     }
 
     .img-container {
-      position: absolute;
-      right: 31px;
-      cursor: pointer;
-      padding: 15px;
+      right: 3px;
+      padding: 17px 15px;
     }
   }
 }

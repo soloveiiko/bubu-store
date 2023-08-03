@@ -7,7 +7,7 @@ const UserActions = () => {
       {additionList.map((el) => (
         <div key={el.key} className={el.className}>
           <img src={el.logo} alt={el.className} />
-          <span>{el.counter}</span>
+          <span className="counter">{el.counter}</span>
         </div>
       ))}
     </div>
