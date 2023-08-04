@@ -2,8 +2,14 @@ import React from 'react';
 import { SocialNetwork } from '../../components';
 import { Link } from 'react-router-dom';
 import { liqpay, mastercard, visa } from '../../assets';
-import { catalogList, navFooterList } from '../../utils/data';
-
+import { catalogList } from '../../utils/data';
+const navList = [
+  { id: '1', name: 'Про нас', link: '#' },
+  { id: '2', name: 'Контакти', link: '#' },
+  { id: '3', name: 'Доставка і оплата', link: '#' },
+  { id: '4', name: 'Повернення і обмін', link: '#' },
+  { id: '5', name: 'Політика конфеденційності', link: '#' },
+];
 const Footer = () => {
   return (
     <footer className="footer">
@@ -18,7 +24,7 @@ const Footer = () => {
           <div className="information">
             <h2 className="headline">інформація</h2>
             <ul className="information-list">
-              {navFooterList.map((el) => (
+              {navList.map((el) => (
                 <li key={el.key} className="information-item">
                   <Link className="text" to={el.link}>
                     {el.name}
@@ -31,7 +37,7 @@ const Footer = () => {
             <h2 className="headline">каталог</h2>
             <ul className="catalog-list">
               {catalogList.map((el) => (
-                <li key={el.key} className="catalog-item">
+                <li key={el.id} className="catalog-item">
                   <Link to={el.link}>
                     <span className="text">{el.name}</span>
                   </Link>

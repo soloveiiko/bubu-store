@@ -1,11 +1,14 @@
 import React from 'react';
-import { langList } from '../../utils/data';
 
+const langList = [
+  { id: '1', name: 'Ukrainian', code: 'Укр' },
+  { id: '2', name: 'English', code: 'Англ' },
+];
 const Languages = () => {
   return (
     <div className="languages">
       {langList.map((el) => (
-        <button key={el.key} className="language-item">
+        <button key={el.id} className="language-item">
           {el.code}
         </button>
       ))}

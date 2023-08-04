@@ -34,17 +34,17 @@ const Catalog = (props) => {
               </button>
               <ul className="catalog-list">
                 {catalogList.map((el) => (
-                  <li key={el.key} className="catalog-item" onClick={() => toggleSubCatalog(el.key)}>
+                  <li key={el.id} className="catalog-item" onClick={() => toggleSubCatalog(el.id)}>
                     <img src={el.logo} alt={el.name} />
                     <span>{el.name}</span>
-                    {itemStates[el.key] && (
+                    {itemStates[el.id] && (
                       <div className="subcatalog">
                         <button className="close-btn" onClick={() => toggleSubCatalog({})}>
                           <MdOutlineArrowBackIosNew className="catalog-arrow" /> Каталог
                         </button>
                         <ul className="subcatalog-list">
                           {el.subList.map((item) => (
-                            <li key={item.key} className="subcatalog-item" onClick={props.toggleMenu}>
+                            <li key={item.id} className="subcatalog-item" onClick={props.toggleMenu}>
                               <Link to={item.link}>{item.name}</Link>
                             </li>
                           ))}
@@ -63,7 +63,7 @@ const Catalog = (props) => {
             <div className="catalog-container">
               <ul className="catalog-list">
                 {catalogList.map((el) => (
-                  <li key={el.key} className="catalog-item">
+                  <li key={el.id} className="catalog-item">
                     <Link to={el.link}>
                       <img src={el.logo} alt={el.name} />
                       <span>{el.name}</span>

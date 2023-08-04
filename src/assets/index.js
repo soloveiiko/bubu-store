@@ -14,7 +14,6 @@ import bottom from './background/bottom-login.jpg';
 import mastercard from './card/mastercard.jpg';
 import visa from './card/visa.jpg';
 import liqpay from './card/liqpay.jpg';
-
 import carriage from './catalog/carriage.svg';
 import room from './catalog/room.svg';
 import chair from './catalog/chair.svg';
@@ -25,8 +24,37 @@ import car from './catalog/car.svg';
 import toy from './catalog/toy.svg';
 import clothes from './catalog/clothes.svg';
 import newThings from './catalog/new.svg';
+import discount from './discount/discount.jpg';
+import goods from './goods/goods.jpg';
+import carriageCat from './category/carriage.png';
+import bathCat from './category/bath.png';
+import bedCat from './category/bed.png';
+import potCat from './category/pot.png';
+import roomCat from './category/room.png';
+import puzzlesCat from './category/puzzles.png';
+import anex from './brands/anex.jpg';
+import hipp from './brands/hipp.jpg';
+import bebivita from './brands/bebivita.jpg';
+import huggies from './brands/huggies.jpg';
+import pampers from './brands/pampers.jpg';
+import playdoh from './brands/playdoh.jpg';
+import lego from './brands/lego.jpg';
 
 export {
+  lego,
+  anex,
+  hipp,
+  bebivita,
+  huggies,
+  pampers,
+  playdoh,
+  carriageCat,
+  bathCat,
+  bedCat,
+  potCat,
+  roomCat,
+  puzzlesCat,
+  goods,
   mainLogo,
   accentLogo,
   facebook,
@@ -53,4 +81,5 @@ export {
   clothes,
   newThings,
   searchXl,
+  discount,
 };
