@@ -17,7 +17,7 @@ const Brands = () => {
       <h2 className="headline">Популярні бренди</h2>
       <Slider {...settings}>
         {brands.map((el) => (
-          <div key={el.key}>
+          <div key={el.id}>
             <img src={el.image} alt={el.name} />
           </div>
         ))}

@@ -25,7 +25,7 @@ const Footer = () => {
             <h2 className="headline">інформація</h2>
             <ul className="information-list">
               {navList.map((el) => (
-                <li key={el.key} className="information-item">
+                <li key={el.id} className="information-item">
                   <Link className="text" to={el.link}>
                     {el.name}
                   </Link>

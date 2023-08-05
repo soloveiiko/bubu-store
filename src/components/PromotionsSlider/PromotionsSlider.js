@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { NextArrow } from '../Arrows';
 import { promotionalProducts } from '../../utils/data';
+import ProductItem from '../ProductItem';
 
 const PromotionsSlider = () => {
   const settings = {
@@ -11,18 +12,11 @@ const PromotionsSlider = () => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
   };
-  const perDifference = (prevPrice, currPrice) => {
-    return Math.floor(((prevPrice - currPrice) * 100) / prevPrice);
-  };
   return (
     <Slider {...settings}>
-      {promotionalProducts.map((el) => (
-        <div key={el.id}>
-          <div className="percentage-difference">{perDifference(el.prevPrice, el.currPrice)}</div>
-          <img src={el.image} alt={el.name} />
-          <div className="description">{el.description}</div>
-          <div className="prev-price">{el.prevPrice}</div>
-          <div className="curr-price">{el.currPrice}</div>
+      {promotionalProducts.map((product) => (
+        <div key={product.id}>
+          <ProductItem product={product} />
         </div>
       ))}
     </Slider>

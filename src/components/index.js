@@ -8,5 +8,19 @@ import UserActions from './UserActions';
 import Catalog from './Catalog';
 import Search from './Search';
 import Footer from './Footer';
+import Product from './Product';
 
-export { SignIn, SignUp, Header, Footer, Navbar, Catalog, Search, SocialNetwork, Languages, UserPanel, UserActions };
+export {
+  SignIn,
+  SignUp,
+  Header,
+  Footer,
+  Navbar,
+  Catalog,
+  Search,
+  SocialNetwork,
+  Languages,
+  UserPanel,
+  UserActions,
+  Product,
+};
