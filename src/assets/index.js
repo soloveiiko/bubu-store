@@ -1,44 +1,57 @@
-import mainLogo from './logo/logoWhite.png';
-import accentLogo from './logo/logoAccent.svg';
-import instagram from './logo/instagram.svg';
-import youtube from './logo/youtube.svg';
-import facebook from './logo/facebook.svg';
-import user from './logo/user.svg';
-import searchXl from './logo/search-bold.svg';
-import search from './logo/search.svg';
-import comparison from './logo/сomparison.svg';
-import favorite from './logo/favorite.svg';
-import cart from './logo/cart.svg';
-import top from './background/top-login.jpg';
-import bottom from './background/bottom-login.jpg';
-import mastercard from './card/mastercard.jpg';
-import visa from './card/visa.jpg';
-import liqpay from './card/liqpay.jpg';
-import carriage from './catalog/carriage.svg';
-import room from './catalog/room.svg';
-import chair from './catalog/chair.svg';
-import feeding from './catalog/feeding.svg';
-import soap from './catalog/soap.svg';
-import autochair from './catalog/autochair.svg';
-import car from './catalog/car.svg';
-import toy from './catalog/toy.svg';
-import clothes from './catalog/clothes.svg';
-import newThings from './catalog/new.svg';
-import discount from './discount/discount.jpg';
-import goods from './goods/goods.jpg';
-import carriageCat from './category/carriage.png';
-import bathCat from './category/bath.png';
-import bedCat from './category/bed.png';
-import potCat from './category/pot.png';
-import roomCat from './category/room.png';
-import puzzlesCat from './category/puzzles.png';
-import anex from './brands/anex.jpg';
-import hipp from './brands/hipp.jpg';
-import bebivita from './brands/bebivita.jpg';
-import huggies from './brands/huggies.jpg';
-import pampers from './brands/pampers.jpg';
-import playdoh from './brands/playdoh.jpg';
-import lego from './brands/lego.jpg';
+// Logo
+import logoWhite from './images/logo/white-logo.png';
+import logoAccent from './images/logo/accent-logo.svg';
+// Social networks
+import instagram from './images/icons/social-network/instagram.svg';
+import youtube from './images/icons/social-network/youtube.svg';
+import facebook from './images/icons/social-network/facebook.svg';
+// Login
+import user from './images/icons/login/user.svg';
+// Search
+import searchBold from './images/icons/search/search-bold.svg';
+import searchLight from './images/icons/search/search-light.svg';
+// User actions
+import comparison from './images/icons/actions/сomparison.svg';
+import favorite from './images/icons/actions/favorite.svg';
+import cart from './images/icons/actions/cart.svg';
+// Backgrounds
+import bgLoginTop from './images/background/bg-login-top.png';
+import bgLoginBottom from './images/background/bg-login-bottom.png';
+// import bgFooter from '/images/background/bg-footer.png';
+// Cards
+import mastercard from './images/cards/mastercard.jpg';
+import visa from './images/cards/visa.jpg';
+import liqPay from './images/cards/liqpay.jpg';
+// Catalog
+import carriage from './images/icons/catalog/carriage.svg';
+import room from './images/icons/catalog/room.svg';
+import chair from './images/icons/catalog/chair.svg';
+import feeding from './images/icons/catalog/feeding.svg';
+import soap from './images/icons/catalog/soap.svg';
+import autoChair from './images/icons/catalog/autochair.svg';
+import car from './images/icons/catalog/car.svg';
+import toy from './images/icons/catalog/toy.svg';
+import clothes from './images/icons/catalog/clothes.svg';
+import newThings from './images/icons/catalog/new.svg';
+// Discounts
+import discount from './images/discounts/discount.jpg';
+// Products
+import goods from './images/products/goods.jpg';
+// Categories
+import carriageCat from './images/categories/carriage.png';
+import bathCat from './images/categories/bath.png';
+import bedCat from './images/categories/bed.png';
+import potCat from './images/categories/pot.png';
+import roomCat from './images/categories/room.png';
+import puzzlesCat from './images/categories/puzzles.png';
+// Brands
+import anex from './images/brands/anex.jpg';
+import hipp from './images/brands/hipp.jpg';
+import bebivita from './images/brands/bebivita.jpg';
+import huggies from './images/brands/huggies.jpg';
+import pampers from './images/brands/pampers.jpg';
+import playdoh from './images/brands/playdoh.jpg';
+import lego from './images/brands/lego.jpg';
 
 export {
   lego,
@@ -55,31 +68,32 @@ export {
   roomCat,
   puzzlesCat,
   goods,
-  mainLogo,
-  accentLogo,
+  logoWhite,
+  logoAccent,
   facebook,
   youtube,
   instagram,
   user,
-  search,
+  searchLight,
   comparison,
   favorite,
   cart,
-  top,
-  bottom,
+  bgLoginTop,
+  bgLoginBottom,
   mastercard,
   visa,
-  liqpay,
+  liqPay,
   carriage,
   room,
   chair,
   feeding,
   soap,
-  autochair,
+  autoChair,
   car,
   toy,
   clothes,
   newThings,
-  searchXl,
+  searchBold,
   discount,
+  // bgFooter,
 };

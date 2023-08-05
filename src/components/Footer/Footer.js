@@ -1,7 +1,7 @@
 import React from 'react';
 import { SocialNetwork } from '../../components';
 import { Link } from 'react-router-dom';
-import { liqpay, mastercard, visa } from '../../assets';
+import { liqPay, mastercard, visa } from '../../assets';
 import { catalogList } from '../../utils/data';
 const navList = [
   { id: '1', name: 'Про нас', link: '#' },
@@ -51,7 +51,7 @@ const Footer = () => {
           <div className="cards">
             <img src={mastercard} alt="Master Card" />
             <img src={visa} alt="Visa" />
-            <img src={liqpay} alt="LIGPAY" />
+            <img src={liqPay} alt="LIGPAY" />
           </div>
         </div>
       </div>

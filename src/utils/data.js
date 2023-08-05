@@ -1,6 +1,6 @@
 import {
   anex,
-  autochair,
+  autoChair,
   bathCat,
   bebivita,
   bedCat,
@@ -83,7 +83,7 @@ export const catalogList = [
     id: '6',
     name: 'Автокрісла',
     link: '#',
-    logo: autochair,
+    logo: autoChair,
     subList: [
       { id: 'test1', name: 'test1', link: '#' },
       { id: 'test2', name: 'test2', link: '#' },

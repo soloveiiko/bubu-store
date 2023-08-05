@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Catalog, Languages, Navbar, Search, SocialNetwork, UserActions, UserPanel } from '../../components';
-import { mainLogo } from './../../assets';
+import { logoWhite } from './../../assets';
 
 const Header = () => {
   const [mobile, setMobile] = useState(false);
@@ -32,7 +32,7 @@ const Header = () => {
                 <span className="toggle-item"></span>
               </button>
               <Link to="/" className="logo">
-                <img src={mainLogo} alt="Bubu Store" />
+                <img src={logoWhite} alt="Bubu Store" />
               </Link>
             </div>
             <div className="right-block">
@@ -60,7 +60,7 @@ const Header = () => {
         <div className="container">
           <div className="top-block">
             <Link to="/" className="logo">
-              <img src={mainLogo} alt="Bubu Store" />
+              <img src={logoWhite} alt="Bubu Store" />
             </Link>
             <Navbar />
             <div className="tools">
