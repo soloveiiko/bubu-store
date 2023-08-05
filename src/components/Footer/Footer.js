@@ -3,6 +3,7 @@ import { SocialNetwork } from '../../components';
 import { Link } from 'react-router-dom';
 import { liqPay, mastercard, visa } from '../../assets';
 import { catalogList } from '../../utils/data';
+
 const navList = [
   { id: '1', name: 'Про нас', link: '#' },
   { id: '2', name: 'Контакти', link: '#' },

@@ -9,6 +9,7 @@ import Catalog from './Catalog';
 import Search from './Search';
 import Footer from './Footer';
 import Product from './Product';
+import Subscription from './Subscription';
 
 export {
   SignIn,
@@ -23,4 +24,5 @@ export {
   UserPanel,
   UserActions,
   Product,
+  Subscription,
 };

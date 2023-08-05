@@ -1,5 +1,5 @@
 import './App.css';
-import { Footer, Header } from './components';
+import { Footer, Header, Subscription } from './components';
 import AppRoutes from './routes';
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
           <AppRoutes />
         </div>
       </div>
+      <Subscription />
       <Footer />
     </div>
   );

@@ -17,7 +17,7 @@ import cart from './images/icons/actions/cart.svg';
 // Backgrounds
 import bgLoginTop from './images/background/bg-login-top.png';
 import bgLoginBottom from './images/background/bg-login-bottom.png';
-// import bgFooter from '/images/background/bg-footer.png';
+import bgFooter from './images/background/bg-footer.png';
 // Cards
 import mastercard from './images/cards/mastercard.jpg';
 import visa from './images/cards/visa.jpg';
@@ -52,6 +52,8 @@ import huggies from './images/brands/huggies.jpg';
 import pampers from './images/brands/pampers.jpg';
 import playdoh from './images/brands/playdoh.jpg';
 import lego from './images/brands/lego.jpg';
+// Others
+import footerImg from './images/footer-img.png';
 
 export {
   lego,
@@ -95,5 +97,6 @@ export {
   newThings,
   searchBold,
   discount,
-  // bgFooter,
+  footerImg,
+  bgFooter,
 };
