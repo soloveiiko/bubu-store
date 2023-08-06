@@ -8,9 +8,29 @@ const Brands = () => {
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 7,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 479,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
   };
   return (
     <div>

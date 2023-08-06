@@ -11,6 +11,26 @@ const PromotionsSlider = () => {
     slidesToShow: 5,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 479,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
   return (
     <Slider {...settings}>
