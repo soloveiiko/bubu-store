@@ -1,11 +1,11 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { NextArrow } from '../commons/Arrows';
-import { products } from '../../utils/data';
+import { productsList } from '../../utils/data';
 import ProductItem from '../ProductItem';
 
 const PromotionsSlider = () => {
-  const isDiscountProducts = products.filter((product) => product.discount.isDiscount === true);
+  const isDiscountProducts = productsList.filter((product) => product.discount.isDiscount === true);
   const numSlides = isDiscountProducts.length;
 
   const settings = {

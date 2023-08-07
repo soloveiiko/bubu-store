@@ -1,12 +1,12 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { discountSliderData } from '../../utils/data';
+import { discountList } from '../../utils/data';
 import { NextArrow, PrevArrow } from '../commons/Arrows';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const DiscountSlider = () => {
-  const numSlides = discountSliderData.length;
+  const numSlides = discountList.length;
 
   const settings = {
     dots: true,
@@ -20,7 +20,7 @@ const DiscountSlider = () => {
   };
   return (
     <Slider {...settings}>
-      {discountSliderData.map((slide, index) => (
+      {discountList.map((slide, index) => (
         <div key={index}>
           <img src={slide.image} alt={slide.id} />
         </div>

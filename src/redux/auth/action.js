@@ -62,7 +62,6 @@ export const signUpUserAsync = (userData) => {
         const user = response.data;
         dispatch(signUpUserSuccess(user));
         localStorage.setItem('user', response.data);
-        console.log(user);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -79,7 +78,6 @@ export const getUserDataAsync = (userData) => {
         const user = response.data;
         dispatch(getUserDataSuccess(user));
         localStorage.setItem('user', user);
-        console.log(user);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -87,4 +85,3 @@ export const getUserDataAsync = (userData) => {
       });
   };
 };
-// export const setAuthStatus = () => {};

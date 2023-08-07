@@ -6,7 +6,7 @@ const PrivateRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
-      <Route path="/catalog" element={<CatalogPage />} />
+      <Route path="/catalog/:id" element={<CatalogPage />} />
       <Route path="/product/:id" element={<ProductPage />} />
       <Route path="/403" element={<NoAccessPage />} />
       <Route path="*" element={<NotFoundPage />} />

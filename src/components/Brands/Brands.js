@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import { brands } from '../../utils/data';
+import { brandsList } from '../../utils/data';
 import { NextArrow } from '../commons/Arrows';
 
 const Brands = () => {
-  const numSlides = brands.length;
+  const numSlides = brandsList.length;
 
   const settings = {
     infinite: numSlides > 7,
@@ -41,7 +41,7 @@ const Brands = () => {
     <div>
       <h2 className="headline">Популярні бренди</h2>
       <Slider {...settings}>
-        {brands.map((el) => (
+        {brandsList.map((el) => (
           <div key={el.id}>
             <img src={el.image} alt={el.name} />
           </div>

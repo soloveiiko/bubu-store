@@ -11,7 +11,6 @@ import {
   clothes,
   discount,
   feeding,
-  goods,
   hipp,
   huggies,
   lego,
@@ -30,107 +29,135 @@ export const catalogList = [
   {
     id: '1',
     name: 'Дитячі коляски',
+    code: 'carriage',
     link: '#',
     logo: carriage,
-    subList: [
-      { id: 'carriages', name: 'Коляски 2 в 1', link: '#' },
-      { id: 'envelopes', name: 'Зимові конверти', link: '#' },
-      { id: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
-      { id: 'couplings', name: 'Муфти', link: '#' },
+    categories: [
+      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
+      { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
+      { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
     ],
   },
   {
     id: '2',
     name: 'Дитяча кімната',
+    code: 'room',
     link: '#',
     logo: room,
-    subList: [
-      { id: 'test1', name: 'test1', link: '#' },
-      { id: 'test2', name: 'test2', link: '#' },
+    categories: [
+      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
+      { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
+      { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
     ],
   },
   {
     id: '3',
     name: 'Стільці і шезлонги',
+    code: 'chair',
     link: '#',
     logo: chair,
-    subList: [
-      { id: 'test1', name: 'test1', link: '#' },
-      { id: 'test2', name: 'test2', link: '#' },
+    categories: [
+      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
+      { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
+      { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
     ],
   },
   {
     id: '4',
     name: 'Для годування',
+    code: 'feeding',
     link: '#',
     logo: feeding,
-    subList: [
-      { id: 'test1', name: 'test1', link: '#' },
-      { id: 'test2', name: 'test2', link: '#' },
+    categories: [
+      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
+      { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
+      { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
     ],
   },
   {
     id: '5',
     name: 'Гігієна і догляд',
+    code: 'soap',
     link: '#',
     logo: soap,
-    subList: [
-      { id: 'test1', name: 'test1', link: '#' },
-      { id: 'test2', name: 'test2', link: '#' },
+    categories: [
+      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
+      { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
+      { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
     ],
   },
   {
     id: '6',
     name: 'Автокрісла',
+    code: 'autoChair',
     link: '#',
     logo: autoChair,
-    subList: [
-      { id: 'test1', name: 'test1', link: '#' },
-      { id: 'test2', name: 'test2', link: '#' },
+    categories: [
+      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
+      { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
+      { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
     ],
   },
   {
     id: '7',
     name: 'Дитячий транспорт',
+    code: 'car',
     link: '#',
     logo: car,
-    subList: [
-      { id: 'test1', name: 'test1', link: '#' },
-      { id: 'test2', name: 'test2', link: '#' },
+    categories: [
+      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
+      { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
+      { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
     ],
   },
   {
     id: '8',
     name: 'Іграшки',
+    code: 'toy',
     link: '#',
     logo: toy,
-    subList: [
-      { id: 'test1', name: 'test1', link: '#' },
-      { id: 'test2', name: 'test2', link: '#' },
+    categories: [
+      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
+      { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
+      { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
     ],
   },
   {
     id: '9',
-    name: 'Одяг',
+    name: 'clothes',
+    code: 'toy',
     link: '#',
     logo: clothes,
-    subList: [
-      { id: 'test1', name: 'test1', link: '#' },
-      { id: 'test2', name: 'test2', link: '#' },
+    categories: [
+      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
+      { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
+      { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
     ],
   },
   {
     id: '10',
     name: 'Новий товар',
+    code: 'newThings',
     link: '#',
     logo: newThings,
-    subList: [
-      { id: 'test1', name: 'test1', link: '#' },
-      { id: 'test3', name: 'test3', link: '#' },
+    categories: [
+      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
+      { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
+      { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
     ],
   },
 ];
-export const discountSliderData = [
+export const discountList = [
   {
     id: '1',
     name: 'First',
@@ -152,7 +179,18 @@ export const discountSliderData = [
     image: discount,
   },
 ];
-export const products = [
+export const producersList = [
+  { id: '1', name: 'Anex', code: 'anex' },
+  { id: '2', name: 'Bair', code: 'bair' },
+  { id: '3', name: 'BabyOno', code: 'babyono' },
+  { id: '4', name: 'Corrello', code: 'corrello' },
+  { id: '5', name: 'OK Baby', code: 'okbaby' },
+  { id: '6', name: 'Babyroom', code: 'babyroom' },
+  { id: '7', name: 'ZD', code: 'zd' },
+  { id: '8', name: 'Маленька Соня', code: 'littlesonia' },
+  { id: '9', name: 'Espiro', code: 'espiro' },
+];
+export const productsList = [
   {
     id: '1',
     isAvailable: true,
@@ -161,7 +199,9 @@ export const products = [
     code: 'EP-01',
     colors: ['blue', 'red', 'green'],
     sex: ['male', 'female'],
+    catalog: 'carriage',
     category: 'carriage',
+    producer: 'Anex',
     price: 5000,
     discount: {
       isDiscount: true,
@@ -181,7 +221,9 @@ export const products = [
     code: 'EP-01',
     // colors: ['blue', 'red', 'green'],
     // sex: ['male', 'female'],
-    category: 'toy',
+    catalog: 'toy',
+    category: 'carriage',
+    producer: 'BabyOno',
     price: 200,
     discount: {
       isDiscount: true,
@@ -197,67 +239,19 @@ export const products = [
     code: 'EP-01',
     colors: ['blue', 'red', 'green'],
     sex: ['male', 'female'],
-    category: 'carriage',
+    catalog: 'carriage',
+    category: 'envelopes',
+    producer: 'BabyOno',
     price: 100,
     discount: {
       isDiscount: false,
     },
     photos: {
-      blue: 'path/to/blue_photo.jpg',
-      red: 'path/to/red_photo.jpg',
-      green: 'path/to/green_photo.jpg',
+      blue: [anex, discount],
+      red: [],
+      green: [],
     },
   },
-];
-export const promotionalProducts = [
-  {
-    id: '1',
-    image: goods,
-    name: 'test1',
-    description: 'first',
-    prevPrice: 6000,
-    currPrice: 5000,
-  },
-  {
-    id: '2',
-    image: goods,
-    name: 'test2',
-    description: 'second',
-    prevPrice: 4000,
-    currPrice: 3500,
-  },
-  {
-    id: '3',
-    image: goods,
-    name: 'test3',
-    description: 'second',
-    prevPrice: 4000,
-    currPrice: 3500,
-  },
-  // {
-  //   id: '4',
-  //   image: goods,
-  //   name: 'test4',
-  //   description: 'second',
-  //   prevPrice: 4000,
-  //   currPrice: 3500,
-  // },
-  // {
-  //   id: '5',
-  //   image: goods,
-  //   name: 'test5',
-  //   description: 'second',
-  //   prevPrice: 4000,
-  //   currPrice: 3500,
-  // },
-  // {
-  //   id: '6',
-  //   image: goods,
-  //   name: 'test6',
-  //   description: 'second',
-  //   prevPrice: 4000,
-  //   currPrice: 3500,
-  // },
 ];
 export const popularCategory = [
   { id: '1', image: carriageCat, name: 'Коляски 2в1' },
@@ -267,8 +261,7 @@ export const popularCategory = [
   { id: '5', image: roomCat, name: 'Пазли' },
   { id: '6', image: puzzlesCat, name: 'Ванночки' },
 ];
-
-export const brands = [
+export const brandsList = [
   { id: '1', name: 'Play Doh', image: playdoh },
   { id: '2', name: 'Huggies', image: huggies },
   { id: '3', name: 'Hipp', image: hipp },

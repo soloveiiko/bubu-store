@@ -43,7 +43,7 @@ const Catalog = (props) => {
                           <MdOutlineArrowBackIosNew className="catalog-arrow" /> Каталог
                         </button>
                         <ul className="subcatalog-list">
-                          {el.subList.map((item) => (
+                          {el.categories.map((item) => (
                             <li key={item.id} className="subcatalog-item" onClick={props.toggleMenu}>
                               <Link to={item.link}>{item.name}</Link>
                             </li>
