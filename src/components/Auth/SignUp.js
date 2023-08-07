@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Inputs, { emailField, nameField, numberField, passwordField } from '../Inputs';
+import Inputs, { emailField, nameField, numberField, passwordField } from '../commons/Inputs';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signUpUserAsync } from '../../redux/auth/action';

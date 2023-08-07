@@ -1,7 +1,7 @@
 import React from 'react';
 import { Product } from '../../components';
 import { useParams } from 'react-router-dom';
-import { promotionalProducts } from '../../utils/data';
+import { products } from '../../utils/data';
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -16,19 +16,12 @@ const ProductPage = () => {
   //     console.log(error);
   //   }
   // }, []);
-  const product = promotionalProducts.find((product) => product.id === productId);
+  const product = products.find((product) => product.id === productId);
 
   return (
     <div>
       Product Page
-      <Product
-        id={product.id}
-        image={product.image}
-        name={product.name}
-        description={product.description}
-        prevPrice={product.prevPrice}
-        currPrice={product.currPrice}
-      />
+      <Product product={product} />
     </div>
   );
 };

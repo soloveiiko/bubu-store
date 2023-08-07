@@ -1,14 +1,16 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { discountSliderData } from '../../utils/data';
-import { NextArrow, PrevArrow } from '../Arrows';
+import { NextArrow, PrevArrow } from '../commons/Arrows';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const DiscountSlider = () => {
+  const numSlides = discountSliderData.length;
+
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: numSlides > 1,
     // autoplay: true,
     speed: 2000,
     slidesToShow: 1,

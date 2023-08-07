@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { addToHistory } from '../../redux/browsing-history/action';
 import { useDispatch } from 'react-redux';
+import { defaultImg } from '../../assets';
 
 const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
@@ -13,15 +14,40 @@ const ProductItem = ({ product }) => {
     dispatch(addToHistory(product));
     console.log('product', product);
   };
+  const renderPhotos = () => {
+    if (product.photos) {
+      const firstColor = Object.keys(product.photos)[0];
+      const imagesForColor = product.photos[firstColor];
+
+      if (imagesForColor && imagesForColor.length > 0) {
+        return (
+          <div>
+            <img src={imagesForColor[0]} alt={firstColor} />
+          </div>
+        );
+      }
+    } else if (product.images.length > 0) {
+      return (
+        <div>
+          <img src={product.images[0]} alt={product.name} />
+        </div>
+      );
+    }
+    return (
+      <div>
+        <img src={defaultImg} alt="Product" />
+      </div>
+    );
+  };
   return (
     <div>
-      <div className="percentage-difference">{perDifference(product.prevPrice, product.currPrice)}</div>
-      <img src={product.image} alt={product.name} />
+      <div className="percentage-difference">{perDifference(product.price, product.discount.price)}</div>
+      {renderPhotos()}
       <Link to={`/product/${product.id}`} className="description" onMouseUp={() => onClickDis(product)}>
-        {product.description}
+        {product.fullName}
       </Link>
-      <div className="prev-price">{product.prevPrice}</div>
-      <div className="curr-price">{product.currPrice}</div>
+      <div className="prev-price">{product.price}</div>
+      <div className="curr-price">{product.discount.price}</div>
     </div>
   );
 };

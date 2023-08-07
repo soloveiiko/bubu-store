@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Product = (props) => {
+const Product = ({ product }) => {
   return (
     <div>
       <div>
-        <h2 className="product-name">name: {props.name}</h2>
+        <h2 className="product-name">name: {product.fullName}</h2>
         <div>У вибране</div>
         <div>Порівняти</div>
       </div>

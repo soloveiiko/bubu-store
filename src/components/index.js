@@ -8,8 +8,15 @@ import UserActions from './UserActions';
 import Catalog from './Catalog';
 import Search from './Search';
 import Footer from './Footer';
-import Product from './Product';
 import Subscription from './Subscription';
+import Product from './Product';
+import ProductItem from './ProductItem';
+import Brands from './Brands';
+import BrowsingHistory from './BrowsingHistory';
+import DiscountSlider from './DiscountSlider';
+import PopularCategory from './PopularCategory';
+import PromotionsSlider from './PromotionsSlider';
+import Filter from './Filter';
 
 export {
   SignIn,
@@ -25,4 +32,11 @@ export {
   UserActions,
   Product,
   Subscription,
+  ProductItem,
+  Brands,
+  BrowsingHistory,
+  DiscountSlider,
+  PopularCategory,
+  PromotionsSlider,
+  Filter,
 };

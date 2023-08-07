@@ -54,8 +54,10 @@ import playdoh from './images/brands/playdoh.jpg';
 import lego from './images/brands/lego.jpg';
 // Others
 import footerImg from './images/footer-img.png';
+import defaultImg from './images/default.jpeg';
 
 export {
+  defaultImg,
   lego,
   anex,
   hipp,

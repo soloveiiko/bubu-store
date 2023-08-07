@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { brands } from '../../utils/data';
-import { NextArrow } from '../Arrows';
-import { Link } from 'react-router-dom';
+import { NextArrow } from '../commons/Arrows';
 
 const Brands = () => {
+  const numSlides = brands.length;
+
   const settings = {
-    infinite: true,
+    infinite: numSlides > 7,
     speed: 500,
     slidesToShow: 7,
     slidesToScroll: 1,
@@ -15,18 +17,21 @@ const Brands = () => {
       {
         breakpoint: 1200,
         settings: {
+          infinite: numSlides > 5,
           slidesToShow: 5,
         },
       },
       {
         breakpoint: 768,
         settings: {
+          infinite: numSlides > 4,
           slidesToShow: 4,
         },
       },
       {
         breakpoint: 479,
         settings: {
+          infinite: numSlides > 3,
           slidesToShow: 3,
         },
       },
