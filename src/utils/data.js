@@ -33,7 +33,7 @@ export const catalogList = [
     link: '#',
     logo: carriage,
     categories: [
-      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '1', code: 'carriage', name: 'Коляски 2 в 1', link: '#' },
       { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
       { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
       { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
@@ -46,7 +46,7 @@ export const catalogList = [
     link: '#',
     logo: room,
     categories: [
-      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '1', code: 'carriage', name: 'Коляски 2 в 1', link: '#' },
       { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
       { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
       { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
@@ -59,7 +59,7 @@ export const catalogList = [
     link: '#',
     logo: chair,
     categories: [
-      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '1', code: 'carriage', name: 'Коляски 2 в 1', link: '#' },
       { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
       { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
       { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
@@ -72,7 +72,7 @@ export const catalogList = [
     link: '#',
     logo: feeding,
     categories: [
-      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '1', code: 'carriage', name: 'Коляски 2 в 1', link: '#' },
       { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
       { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
       { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
@@ -85,7 +85,7 @@ export const catalogList = [
     link: '#',
     logo: soap,
     categories: [
-      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '1', code: 'carriage', name: 'Коляски 2 в 1', link: '#' },
       { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
       { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
       { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
@@ -98,7 +98,7 @@ export const catalogList = [
     link: '#',
     logo: autoChair,
     categories: [
-      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '1', code: 'carriage', name: 'Коляски 2 в 1', link: '#' },
       { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
       { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
       { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
@@ -111,7 +111,7 @@ export const catalogList = [
     link: '#',
     logo: car,
     categories: [
-      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '1', code: 'carriage', name: 'Коляски 2 в 1', link: '#' },
       { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
       { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
       { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
@@ -124,7 +124,7 @@ export const catalogList = [
     link: '#',
     logo: toy,
     categories: [
-      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '1', code: 'carriage', name: 'Коляски 2 в 1', link: '#' },
       { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
       { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
       { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
@@ -137,7 +137,7 @@ export const catalogList = [
     link: '#',
     logo: clothes,
     categories: [
-      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '1', code: 'carriage', name: 'Коляски 2 в 1', link: '#' },
       { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
       { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
       { id: '4', code: 'couplings', name: 'Муфти', link: '#' },
@@ -150,7 +150,7 @@ export const catalogList = [
     link: '#',
     logo: newThings,
     categories: [
-      { id: '1', code: 'carriages', name: 'Коляски 2 в 1', link: '#' },
+      { id: '1', code: 'carriage', name: 'Коляски 2 в 1', link: '#' },
       { id: '2', code: 'envelopes', name: 'Зимові конверти', link: '#' },
       { id: '3', code: 'components', name: 'Аксесуари та комплектуючі', link: '#' },
       { id: '4', code: 'couplings', name: 'Муфти', link: '#' },

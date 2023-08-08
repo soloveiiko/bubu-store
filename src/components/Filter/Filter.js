@@ -1,45 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { RiArrowUpSLine } from 'react-icons/ri';
-import { FiArrowRight } from 'react-icons/fi';
-import { fetchProducerData } from '../../api/api';
-import { useDispatch } from 'react-redux';
-import { getProductsData } from '../../redux/products/action';
 
-const Filter = ({ catalog }) => {
-  // const [producer, setProducer] = useState([]);
-  // const [category, setCategory] = useState([]);
-  const dispatch = useDispatch();
-  // const [activeFilters, setActiveFilters] = useState({
-  //   isAvailable: false,
-  //   isDiscount: false,
-  // });
-
-  useEffect(() => {
-    // const fetchData = async () => {
-    //   try {
-    //     // const producerData = await fetchProducerData();
-    //     // setProducer(producerData);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // };
-    //
-    // fetchData();
-    dispatch(getProductsData());
-  }, [dispatch]);
-
-  const categoryFilter = (category) => {
-    const newItem = catalog.categories.find((el) => el.code === category.code);
-    if (newItem) {
-      applyFilters({ category: newItem.code });
-    }
-  };
-
-  const applyFilters = (filters) => {
-    dispatch(getProductsData(filters));
-    debugger;
-    console.log('filters', filters);
-  };
+const Filter = ({ catalog, categoriesFilter }) => {
   return (
     <div className="filter">
       <h2 className="headline">{catalog.name}</h2>
@@ -50,7 +12,7 @@ const Filter = ({ catalog }) => {
         </div>
         <ul className="categories-filter-list">
           {catalog.categories.map((el) => (
-            <li key={el.id} className="categories-filter-item" onClick={() => categoryFilter(el)}>
+            <li key={el.id} className="categories-filter-item" onClick={() => categoriesFilter(el)}>
               {el.name}
             </li>
           ))}

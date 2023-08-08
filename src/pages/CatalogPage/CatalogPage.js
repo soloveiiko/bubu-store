@@ -7,11 +7,15 @@ import { fetchCatalogData } from '../../api/api';
 
 const CatalogPage = () => {
   const [catalogList, setCatalog] = useState([]);
+  // const [producerList, setProducer] = useState([]);
+  // const [isAvailable, setIsAvailable] = useState(false);
+  // const [isDiscount, setIsDiscount] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [isFiltered, setIsFiltered] = useState(false);
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-  console.log('Products list:', products);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -32,15 +36,42 @@ const CatalogPage = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  const catalog = catalogList.find((catalog) => catalog.id === catalogId);
-  const catalogProducts = products.products.filter((product) => product.catalog === catalog.code);
+  const selectedCatalog = catalogList.find((catalog) => catalog.id === catalogId);
+  const catalogProducts = products.products.filter((product) => product.catalog === selectedCatalog.code);
+
+  const categoriesFilter = (category) => {
+    const selectedCategory = selectedCatalog.categories.find((el) => el.code === category.code);
+    if (selectedCategory) {
+      applyFilters(selectedCategory.code);
+    }
+  };
+
+  const applyFilters = (selectedCategory) => {
+    if (selectedCategory) {
+      const filteredProducts = catalogProducts.filter((product) => product.category === selectedCategory);
+      setFilteredProducts(filteredProducts);
+      setIsFiltered(true);
+      console.log('filtered Products', filteredProducts);
+      console.log('catalog Products', products);
+      console.log('selected Category', selectedCategory);
+    } else {
+      setIsFiltered(false);
+      setFilteredProducts(catalogProducts);
+    }
+  };
   return (
     <div className="catalog-page">
-      <Filter catalog={catalog} />
+      <Filter catalog={selectedCatalog} categoriesFilter={categoriesFilter} />
       <div className="sorted-products">
-        {catalogProducts.map((el) => (
-          <ProductItem key={el.id} product={el} />
-        ))}
+        {isFiltered ? (
+          filteredProducts.length > 0 ? (
+            filteredProducts.map((el) => <ProductItem key={el.id} product={el} />)
+          ) : (
+            <div>No such product</div>
+          )
+        ) : (
+          catalogProducts.map((el) => <ProductItem key={el.id} product={el} />)
+        )}
       </div>
     </div>
   );
