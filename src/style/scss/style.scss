@@ -2,6 +2,8 @@
 @import 'additional/mixins';
 @import 'additional/fonts';
 @import './../../pages/Auth/login';
+@import './../../pages/ProductPage/product-page';
+@import './../../pages/CatalogPage/catalog-page';
 @import './../../components/Header/header';
 @import './../../components/Navbar/navbar';
 @import './../../components/SocialNetwork/social-network';
@@ -12,6 +14,8 @@
 @import './../../components/UserActions/user-action';
 @import './../../components/Footer/footer';
 @import './../../components/Subscription/subscription';
+@import './../../components/Filter/filter';
+@import './../../components/ProductItem/product-item';
 
 html,
 body {

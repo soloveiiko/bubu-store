@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { brandsList, catalogList, discountList, popularCategory, producersList } from '../utils/data';
+import { brandsList, catalogList, discountList, popularCategory, producersList, productsList } from '../utils/data';
 
 const instance = axios.create({
   withCredentials: true,
@@ -39,6 +39,9 @@ const fetchDataFromServer = async (data) => {
   } catch (error) {
     console.log(error);
   }
+};
+export const fetchProductData = async () => {
+  return fetchDataFromServer(productsList);
 };
 
 export const fetchBrandsData = async () => {

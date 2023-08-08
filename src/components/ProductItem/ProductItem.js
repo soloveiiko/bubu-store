@@ -40,7 +40,7 @@ const ProductItem = ({ product }) => {
     );
   };
   return (
-    <div>
+    <div className="product-item">
       <div className="percentage-difference">
         {product.discount.isDiscount && perDifference(product.price, product.discount.price)}
       </div>

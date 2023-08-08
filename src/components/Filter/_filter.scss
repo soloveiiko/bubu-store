@@ -1,0 +1,18 @@
+.filter {
+  .categories-filter {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .categories-title {
+    display: flex;
+  }
+  .categories-filter-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+  .categories-filter-item {
+    cursor: pointer;
+  }
+}

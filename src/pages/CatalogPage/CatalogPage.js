@@ -35,13 +35,11 @@ const CatalogPage = () => {
   const catalog = catalogList.find((catalog) => catalog.id === catalogId);
   const catalogProducts = products.products.filter((product) => product.catalog === catalog.code);
   return (
-    <div>
+    <div className="catalog-page">
       <Filter catalog={catalog} />
-      <div>
+      <div className="sorted-products">
         {catalogProducts.map((el) => (
-          <div key={el.id}>
-            <ProductItem product={el} />
-          </div>
+          <ProductItem key={el.id} product={el} />
         ))}
       </div>
     </div>

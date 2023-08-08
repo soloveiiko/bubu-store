@@ -1,4 +1,4 @@
-import { productsList } from '../../utils/data';
+import { fetchProductData } from '../../api/api';
 
 export const GET_PRODUCTS_DATA = 'GET_PRODUCTS_DATA';
 export const GET_PRODUCTS_DATA_SUCCESS = 'GET_PRODUCTS_DATA_SUCCESS';
@@ -8,12 +8,9 @@ export const getProductsData = () => {
   return async (dispatch) => {
     dispatch({ type: GET_PRODUCTS_DATA });
     try {
-      const response = await new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(productsList);
-        }, 1000);
-      });
+      const response = await fetchProductData();
       dispatch({ type: GET_PRODUCTS_DATA_SUCCESS, payload: response });
+      console.log('response fetchProductData', response);
     } catch (error) {
       dispatch({ type: GET_PRODUCTS_DATA_ERROR, payload: error });
     }
