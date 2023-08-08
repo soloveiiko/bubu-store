@@ -1,7 +1,7 @@
 import React from 'react';
 import { RiArrowUpSLine } from 'react-icons/ri';
 
-const Filter = ({ catalog, categoriesFilter }) => {
+const Filter = ({ catalog, categoriesFilter, isAvailableFilter, isAvailable }) => {
   return (
     <div className="filter">
       <h2 className="headline">{catalog.name}</h2>
@@ -18,10 +18,16 @@ const Filter = ({ catalog, categoriesFilter }) => {
           ))}
         </ul>
       </div>
-      {/*<div>*/}
-      {/*  <input type="checkbox" id="isAvailable" onClick={() => isAvailableFilter()} />*/}
-      {/*  <label htmlFor="isAvailable">В наявності</label>*/}
-      {/*</div>*/}
+      <div>
+        <input
+          type="checkbox"
+          id="isAvailable"
+          checked={isAvailable}
+          // onClick={(e) => isAvailableFilter(e.target.checked)}
+          onChange={(e) => isAvailableFilter(e.target.checked)}
+        />
+        <label htmlFor="isAvailable">В наявності</label>
+      </div>
       {/*<div>*/}
       {/*  <input type="checkbox" id="isDiscount" />*/}
       {/*  <label htmlFor="isDiscount">Зі знижкою</label>*/}

@@ -1,10 +1,4 @@
-import {
-  CLEAR_FILTER,
-  GET_PRODUCTS_DATA,
-  GET_PRODUCTS_DATA_ERROR,
-  GET_PRODUCTS_DATA_SUCCESS,
-  UPDATE_FILTER,
-} from './action';
+import { GET_PRODUCTS_DATA, GET_PRODUCTS_DATA_ERROR, GET_PRODUCTS_DATA_SUCCESS } from './action';
 
 const initialState = {
   products: [],
@@ -33,16 +27,6 @@ const productsReducer = (state = initialState, action) => {
         products: [],
         isLoading: false,
         error: payload,
-      };
-    case UPDATE_FILTER:
-      return {
-        ...state,
-        products: payload,
-      };
-    case CLEAR_FILTER:
-      return {
-        ...state,
-        products: [],
       };
     default:
       return state;

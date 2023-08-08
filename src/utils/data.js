@@ -252,6 +252,28 @@ export const productsList = [
       green: [],
     },
   },
+  {
+    id: '4',
+    isAvailable: false,
+    fullName: 'Коляска',
+    name: 'Коляска',
+    code: 'EP-01',
+    colors: ['blue', 'red', 'green'],
+    sex: ['male', 'female'],
+    catalog: 'carriage',
+    category: 'carriage',
+    producer: 'Anex',
+    price: 5000,
+    discount: {
+      isDiscount: true,
+      price: 4000,
+    },
+    photos: {
+      blue: [anex, discount],
+      red: [],
+      green: [],
+    },
+  },
 ];
 export const popularCategory = [
   { id: '1', image: carriageCat, name: 'Коляски 2в1' },
