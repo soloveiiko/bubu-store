@@ -18,6 +18,7 @@ import PopularCategory from './PopularCategory';
 import PromotionsSlider from './PromotionsSlider';
 import Filter from './Filter';
 import SortBy from './SortBy';
+import ShowMore from './ShowMore';
 
 export {
   SignIn,
@@ -41,4 +42,5 @@ export {
   PromotionsSlider,
   Filter,
   SortBy,
+  ShowMore,
 };

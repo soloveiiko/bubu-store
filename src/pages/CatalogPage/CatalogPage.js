@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Filter, ProductItem, SortBy } from '../../components';
+import { Filter, ProductItem, ShowMore, SortBy } from '../../components';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsData } from '../../redux/products/action';
 import { fetchCatalogData, fetchProducerData } from '../../api/api';
@@ -16,6 +16,7 @@ const CatalogPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProducers, setSelectedProducers] = useState([]);
   const [selectedSort, setSelectedSort] = useState('1');
+  const [visibleProducts, setVisibleProducts] = useState(16);
 
   const products = useSelector((state) => state.products);
   const filter = useSelector((state) => state.filter);
@@ -162,6 +163,9 @@ const CatalogPage = () => {
     }
     dispatch(updateFilter(filteredProducts));
   };
+  const handleShowMore = () => {
+    setVisibleProducts(visibleProducts + 10);
+  };
   return (
     <div className="catalog-page">
       <Filter
@@ -182,18 +186,21 @@ const CatalogPage = () => {
       <div className="sorted-products">
         {filter.isFiltered ? (
           filter.filteredProducts.length > 0 ? (
-            filter.filteredProducts.map((el) =>
-              (filterData.isAvailable && el.isAvailable) || !filterData.isAvailable ? (
-                <ProductItem key={el.id} product={el} />
-              ) : null
-            )
+            filter.filteredProducts
+              .slice(0, visibleProducts)
+              .map((el) =>
+                (filterData.isAvailable && el.isAvailable) || !filterData.isAvailable ? (
+                  <ProductItem key={el.id} product={el} />
+                ) : null
+              )
           ) : (
             <div>No such product</div>
           )
         ) : (
-          catalogProducts.map((el) => <ProductItem key={el.id} product={el} />)
+          catalogProducts.slice(0, visibleProducts).map((el) => <ProductItem key={el.id} product={el} />)
         )}
       </div>
+      {catalogProducts.length > 16 && <ShowMore onClick={handleShowMore} />}
     </div>
   );
 };
