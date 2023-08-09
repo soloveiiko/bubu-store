@@ -10,6 +10,9 @@ const Filter = (props) => {
   const handleAvailableFilter = (isAvailable) => {
     props.onAvailableFilter(isAvailable);
   };
+  const handleDiscountFilter = (isDiscount) => {
+    props.onDiscountFilter(isDiscount);
+  };
   return (
     <div className="filter">
       <h2 className="headline">{props.catalog.name}</h2>
@@ -31,15 +34,19 @@ const Filter = (props) => {
           type="checkbox"
           id="isAvailable"
           checked={props.isAvailable}
-          // onClick={(e) => isAvailableFilter(e.target.checked)}
           onChange={(e) => handleAvailableFilter(e.target.checked)}
         />
         <label htmlFor="isAvailable">В наявності</label>
       </div>
-      {/*<div>*/}
-      {/*  <input type="checkbox" id="isDiscount" />*/}
-      {/*  <label htmlFor="isDiscount">Зі знижкою</label>*/}
-      {/*</div>*/}
+      <div>
+        <input
+          type="checkbox"
+          id="isDiscount"
+          checked={props.isDiscount}
+          onChange={(e) => handleDiscountFilter(e.target.checked)}
+        />
+        <label htmlFor="isDiscount">Зі знижкою</label>
+      </div>
       {/*<div>*/}
       {/*  <div>*/}
       {/*    <h3>Ціна</h3>*/}

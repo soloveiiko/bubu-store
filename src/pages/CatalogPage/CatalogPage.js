@@ -59,10 +59,17 @@ const CatalogPage = () => {
       ...prevState,
       isAvailable: isAvailable,
     }));
-    applyFilters(filterData.selectedCategory, isAvailable);
+    applyFilters(filterData.selectedCategory, isAvailable, filterData.isDiscount);
+  };
+  const handleDiscountFilter = (isDiscount) => {
+    setFilterData((prevState) => ({
+      ...prevState,
+      isDiscount: isDiscount,
+    }));
+    applyFilters(filterData.selectedCategory, filterData.isAvailable, isDiscount);
   };
 
-  const applyFilters = (categoryCode, isAvailable) => {
+  const applyFilters = (categoryCode, isAvailable, isDiscount) => {
     let filteredProducts = catalogProducts;
 
     if (isAvailable) {
@@ -71,6 +78,9 @@ const CatalogPage = () => {
 
     if (categoryCode) {
       filteredProducts = filteredProducts.filter((product) => product.category === categoryCode);
+    }
+    if (isDiscount) {
+      filteredProducts = filteredProducts.filter((product) => product.discount.isDiscount === isDiscount);
     }
 
     setIsFiltered(true);
@@ -81,8 +91,10 @@ const CatalogPage = () => {
       <Filter
         catalog={selectedCatalog}
         isAvailable={filterData.isAvailable}
+        isDiscount={filterData.isDiscount}
         onCategoryFilter={handleCategoryFilter}
         onAvailableFilter={handleAvailableFilter}
+        onDiscountFilter={handleDiscountFilter}
       />
       <div className="sorted-products">
         {isFiltered ? (
