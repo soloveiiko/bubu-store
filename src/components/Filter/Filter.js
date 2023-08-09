@@ -1,18 +1,26 @@
 import React from 'react';
 import { RiArrowUpSLine } from 'react-icons/ri';
 
-const Filter = ({ catalog, categoriesFilter, isAvailableFilter, isAvailable }) => {
+const Filter = (props) => {
+  const handleCategoryFilter = (category) => {
+    const selectedCategory = props.catalog.categories.find((el) => el.code === category.code);
+    props.onCategoryFilter(selectedCategory.code);
+  };
+
+  const handleAvailableFilter = (isAvailable) => {
+    props.onAvailableFilter(isAvailable);
+  };
   return (
     <div className="filter">
-      <h2 className="headline">{catalog.name}</h2>
+      <h2 className="headline">{props.catalog.name}</h2>
       <div className="categories-filter">
         <div className="categories-title">
           <h4>Категорія</h4>
           <RiArrowUpSLine />
         </div>
         <ul className="categories-filter-list">
-          {catalog.categories.map((el) => (
-            <li key={el.id} className="categories-filter-item" onClick={() => categoriesFilter(el)}>
+          {props.catalog.categories.map((el) => (
+            <li key={el.id} className="categories-filter-item" onClick={() => handleCategoryFilter(el)}>
               {el.name}
             </li>
           ))}
@@ -22,9 +30,9 @@ const Filter = ({ catalog, categoriesFilter, isAvailableFilter, isAvailable }) =
         <input
           type="checkbox"
           id="isAvailable"
-          checked={isAvailable}
+          checked={props.isAvailable}
           // onClick={(e) => isAvailableFilter(e.target.checked)}
-          onChange={(e) => isAvailableFilter(e.target.checked)}
+          onChange={(e) => handleAvailableFilter(e.target.checked)}
         />
         <label htmlFor="isAvailable">В наявності</label>
       </div>

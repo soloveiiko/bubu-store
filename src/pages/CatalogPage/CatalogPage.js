@@ -4,10 +4,10 @@ import { Filter, ProductItem } from '../../components';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsData } from '../../redux/products/action';
 import { fetchCatalogData, fetchProducerData } from '../../api/api';
-import { clearFilter, updateFilter } from '../../redux/filter/action';
+import { updateFilter } from '../../redux/filter/action';
 
 const CatalogPage = () => {
-  // const [catalogList, setCatalog] = useState([]);
+  const [isFiltered, setIsFiltered] = useState(false);
   const [filterData, setFilterData] = useState({
     catalogList: [],
     producer: [],
@@ -22,14 +22,13 @@ const CatalogPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchCatalogData();
-        const data1 = await fetchProducerData();
+        const catalogData = await fetchCatalogData();
+        const producerData = await fetchProducerData();
         setFilterData((prevState) => ({
           ...prevState,
-          catalogList: data,
-          producer: data1,
+          catalogList: catalogData,
+          producer: producerData,
         }));
-        // setCatalog(data);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -47,83 +46,46 @@ const CatalogPage = () => {
   }
   const selectedCatalog = filterData.catalogList.find((catalog) => catalog.id === catalogId);
   const catalogProducts = products.products.filter((product) => product.catalog === selectedCatalog.code);
-
-  // const applyFilters = (selectedCategory) => {
-  //   if (selectedCategory) {
-  //     const filteredProducts = catalogProducts.filter((product) => product.category === selectedCategory);
-  //     dispatch(updateFilter(filteredProducts));
-  //     console.log('filtered Products', filteredProducts);
-  //     console.log('catalog Products', products);
-  //     console.log('selected Category', selectedCategory);
-  //   } else {
-  //     dispatch(clearFilter());
-  //     dispatch(updateFilter(catalogProducts));
-  //   }
-  // };
-  // const categoriesFilter = (category) => {
-  //   const selectedCategory = selectedCatalog.categories.find((el) => el.code === category.code);
-  //   if (selectedCategory) {
-  //     applyFilters(selectedCategory.code);
-  //   }
-  // };
-  // const isAvailableFilter = (isAvailable) => {
-  //   const isAvailableProduct = catalogProducts.filter((product) => product.isAvailable === isAvailable);
-  //   if (isAvailableProduct) {
-  //     setFilterData((prevState) => ({
-  //       ...prevState,
-  //       isAvailable: isAvailable,
-  //     }));
-  //     dispatch(updateFilter(isAvailableProduct));
-  //   }
-  //   console.log(catalogProducts[0].isAvailable);
-  //   // setFilterData((prevState) => ({
-  //   //   ...prevState,
-  //   //   isAvailable: isAvailable,
-  //   // }));
-  // };
-  let filteredProducts = catalogProducts;
-  const applyFilters = (filteredProducts) => {
-    if (filteredProducts) {
-      dispatch(updateFilter(filteredProducts));
-      console.log('filtered Products', filteredProducts);
-    } else {
-      dispatch(clearFilter());
-      dispatch(updateFilter(catalogProducts));
-    }
+  const handleCategoryFilter = (selectedCategory) => {
+    setFilterData((prevState) => ({
+      ...prevState,
+      selectedCategory: selectedCategory,
+    }));
+    applyFilters(selectedCategory, filterData.isAvailable);
   };
 
-  const categoriesFilter = (category) => {
-    const selectedCategory = selectedCatalog.categories.find((el) => el.code === category.code);
-    // if (selectedCategory) {
-    //   setFilterData((prevState) => ({
-    //     ...prevState,
-    //     selectedCategory: selectedCategory.code,
-    //   }));
-    // }
-    filteredProducts = filteredProducts.filter((product) => product.category === selectedCategory.code);
-    applyFilters(filteredProducts);
-    console.log('filtered Products selectedCategory', filteredProducts);
-  };
-
-  const isAvailableFilter = (isAvailable) => {
-    filteredProducts = filteredProducts.filter((product) => product.isAvailable === isAvailable);
+  const handleAvailableFilter = (isAvailable) => {
     setFilterData((prevState) => ({
       ...prevState,
       isAvailable: isAvailable,
     }));
-    applyFilters(filteredProducts);
+    applyFilters(filterData.selectedCategory, isAvailable);
   };
 
+  const applyFilters = (categoryCode, isAvailable) => {
+    let filteredProducts = catalogProducts;
+
+    if (isAvailable) {
+      filteredProducts = filteredProducts.filter((product) => product.isAvailable === isAvailable);
+    }
+
+    if (categoryCode) {
+      filteredProducts = filteredProducts.filter((product) => product.category === categoryCode);
+    }
+
+    setIsFiltered(true);
+    dispatch(updateFilter(filteredProducts));
+  };
   return (
     <div className="catalog-page">
       <Filter
         catalog={selectedCatalog}
-        categoriesFilter={categoriesFilter}
-        isAvailableFilter={isAvailableFilter}
         isAvailable={filterData.isAvailable}
+        onCategoryFilter={handleCategoryFilter}
+        onAvailableFilter={handleAvailableFilter}
       />
       <div className="sorted-products">
-        {filter.isFiltered ? (
+        {isFiltered ? (
           filter.filteredProducts.length > 0 ? (
             filter.filteredProducts.map((el) =>
               (filterData.isAvailable && el.isAvailable) || !filterData.isAvailable ? (
