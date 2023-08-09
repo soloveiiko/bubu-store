@@ -1,6 +1,6 @@
 import React from 'react';
 import { footerImg } from '../../assets';
-import { FiArrowRight } from 'react-icons/fi';
+import SendButton from '../commons/SendButton';
 
 const Subscription = () => {
   return (
@@ -10,9 +10,7 @@ const Subscription = () => {
           <h2 className="headline">Отримуйте промокоди та ексклюзивні пропозиції</h2>
           <div className="input-container">
             <input type="email" placeholder="Ваш email" />
-            <button className="btn-container">
-              <FiArrowRight />
-            </button>
+            <SendButton />
           </div>
         </div>
         <div className="img-container">

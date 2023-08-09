@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RiArrowUpSLine } from 'react-icons/ri';
+import PriceRange from '../PriceRange';
 
 const Filter = (props) => {
+  const [minPriceFilter, setMinPriceFilter] = useState(props.minPrice);
+  const [maxPriceFilter, setMaxPriceFilter] = useState(props.maxPrice);
+
   const handleCategoryFilter = (category) => {
     const selectedCategory = props.catalog.categories.find((el) => el.code === category.code);
     props.onCategoryFilter(selectedCategory.code);
@@ -13,22 +17,20 @@ const Filter = (props) => {
     props.onDiscountFilter(isDiscount);
   };
   const handleProducerFilter = (producer) => {
-    // const updatedSelectedProducers = props.selectedProducers.includes(producer.name)
-    //   ? props.selectedProducers.filter((el) => el.name !== producer)
-    //   : [...props.selectedProducers, producer.name];
-
     props.onProducerFilter(producer);
-    console.log('producer', producer);
-    // console.log('updatedSelectedProducers', updatedSelectedProducers);
   };
-
+  const handlePriceFilter = () => {
+    props.onPriceFilter({ min: minPriceFilter, max: maxPriceFilter });
+  };
   return (
     <div className="filter">
       <h2 className="headline">{props.catalog.name}</h2>
       <div className="categories-filter">
-        <div className="categories-title">
-          <h4>Категорія</h4>
-          <RiArrowUpSLine />
+        <div className="filter-item">
+          <div className="title-wrapper">
+            <h4 className="title">Категорія</h4>
+            <RiArrowUpSLine />
+          </div>
         </div>
         <ul className="categories-filter-list">
           {props.catalog.categories.map((el) => (
@@ -38,7 +40,7 @@ const Filter = (props) => {
           ))}
         </ul>
       </div>
-      <div>
+      <div className="available-filter">
         <input
           type="checkbox"
           id="isAvailable"
@@ -47,7 +49,7 @@ const Filter = (props) => {
         />
         <label htmlFor="isAvailable">В наявності</label>
       </div>
-      <div>
+      <div className="discount-filter">
         <input
           type="checkbox"
           id="isDiscount"
@@ -56,23 +58,29 @@ const Filter = (props) => {
         />
         <label htmlFor="isDiscount">Зі знижкою</label>
       </div>
-      {/*<div>*/}
-      {/*  <div>*/}
-      {/*    <h3>Ціна</h3>*/}
-      {/*    <RiArrowUpSLine />*/}
-      {/*  </div>*/}
-      {/*  <div>Slider</div>*/}
-      {/*  <input type="text" />*/}
-      {/*  -*/}
-      {/*  <input type="text" />*/}
-      {/*  <button>*/}
-      {/*    <FiArrowRight />*/}
-      {/*  </button>*/}
-      {/*</div>*/}
-      <div>
-        <div className="producers-title">
-          <h4>Виробник</h4>
-          <RiArrowUpSLine />
+      <div className="price-filter">
+        <div className="filter-item">
+          <div className="title-wrapper">
+            <h4 className="title">Ціна</h4>
+            <RiArrowUpSLine />
+          </div>
+        </div>
+        <PriceRange
+          min={props.minPrice}
+          max={props.maxPrice}
+          onChange={({ min, max }) => {
+            setMinPriceFilter(min);
+            setMaxPriceFilter(max);
+          }}
+          onPriceFilter={handlePriceFilter}
+        />
+      </div>
+      <div className="producer-filter">
+        <div className="filter-item">
+          <div className="title-wrapper">
+            <h4 className="title">Виробник</h4>
+            <RiArrowUpSLine />
+          </div>
         </div>
         {props.producers.map((el) => (
           <div key={el.id}>
@@ -80,7 +88,7 @@ const Filter = (props) => {
               type="checkbox"
               id={el.code}
               checked={props.selectedProducers.includes(el.name)}
-              onChange={(e) => handleProducerFilter(el)}
+              onChange={() => handleProducerFilter(el)}
             />
             <label htmlFor={el.code}>{el.name}</label>
           </div>

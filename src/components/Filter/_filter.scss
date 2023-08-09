@@ -4,8 +4,10 @@
     flex-direction: column;
     row-gap: 20px;
   }
-  .categories-title {
+  .filter-item {
+    .title-wrapper {
     display: flex;
+    }
   }
   .categories-filter-list {
     display: flex;

@@ -1,0 +1,14 @@
+.send-button {
+  padding: 6px;
+  display: flex;
+  border-radius: 50px;
+  border: 1px solid $white;
+  background-color: $white;
+  font-size: 22px;
+  cursor: pointer;
+  svg {
+    &>* {
+      color: $accent;
+    }
+  }
+}
