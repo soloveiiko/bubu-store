@@ -8,6 +8,8 @@ import { updateFilter } from '../../redux/filter/action';
 
 const CatalogPage = () => {
   const [isFiltered, setIsFiltered] = useState(false);
+  const [selectedProducers, setSelectedProducers] = useState([]);
+
   const [filterData, setFilterData] = useState({
     catalogList: [],
     producer: [],
@@ -38,7 +40,6 @@ const CatalogPage = () => {
     fetchData();
     dispatch(getProductsData());
   }, [dispatch]);
-
   const { id } = useParams();
   const catalogId = id;
   if (isLoading) {
@@ -46,12 +47,13 @@ const CatalogPage = () => {
   }
   const selectedCatalog = filterData.catalogList.find((catalog) => catalog.id === catalogId);
   const catalogProducts = products.products.filter((product) => product.catalog === selectedCatalog.code);
+
   const handleCategoryFilter = (selectedCategory) => {
     setFilterData((prevState) => ({
       ...prevState,
       selectedCategory: selectedCategory,
     }));
-    applyFilters(selectedCategory, filterData.isAvailable);
+    applyFilters(selectedCategory, filterData.isAvailable, filterData.isDiscount, selectedProducers);
   };
 
   const handleAvailableFilter = (isAvailable) => {
@@ -59,28 +61,39 @@ const CatalogPage = () => {
       ...prevState,
       isAvailable: isAvailable,
     }));
-    applyFilters(filterData.selectedCategory, isAvailable, filterData.isDiscount);
+    applyFilters(filterData.selectedCategory, isAvailable, filterData.isDiscount, selectedProducers);
   };
   const handleDiscountFilter = (isDiscount) => {
     setFilterData((prevState) => ({
       ...prevState,
       isDiscount: isDiscount,
     }));
-    applyFilters(filterData.selectedCategory, filterData.isAvailable, isDiscount);
+    applyFilters(filterData.selectedCategory, filterData.isAvailable, isDiscount, selectedProducers);
   };
+  const handleProducerFilter = (producer) => {
+    const selectedProducer = selectedProducers.includes(producer.name)
+      ? selectedProducers.filter((el) => el !== producer.name)
+      : [...selectedProducers, producer.name];
 
-  const applyFilters = (categoryCode, isAvailable, isDiscount) => {
+    setSelectedProducers(selectedProducer);
+    applyFilters(filterData.selectedCategory, filterData.isAvailable, filterData.isDiscount, selectedProducer);
+    console.log('updatedSelectedProducers', selectedProducer);
+  };
+  const applyFilters = (category, isAvailable, isDiscount, producers) => {
     let filteredProducts = catalogProducts;
 
+    if (category) {
+      filteredProducts = filteredProducts.filter((product) => product.category === category);
+    }
     if (isAvailable) {
       filteredProducts = filteredProducts.filter((product) => product.isAvailable === isAvailable);
     }
 
-    if (categoryCode) {
-      filteredProducts = filteredProducts.filter((product) => product.category === categoryCode);
-    }
     if (isDiscount) {
       filteredProducts = filteredProducts.filter((product) => product.discount.isDiscount === isDiscount);
+    }
+    if (producers.length > 0) {
+      filteredProducts = filteredProducts.filter((product) => producers.includes(product.producer));
     }
 
     setIsFiltered(true);
@@ -90,11 +103,14 @@ const CatalogPage = () => {
     <div className="catalog-page">
       <Filter
         catalog={selectedCatalog}
+        producers={filterData.producer}
         isAvailable={filterData.isAvailable}
         isDiscount={filterData.isDiscount}
+        selectedProducers={selectedProducers}
         onCategoryFilter={handleCategoryFilter}
         onAvailableFilter={handleAvailableFilter}
         onDiscountFilter={handleDiscountFilter}
+        onProducerFilter={handleProducerFilter}
       />
       <div className="sorted-products">
         {isFiltered ? (

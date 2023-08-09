@@ -201,7 +201,7 @@ export const productsList = [
     sex: ['male', 'female'],
     catalog: 'carriage',
     category: 'carriage',
-    producer: 'Anex',
+    producer: 'BabyOno',
     price: 5000,
     discount: {
       isDiscount: true,

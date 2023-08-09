@@ -6,13 +6,22 @@ const Filter = (props) => {
     const selectedCategory = props.catalog.categories.find((el) => el.code === category.code);
     props.onCategoryFilter(selectedCategory.code);
   };
-
   const handleAvailableFilter = (isAvailable) => {
     props.onAvailableFilter(isAvailable);
   };
   const handleDiscountFilter = (isDiscount) => {
     props.onDiscountFilter(isDiscount);
   };
+  const handleProducerFilter = (producer) => {
+    // const updatedSelectedProducers = props.selectedProducers.includes(producer.name)
+    //   ? props.selectedProducers.filter((el) => el.name !== producer)
+    //   : [...props.selectedProducers, producer.name];
+
+    props.onProducerFilter(producer);
+    console.log('producer', producer);
+    // console.log('updatedSelectedProducers', updatedSelectedProducers);
+  };
+
   return (
     <div className="filter">
       <h2 className="headline">{props.catalog.name}</h2>
@@ -60,14 +69,23 @@ const Filter = (props) => {
       {/*    <FiArrowRight />*/}
       {/*  </button>*/}
       {/*</div>*/}
-      {/*<div>*/}
-      {/*  {producer.map((el) => (*/}
-      {/*    <div key={el.id}>*/}
-      {/*      <input type="checkbox" id={el.code} />*/}
-      {/*      <label htmlFor={el.code}>{el.name}</label>*/}
-      {/*    </div>*/}
-      {/*  ))}*/}
-      {/*</div>*/}
+      <div>
+        <div className="producers-title">
+          <h4>Виробник</h4>
+          <RiArrowUpSLine />
+        </div>
+        {props.producers.map((el) => (
+          <div key={el.id}>
+            <input
+              type="checkbox"
+              id={el.code}
+              checked={props.selectedProducers.includes(el.name)}
+              onChange={(e) => handleProducerFilter(el)}
+            />
+            <label htmlFor={el.code}>{el.name}</label>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
