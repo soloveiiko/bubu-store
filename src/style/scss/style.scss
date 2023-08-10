@@ -5,17 +5,19 @@
 @import './../../pages/ProductPage/product-page';
 @import './../../pages/CatalogPage/catalog-page';
 @import './../../components/Header/header';
-@import './../../components/Navbar/navbar';
-@import './../../components/SocialNetwork/social-network';
-@import './../../components/Languages/languages';
-@import './../../components/UserPanel/user-panel';
-@import './../../components/Catalog/catalog';
-@import './../../components/Search/search';
-@import './../../components/UserActions/user-action';
+@import './../../components/Header/Navbar/navbar';
+@import './../../components/commons/SocialNetwork/social-network';
+@import './../../components/Header/Languages/languages';
+@import './../../components/Header/UserPanel/user-panel';
+@import './../../components/CatalogMenu/catalog';
+@import './../../components/Header/Search/search';
+@import './../../components/Header/UserActions/user-action';
 @import './../../components/Footer/footer';
 @import './../../components/Subscription/subscription';
 @import './../../components/Filter/filter';
-@import './../../components/ProductItem/product-item';
+@import './../../components/commons/ProductItem/product-item';
+@import './../../components/commons/SendButton/send-button';
+@import './../../components/Filter/PriceRange/range-price';
 
 html,
 body {

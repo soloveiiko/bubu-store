@@ -33,7 +33,7 @@ const fetchDataFromServer = async (data) => {
     const response = await new Promise((resolve) => {
       setTimeout(() => {
         resolve(data);
-      }, 1000);
+      }, 100);
     });
     return response;
   } catch (error) {

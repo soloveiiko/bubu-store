@@ -55,8 +55,14 @@ import lego from './images/brands/lego.jpg';
 // Others
 import footerImg from './images/footer-img.png';
 import defaultImg from './images/default.jpeg';
+import favoriteAccent from './images/icons/actions/favoriteAccent.svg';
+import comparisonGray from './images/icons/actions/сomparisonGray.svg';
+import location from './images/icons/actions/location.svg';
 
 export {
+  location,
+  comparisonGray,
+  favoriteAccent,
   defaultImg,
   lego,
   anex,

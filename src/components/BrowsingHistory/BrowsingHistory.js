@@ -1,17 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ProductItem from '../ProductItem';
+import { ProductsSlider } from '../commons';
 
 const BrowsingHistory = () => {
-  const recentlyViewedProducts = useSelector((state) => state.history.products.slice(-4));
+  const recentlyViewedProducts = useSelector((state) => state.history.products);
+  const numSlides = recentlyViewedProducts.length;
+
   return (
-    <div>
-      <h2 className="headline">Ви переглядали</h2>
-      {recentlyViewedProducts.map((product) => (
-        <div key={product.id}>
-          <ProductItem product={product} />
-        </div>
-      ))}
+    <div className="promotion-slider">
+      <div className="title">
+        <h2 className="headline">Ви переглядали</h2>
+      </div>
+      <ProductsSlider products={recentlyViewedProducts} numSlides={numSlides} />
     </div>
   );
 };
