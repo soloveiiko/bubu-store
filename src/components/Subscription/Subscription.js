@@ -1,6 +1,6 @@
 import React from 'react';
 import { footerImg } from '../../assets';
-import SendButton from '../commons/SendButton';
+import { SendButton } from '../commons';
 
 const Subscription = () => {
   return (

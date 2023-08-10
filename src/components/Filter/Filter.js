@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { RiArrowUpSLine } from 'react-icons/ri';
-import PriceRange from '../PriceRange';
+import PriceRange from './PriceRange/PriceRange';
 
 const Filter = (props) => {
   const [minPriceFilter, setMinPriceFilter] = useState(props.minPrice);

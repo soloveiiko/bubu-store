@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Filter, ProductItem, ShowMore, SortBy } from '../../components';
+import { Filter, SortBy } from '../../components';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsData } from '../../redux/products/action';
 import { fetchCatalogData, fetchProducerData } from '../../api/api';
 import { updateFilter } from '../../redux/filter/action';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import CatalogList from '../../components/CatalogList/CatalogList';
 
 const CatalogPage = () => {
   const [filterData, setFilterData] = useState({
@@ -21,6 +23,7 @@ const CatalogPage = () => {
   const products = useSelector((state) => state.products);
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -46,7 +49,6 @@ const CatalogPage = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
   const selectedCatalog = filterData.catalogList.find((catalog) => catalog.id === catalogId);
   const catalogProducts = products.products.filter((product) => product.catalog === selectedCatalog.code);
   const catalogPrices = catalogProducts.map((product) => product.price);
@@ -69,6 +71,7 @@ const CatalogPage = () => {
       ...prevState,
       selectedCategory: selectedCategory,
     }));
+
     applyFilters(
       selectedCategory,
       filterData.isAvailable,
@@ -79,6 +82,7 @@ const CatalogPage = () => {
       selectedSort
     );
   };
+
   const handleAvailableFilter = (isAvailable) => {
     setFilterData((prevState) => ({
       ...prevState,
@@ -161,11 +165,13 @@ const CatalogPage = () => {
     } else if (sortId === '4') {
       filteredProducts.sort((a, b) => b.price - a.price);
     }
+
     dispatch(updateFilter(filteredProducts));
   };
   const handleShowMore = () => {
     setVisibleProducts(visibleProducts + 10);
   };
+
   return (
     <div className="catalog-page">
       <Filter
@@ -182,25 +188,15 @@ const CatalogPage = () => {
         onProducerFilter={handleProducerFilter}
         onPriceFilter={handlePriceFilter}
       />
+      <Breadcrumbs />
       <SortBy onSortChange={handleSortChange} />
-      <div className="sorted-products">
-        {filter.isFiltered ? (
-          filter.filteredProducts.length > 0 ? (
-            filter.filteredProducts
-              .slice(0, visibleProducts)
-              .map((el) =>
-                (filterData.isAvailable && el.isAvailable) || !filterData.isAvailable ? (
-                  <ProductItem key={el.id} product={el} />
-                ) : null
-              )
-          ) : (
-            <div>No such product</div>
-          )
-        ) : (
-          catalogProducts.slice(0, visibleProducts).map((el) => <ProductItem key={el.id} product={el} />)
-        )}
-      </div>
-      {catalogProducts.length > 16 && <ShowMore onClick={handleShowMore} />}
+      <CatalogList
+        filter={filter}
+        visibleProducts={visibleProducts}
+        filterData={filterData}
+        catalogProducts={catalogProducts}
+        handleShowMore={handleShowMore}
+      />
     </div>
   );
 };

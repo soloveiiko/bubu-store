@@ -1,5 +1,5 @@
 import React from 'react';
-import { DiscountSlider, PromotionsSlider, PopularCategory, Brands, BrowsingHistory } from '../../components';
+import { DiscountSlider, PromotionsSlider, PopularCategory, BrandsSlider, BrowsingHistory } from '../../components';
 
 const MainPage = () => {
   return (
@@ -7,7 +7,7 @@ const MainPage = () => {
       <DiscountSlider />
       <PromotionsSlider />
       <PopularCategory />
-      <Brands />
+      <BrandsSlider />
       <BrowsingHistory />
     </div>
   );

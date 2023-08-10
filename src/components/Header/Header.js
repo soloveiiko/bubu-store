@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import Search from './Search/Search';
+import UserActions from './UserActions/UserActions';
+import CatalogMenu from '../CatalogMenu/CatalogMenu';
+import Navbar from './Navbar/Navbar';
+import Languages from './Languages/Languages';
+import UserPanel from './UserPanel/UserPanel';
+import { SocialNetwork } from '../commons';
 import { Link } from 'react-router-dom';
-import { Catalog, Languages, Navbar, Search, SocialNetwork, UserActions, UserPanel } from '../../components';
 import { logoWhite } from './../../assets';
 
 const Header = () => {
@@ -45,7 +51,7 @@ const Header = () => {
               <button className="close-toggle-menu" onClick={toggleMenu}>
                 &#9587;
               </button>
-              <Catalog isMobile={mobile} toggleMenu={toggleMenu} />
+              <CatalogMenu isMobile={mobile} toggleMenu={toggleMenu} />
               <Navbar />
               <div className="tools">
                 <div className="number">(063) 128-46-09</div>
@@ -71,7 +77,7 @@ const Header = () => {
             </div>
           </div>
           <div className="bottom-block">
-            <Catalog isMobile={mobile} />
+            <CatalogMenu isMobile={mobile} />
             <Search />
             <UserActions />
           </div>

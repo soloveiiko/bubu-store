@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import Inputs, { mixField, passwordField } from '../commons/Inputs';
+import Inputs, { mixField, passwordField } from '../commons/Inputs/Inputs';
 import { Link, useNavigate } from 'react-router-dom';
 import { getUserDataAsync } from '../../redux/auth/action';
 

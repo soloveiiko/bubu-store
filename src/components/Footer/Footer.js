@@ -1,6 +1,6 @@
 import React from 'react';
-import { SocialNetwork } from '../../components';
 import { Link } from 'react-router-dom';
+import { SocialNetwork } from '../commons';
 import { liqPay, mastercard, visa } from '../../assets';
 import { catalogList } from '../../utils/data';
 
