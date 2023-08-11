@@ -1,14 +1,16 @@
 import React from 'react';
 import { DiscountSlider, PromotionsSlider, PopularCategory, BrandsSlider, BrowsingHistory } from '../../components';
+import { useSelector } from 'react-redux';
 
 const MainPage = () => {
+  const recentlyViewedProducts = useSelector((state) => state.history.products);
   return (
     <div>
       <DiscountSlider />
       <PromotionsSlider />
       <PopularCategory />
       <BrandsSlider />
-      <BrowsingHistory />
+      {recentlyViewedProducts.length > 0 && <BrowsingHistory recentlyViewedProducts={recentlyViewedProducts} />}
     </div>
   );
 };

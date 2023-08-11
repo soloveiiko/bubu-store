@@ -20,8 +20,8 @@ export const authAPI = {
   },
 };
 export const commentsAPI = {
-  getComments() {
-    return instance.get('comments');
+  getComments(id) {
+    return instance.get(`comments?postId=${id}`);
   },
   setComments() {
     return instance.post('comments');
@@ -30,12 +30,11 @@ export const commentsAPI = {
 
 const fetchDataFromServer = async (data) => {
   try {
-    const response = await new Promise((resolve) => {
+    return await new Promise((resolve) => {
       setTimeout(() => {
         resolve(data);
       }, 100);
     });
-    return response;
   } catch (error) {
     console.log(error);
   }
