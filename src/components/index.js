@@ -11,6 +11,8 @@ import Filter from './Filter/Filter';
 import SortBy from './SortBy/SortBy';
 import CatalogList from './CatalogList/CatalogList';
 import Product from './Product/Product';
+import ProductDescription from './ProductDescription/ProductDescription';
+import ProductCharacteristics from './ProductCharacteristics/ProductCharacteristics';
 
 export {
   SignIn,
@@ -27,4 +29,6 @@ export {
   SortBy,
   CatalogList,
   Product,
+  ProductDescription,
+  ProductCharacteristics,
 };

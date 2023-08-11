@@ -58,8 +58,12 @@ import defaultImg from './images/default.jpeg';
 import favoriteAccent from './images/icons/actions/favoriteAccent.svg';
 import comparisonGray from './images/icons/actions/сomparisonGray.svg';
 import location from './images/icons/actions/location.svg';
+import default1 from './images/description/default1.jpg';
+import default2 from './images/description/default2.jpg';
 
 export {
+  default1,
+  default2,
   location,
   comparisonGray,
   favoriteAccent,
