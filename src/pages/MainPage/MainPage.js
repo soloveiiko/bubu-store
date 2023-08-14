@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const MainPage = () => {
   const recentlyViewedProducts = useSelector((state) => state.history.products);
   return (
-    <div>
+    <div className="main-page page">
       <DiscountSlider />
       <PromotionsSlider />
       <PopularCategory />

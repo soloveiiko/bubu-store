@@ -4,7 +4,7 @@ const PerDifference = ({ product }) => {
   const perDifference = (prevPrice, currPrice) => {
     return Math.floor(((prevPrice - currPrice) * 100) / prevPrice);
   };
-  return <span>-{perDifference(product.price, product.discount.price)}%</span>;
+  return <>-{perDifference(product.price, product.discount.price)}%</>;
 };
 
 export default PerDifference;

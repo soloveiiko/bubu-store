@@ -19,13 +19,15 @@ const DiscountSlider = () => {
     nextArrow: <NextArrow />,
   };
   return (
-    <Slider {...settings}>
-      {discountList.map((slide, index) => (
-        <div key={index}>
-          <img src={slide.image} alt={slide.id} />
-        </div>
-      ))}
-    </Slider>
+    <div className="discount-slider">
+      <Slider {...settings}>
+        {discountList.map((slide, index) => (
+          <div className="slider-item" key={index}>
+            <img src={slide.image} alt={slide.id} />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

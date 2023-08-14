@@ -1,8 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { NextArrow } from '../../commons';
-import ProductItem from '../ProductItem/ProductItem';
-
+import { NextArrow, ProductItem } from '../../commons';
 const ProductsSlider = ({ products, numSlides }) => {
   const settings = {
     speed: 500,
@@ -36,13 +34,15 @@ const ProductsSlider = ({ products, numSlides }) => {
   };
 
   return (
-    <Slider {...settings}>
-      {products.map((product) => (
-        <div key={product.id}>
-          <ProductItem product={product} />
-        </div>
-      ))}
-    </Slider>
+    <div className="product-slider">
+      <Slider {...settings}>
+        {products.map((product) => (
+          <div key={product.id}>
+            <ProductItem product={product} />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

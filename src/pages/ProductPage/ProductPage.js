@@ -6,6 +6,7 @@ import { getProductsData } from '../../redux/products/action';
 import ProductReviews from '../../components/ProductReviews/ProductReviews';
 import { getCommentsAsync } from '../../redux/comments/action';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import AddReview from '../../components/AddReview/AddReview';
 
 const ProductPage = () => {
   const [visibleReviews, setVisibleReviews] = useState(6);
@@ -15,15 +16,16 @@ const ProductPage = () => {
   const recentlyViewedProducts = useSelector((state) => state.history.products);
   const { id } = useParams();
   const productId = id;
+  const product = products.products.find((product) => product.id === productId);
+
   useEffect(() => {
     dispatch(getProductsData());
     dispatch(getCommentsAsync(id));
-  }, [dispatch]);
-  const product = products.products.find((product) => product.id === productId);
+  }, [dispatch, id]);
+
   const handleShowMore = () => {
     setVisibleReviews(visibleReviews + 6);
   };
-  console.log('recentlyViewedProducts', recentlyViewedProducts);
   return (
     <>
       {product ? (
@@ -43,6 +45,7 @@ const ProductPage = () => {
         <div>Loading ...</div>
       )}
       {recentlyViewedProducts.length > 0 && <BrowsingHistory recentlyViewedProducts={recentlyViewedProducts} />}
+      <AddReview comments={comments.comments} />
     </>
   );
 };

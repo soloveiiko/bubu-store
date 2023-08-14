@@ -1,0 +1,17 @@
+.promotion-slider {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  .title {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+  }
+  .mark-title {
+    color: $discount;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: #FFF0D2;
+  }
+}

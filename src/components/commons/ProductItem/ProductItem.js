@@ -18,20 +18,20 @@ const ProductItem = ({ product }) => {
 
       if (imagesForColor && imagesForColor.length > 0) {
         return (
-          <div>
+          <div className="img-container">
             <img src={imagesForColor[0]} alt={firstColor} />
           </div>
         );
       }
     } else if (product.images.length > 0) {
       return (
-        <div>
+        <div className="img-container">
           <img src={product.images[0]} alt={product.name} />
         </div>
       );
     }
     return (
-      <div>
+      <div className="img-container">
         <img src={defaultImg} alt="Product" />
       </div>
     );
@@ -39,12 +39,16 @@ const ProductItem = ({ product }) => {
   return (
     <div className="product-item">
       <div className="percentage-difference">{product.discount.isDiscount && <PerDifference product={product} />}</div>
-      {renderPhotos()}
-      <Link to={`/product/${product.id}`} className="description" onMouseUp={() => onClickDis(product)}>
-        {product.fullName}
+      <Link to={`/product/${product.id}`} className="product-link" onMouseUp={() => onClickDis(product)}>
+        {renderPhotos()}
+        <div className="full-name">{product.fullName}</div>
       </Link>
-      <div className="prev-price">{product.price}</div>
-      <div className="curr-price">{product.discount.price}</div>
+      <div className={product.discount ? 'prev-price' : 'price'}>
+        {product.price} <span>грн</span>
+      </div>
+      <div className="curr-price">
+        {product.discount.price} <span>грн</span>
+      </div>
     </div>
   );
 };
