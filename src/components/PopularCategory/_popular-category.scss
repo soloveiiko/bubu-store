@@ -114,6 +114,9 @@
     .blue {
       grid-row: 3/5;
     }
+    .category-name {
+      max-width: 165px;
+    }
   }
 }
 @include xl {

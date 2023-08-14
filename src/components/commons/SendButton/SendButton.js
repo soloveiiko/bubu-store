@@ -1,11 +1,19 @@
 import React from 'react';
 import { FiArrowRight } from 'react-icons/fi';
 
-const SendButton = ({ onClick }) => {
+const SendButton = ({ onClick, isAccent = false }) => {
   return (
-    <button onClick={onClick} className="send-button">
-      <FiArrowRight />
-    </button>
+    <>
+      {isAccent ? (
+        <button onClick={onClick} className="send-button-accent">
+          <FiArrowRight />
+        </button>
+      ) : (
+        <button onClick={onClick} className="send-button">
+          <FiArrowRight />
+        </button>
+      )}
+    </>
   );
 };
 

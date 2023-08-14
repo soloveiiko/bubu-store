@@ -174,6 +174,8 @@ const CatalogPage = () => {
 
   return (
     <div className="catalog-page">
+      <Breadcrumbs />
+      <SortBy onSortChange={handleSortChange} />
       <Filter
         catalog={selectedCatalog}
         producers={filterData.producer}
@@ -188,8 +190,6 @@ const CatalogPage = () => {
         onProducerFilter={handleProducerFilter}
         onPriceFilter={handlePriceFilter}
       />
-      <Breadcrumbs />
-      <SortBy onSortChange={handleSortChange} />
       <CatalogList
         filter={filter}
         visibleProducts={visibleProducts}

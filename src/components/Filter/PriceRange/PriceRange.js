@@ -74,7 +74,6 @@ const PriceRange = ({ min, max, onChange, onPriceFilter }) => {
               value={minVal}
               min={min}
               max={max}
-              style={{ width: '40px', height: '25px' }}
               onChange={(e) => {
                 setMinVal(e.target.value);
               }}
@@ -86,13 +85,12 @@ const PriceRange = ({ min, max, onChange, onPriceFilter }) => {
               value={maxVal}
               min={min - 1}
               max={max}
-              style={{ width: '40px', height: '25px' }}
               onChange={(e) => {
                 setMaxVal(e.target.value);
               }}
             />
           </div>
-          <SendButton onClick={() => handlerPrice()} />
+          <SendButton onClick={() => handlerPrice()} isAccent={true} />
         </div>
       </div>
     </div>

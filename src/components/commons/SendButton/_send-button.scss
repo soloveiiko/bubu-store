@@ -1,4 +1,4 @@
-.send-button {
+.send-button, .send-button-accent {
   padding: 6px;
   display: flex;
   border-radius: 50px;
@@ -9,6 +9,24 @@
   svg {
     &>* {
       color: $accent;
+    }
+  }
+}
+.send-button {
+  border: 1px solid $white;
+  background-color: $white;
+  svg {
+    &>* {
+      color: $accent;
+    }
+  }
+}
+.send-button-accent {
+  border: 1px solid $accent;
+  background-color: $accent;
+  svg {
+    &>* {
+      color: $white;
     }
   }
 }
