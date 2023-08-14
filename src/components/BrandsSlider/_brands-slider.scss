@@ -1,0 +1,42 @@
+.brands-slider {
+  .img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .mynext-arrow {
+    top: -76px;
+    right: 0;
+  }
+  .description {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 20px 0;
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .description::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(transparent, white);
+  }
+  .more-link {
+    font-weight: 700;
+    text-decoration-line: underline;
+    color: $accent;
+    text-align: center;
+    margin-top: -40px;
+  }
+}

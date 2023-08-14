@@ -3,14 +3,16 @@ import { popularCategory } from '../../utils/data';
 
 const PopularCategory = () => {
   return (
-    <div>
+    <div className="popular-category">
       <h2 className="headline">Популярні Категорії</h2>
-      {popularCategory.map((el) => (
-        <div key={el.id}>
-          <img src={el.image} alt={el.name} />
-          <span>{el.name}</span>
-        </div>
-      ))}
+      <div className="category-container">
+        {popularCategory.map((el) => (
+          <div key={el.id} className={`category-item ${el.className}`}>
+            <span className="category-name">{el.name}</span>
+            <img src={el.image} alt={el.name} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

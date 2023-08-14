@@ -1,6 +1,7 @@
 import {
   anex,
   autoChair,
+  ball,
   bathCat,
   bebivita,
   bedCat,
@@ -14,15 +15,18 @@ import {
   goods,
   hipp,
   huggies,
+  krislo,
   lego,
   newThings,
   pampers,
   playdoh,
+  pliashechka,
   potCat,
   puzzlesCat,
   room,
   roomCat,
   soap,
+  sumish,
   toy,
 } from '../assets';
 
@@ -210,8 +214,8 @@ export const productsList = [
     },
     photos: {
       blue: [goods, goods],
-      red: [],
-      green: [],
+      red: [goods, goods],
+      green: [goods, goods],
     },
     characteristics: {
       producer: 'BabyOno',
@@ -226,8 +230,8 @@ export const productsList = [
   {
     id: '2',
     isAvailable: true,
-    fullName: 'Іграшка-головоломка Same Toy IQ Ball Cube',
-    name: 'Іграшка-головоломка',
+    fullName: 'Автокрісло Maxi-Cosi Citi Concrete grey',
+    name: 'Автокрісло',
     code: 'EP-01',
     colors: ['blue', 'red', 'green'],
     sex: ['male', 'female'],
@@ -239,7 +243,7 @@ export const productsList = [
       isDiscount: true,
       price: 150,
     },
-    images: [anex, discount],
+    images: [krislo, krislo, krislo, krislo],
     characteristics: {
       producer: 'BabyOno',
       country: 'Польща',
@@ -266,9 +270,9 @@ export const productsList = [
       isDiscount: false,
     },
     photos: {
-      blue: [anex, discount],
-      red: [],
-      green: [],
+      blue: [pliashechka, pliashechka, pliashechka],
+      red: [pliashechka, pliashechka, pliashechka],
+      green: [pliashechka, pliashechka, pliashechka],
     },
     characteristics: {
       producer: 'BabyOno',
@@ -283,8 +287,8 @@ export const productsList = [
   {
     id: '4',
     isAvailable: false,
-    fullName: 'Коляска',
-    name: 'Коляска',
+    fullName: 'Суміш молочна суха Nutrilon для...',
+    name: 'Суміш',
     code: 'EP-01',
     colors: ['blue', 'red', 'green'],
     sex: ['male', 'female'],
@@ -297,9 +301,9 @@ export const productsList = [
       price: 4000,
     },
     photos: {
-      blue: [anex, discount],
-      red: [],
-      green: [],
+      blue: [sumish, sumish, sumish, sumish],
+      red: [sumish, sumish, sumish, sumish],
+      green: [sumish, sumish, sumish, sumish],
     },
     characteristics: {
       producer: 'BabyOno',
@@ -314,8 +318,8 @@ export const productsList = [
   {
     id: '5',
     isAvailable: true,
-    fullName: 'Коляска',
-    name: 'Коляска',
+    fullName: 'Іграшка-головоломка Same Toy IQ Ball Cube',
+    name: 'Іграшка-головоломка',
     code: 'EP-01',
     colors: ['blue', 'red', 'green'],
     sex: ['male', 'female'],
@@ -328,9 +332,9 @@ export const productsList = [
       price: 1500,
     },
     photos: {
-      blue: [anex, discount],
-      red: [],
-      green: [],
+      blue: [ball, ball],
+      red: [ball, ball],
+      green: [ball, ball],
     },
     characteristics: {
       producer: 'BabyOno',
@@ -345,8 +349,8 @@ export const productsList = [
   {
     id: '6',
     isAvailable: true,
-    fullName: 'Коляска',
-    name: 'Коляска',
+    fullName: 'Іграшка-головоломка Same Toy IQ Ball Cube',
+    name: 'Іграшка-головоломка',
     code: 'EP-01',
     colors: ['blue', 'red', 'green'],
     sex: ['male', 'female'],
@@ -359,9 +363,9 @@ export const productsList = [
       price: 1500,
     },
     photos: {
-      blue: [anex, discount],
-      red: [],
-      green: [],
+      blue: [ball, ball],
+      red: [ball, ball],
+      green: [ball, ball],
     },
     characteristics: {
       producer: 'BabyOno',
@@ -375,12 +379,12 @@ export const productsList = [
   },
 ];
 export const popularCategory = [
-  { id: '1', image: carriageCat, name: 'Коляски 2в1' },
-  { id: '2', image: bathCat, name: 'Ліжечка' },
-  { id: '3', image: bedCat, name: 'Горщики' },
-  { id: '4', image: potCat, name: 'Постільна білизна' },
-  { id: '5', image: roomCat, name: 'Пазли' },
-  { id: '6', image: puzzlesCat, name: 'Ванночки' },
+  { id: '1', image: carriageCat, name: 'Коляски 2в1', className: 'green' },
+  { id: '2', image: roomCat, name: 'Ліжечка', className: 'orange' },
+  { id: '3', image: potCat, name: 'Горщики', className: 'turquoise' },
+  { id: '4', image: puzzlesCat, name: 'Пазли', className: 'red' },
+  { id: '5', image: bathCat, name: 'Ванночки', className: 'violet' },
+  { id: '6', image: bedCat, name: 'Дитяча постільна білизна', className: 'blue' },
 ];
 export const brandsList = [
   { id: '1', name: 'Play Doh', image: playdoh },

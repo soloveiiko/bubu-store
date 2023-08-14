@@ -37,6 +37,10 @@ import newThings from './images/icons/catalog/new.svg';
 import discount from './images/discounts/discount.jpg';
 // Products
 import goods from './images/products/goods.jpg';
+import ball from './images/products/ball.jpg';
+import krislo from './images/products/krislo.jpg';
+import sumish from './images/products/sumish.jpg';
+import pliashechka from './images/products/pliashechka.jpg';
 // Categories
 import carriageCat from './images/categories/carriage.png';
 import bathCat from './images/categories/bath.png';
@@ -62,6 +66,10 @@ import default1 from './images/description/default1.jpg';
 import default2 from './images/description/default2.jpg';
 
 export {
+  ball,
+  sumish,
+  krislo,
+  pliashechka,
   default1,
   default2,
   location,

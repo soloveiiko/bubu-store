@@ -1,0 +1,141 @@
+.popular-category {
+
+  .category-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .category-item {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 20px;
+
+    img {
+      width: 40%;
+      margin-bottom: -15px;
+    }
+  }
+
+  .green {
+    background-color: #6AD245;
+
+    .category-name {
+      background-color: #54AD33;
+    }
+  }
+
+  .orange {
+    background-color: #F99C11;
+
+    .category-name {
+      background-color: #DB8300;
+    }
+  }
+
+  .turquoise {
+    background-color: #2DEAE4;
+
+    .category-name {
+      background-color: #1FC0BB;
+    }
+  }
+
+  .red {
+    background-color: #D84545;
+
+    .category-name {
+      background-color: #A43A3A;
+    }
+  }
+
+  .violet {
+    background-color: #A24FE2;
+
+    .category-name {
+      background-color: #7834AD;
+    }
+  }
+
+  .blue {
+    background-color: #4F8AE2;
+
+    .category-name {
+      background-color: #3868B2;
+    }
+  }
+
+  .category-name {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    max-width: 155px;
+    padding: 6px;
+    color: $white;
+    border-radius: 10px;
+  }
+}
+
+@include md {
+  .popular-category {
+
+    .category-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .category-item {
+
+      img {
+        margin: 0 0 auto;
+        width: auto;
+      }
+    }
+
+    .green, .red, .violet {
+      grid-column: 1/2;
+    }
+
+    .orange, .turquoise, .blue {
+      grid-column: 2/3;
+    }
+
+    .green {
+      grid-row: 1/3;
+
+    }
+
+    .blue {
+      grid-row: 3/5;
+    }
+  }
+}
+@include xl {
+  .popular-category {
+
+    .category-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .red, .violet {
+      grid-column: 4/5;
+    }
+    .red {
+      grid-row: 1/2;
+    }
+
+    .green {
+      grid-row: 1/3;
+    }
+
+    .blue {
+      grid-column: 3/4;
+      grid-row: 1/3;
+    }
+  }
+}
