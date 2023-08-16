@@ -36,15 +36,17 @@ const CatalogList = ({ filter, visibleProducts, filterData, catalogProducts, han
             catalogProducts.slice(0, visibleProducts).map((el) => <ProductItem key={el.id} product={el} />)
           )}
         </div>
-        {visibleProducts < totalVisibleProducts && <ShowMore onClick={handleShowMore} />}
-        <Pagination
-          totalItemsCount={totalItemsCount}
-          pageSize={visibleProducts}
-          currentPage={currentPage}
-          paginate={paginate}
-          prevPage={prevPage}
-          nextPage={nextPage}
-        />
+        <div className="additions">
+          {visibleProducts < totalVisibleProducts && <ShowMore onClick={handleShowMore} />}
+          <Pagination
+            totalItemsCount={totalItemsCount}
+            pageSize={visibleProducts}
+            currentPage={currentPage}
+            paginate={paginate}
+            prevPage={prevPage}
+            nextPage={nextPage}
+          />
+        </div>
       </div>
     </div>
   );

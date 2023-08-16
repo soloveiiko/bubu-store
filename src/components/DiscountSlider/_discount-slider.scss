@@ -4,11 +4,13 @@
   .slick-slider {
 
     .myprev-arrow {
+      position: absolute;
       top: 49%;
       left: 15px;
     }
 
     .mynext-arrow {
+      position: absolute;
       top: 49%;
       right: 15px;
     }

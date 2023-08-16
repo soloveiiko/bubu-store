@@ -1,0 +1,26 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+
+  .pagination-list {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+
+  .pagination-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 41px;
+    height: 41px;
+    padding-top: 3px;
+    border: 1px solid $morelightgrey;
+    border-radius: 50px;
+  }
+
+  .selected_page {
+    border-color: $accent;
+  }
+}

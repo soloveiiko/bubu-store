@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Review = ({ comment }) => {
-  console.log(comment);
+  // console.log(comment);
   return (
     <div>
       <div className="date">{comment.date ? comment.date : '11.08.23'}</div>

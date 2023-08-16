@@ -1,5 +1,6 @@
 import React from 'react';
 import { usePagination, DOTS } from '../../../hooks/usePagination';
+import { NextArrow, PrevArrow } from '../Arrows';
 
 const Pagination = ({ totalItemsCount, pageSize, currentPage, paginate, prevPage, nextPage, siblingCount = 1 }) => {
   const paginationRange = usePagination({
@@ -20,8 +21,8 @@ const Pagination = ({ totalItemsCount, pageSize, currentPage, paginate, prevPage
   let lastPage = paginationRange[paginationRange.length - 1];
   return (
     <div className="pagination">
-      <ul className="pagination-container">
-        {currentPage > 1 && <button onClick={handlePrevClick}>prev</button>}
+      {currentPage > 1 && <PrevArrow onClick={handlePrevClick} />}
+      <ul className="pagination-list">
         {paginationRange.map((p) => {
           if (p === DOTS) {
             return (
@@ -31,13 +32,18 @@ const Pagination = ({ totalItemsCount, pageSize, currentPage, paginate, prevPage
             );
           }
           return (
-            <li key={p} id={p} onClick={() => paginate(p)} className={currentPage === p ? 'selected_page' : ''}>
+            <li
+              key={p}
+              id={p}
+              onClick={() => paginate(p)}
+              className={`pagination-item ${currentPage === p ? 'selected_page' : ''}`}
+            >
               {p}
             </li>
           );
         })}
-        {currentPage < lastPage && <button onClick={handleNextClick}>next</button>}
       </ul>
+      {currentPage < lastPage && <NextArrow onClick={handleNextClick} />}
     </div>
   );
 };

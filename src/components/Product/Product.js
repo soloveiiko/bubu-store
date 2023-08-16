@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import PerDifference from '../commons/PerDifference/PerDifference';
 import { Link } from 'react-router-dom';
 
-const Product = ({ product }) => {
+const Product = ({ product, comments }) => {
   const settings = {
     customPaging: function (i) {
       return (
@@ -28,21 +28,23 @@ const Product = ({ product }) => {
         <div className="like-product">
           <img src={favoriteAccent} alt="Like" />У вибране
         </div>
-        <div className="compire-product">
+        <div className="compare-product">
           <img src={comparisonGray} alt="Like" />
           Порівняти
         </div>
       </div>
       <div className="about-product">
-        <div className="avalible">
-          {product.isAvailable ? <span>В наявності </span> : <span>Немає в наявності</span>}
+        <div className="available-container">
+          {product.isAvailable ? (
+            <span className="available">В наявності </span>
+          ) : (
+            <span className="not-available">Немає</span>
+          )}
         </div>
-        <div className="product-code">{product.code}</div>
+        <div className="product-code">Код: {product.code}</div>
         <div className="comments">
-          <span>
-            4.5 <AiFillStar />
-          </span>
-          <span>3 Відгуки</span>
+          4.5 <AiFillStar />
+          <span>({comments.length})</span>
         </div>
       </div>
       <div className="product-information">

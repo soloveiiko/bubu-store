@@ -6,6 +6,7 @@ import historyReducer from './browsing-history/reducer';
 import productsReducer from './products/reducer';
 import filterReducer from './filter/reducer';
 import commentsReducer from './comments/reducer';
+import catalogReducer from './catalogs/reducer';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -13,5 +14,6 @@ const rootReducer = combineReducers({
   products: productsReducer,
   filter: filterReducer,
   comments: commentsReducer,
+  catalog: catalogReducer,
 });
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

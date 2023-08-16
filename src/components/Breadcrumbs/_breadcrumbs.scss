@@ -1,4 +1,6 @@
 .breadcrumbs {
+  display: flex;
+  column-gap: 5px;
   a {
     color: $accent;
   }

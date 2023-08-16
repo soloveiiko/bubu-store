@@ -12,8 +12,8 @@ const Filter = (props) => {
   const [priceOpen, setPriceOpen] = useState(true);
   const [producerOpen, setProducerOpen] = useState(true);
   const handleCategoryFilter = (category) => {
-    const selectedCategory = props.catalog.categories.find((el) => el.code === category.code);
-    props.onCategoryFilter(selectedCategory.code);
+    const selectedCategory = props.catalog.categories.find((el) => el.name === category.name);
+    props.onCategoryFilter(selectedCategory.name);
   };
   const handleAvailableFilter = (isAvailable) => {
     props.onAvailableFilter(isAvailable);

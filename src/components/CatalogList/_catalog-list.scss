@@ -9,6 +9,14 @@
       max-width: calc(50% - 30px);
     }
   }
+  .additions {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @include md {
@@ -19,6 +27,10 @@
         flex: 1 1 calc(33.33% - 30px);
         max-width: calc(33.33% - 30px);
       }
+    }
+    .additions {
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 }

@@ -3,14 +3,14 @@ import { useParams } from 'react-router-dom';
 import { Filter, SortBy } from '../../components';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsData } from '../../redux/products/action';
-import { fetchCatalogData, fetchProducerData } from '../../api/api';
+import { fetchProducerData } from '../../api/api';
 import { updateFilter } from '../../redux/filter/action';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import CatalogList from '../../components/CatalogList/CatalogList';
+import { getCatalogData } from '../../redux/catalogs/action';
 
 const CatalogPage = () => {
   const [filterData, setFilterData] = useState({
-    catalogList: [],
     producer: [],
     isAvailable: false,
     isDiscount: false,
@@ -19,12 +19,13 @@ const CatalogPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProducers, setSelectedProducers] = useState([]);
   const [selectedSort, setSelectedSort] = useState('1');
-  const [visibleProducts, setVisibleProducts] = useState(2);
+  const [visibleProducts, setVisibleProducts] = useState(16);
   const [mobile, setMobile] = useState(false);
   const [tablet, setTablet] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   const products = useSelector((state) => state.products);
+  const catalogsList = useSelector((state) => state.catalog.catalogs);
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -41,11 +42,11 @@ const CatalogPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const catalogData = await fetchCatalogData();
+        dispatch(getCatalogData());
+
         const producerData = await fetchProducerData();
         setFilterData((prevState) => ({
           ...prevState,
-          catalogList: catalogData,
           producer: producerData,
         }));
         setIsLoading(false);
@@ -63,8 +64,9 @@ const CatalogPage = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  const selectedCatalog = filterData.catalogList.find((catalog) => catalog.id === catalogId);
-  const catalogProducts = products.products.filter((product) => product.catalog === selectedCatalog.code);
+  console.log('catalogsList', catalogsList);
+  const selectedCatalog = catalogsList.find((catalog) => catalog.id === catalogId);
+  const catalogProducts = products.products.filter((product) => product.catalog === selectedCatalog.name);
   const catalogPrices = catalogProducts.map((product) => product.price);
   const minPrice = Math.min(...catalogPrices);
   const maxPrice = Math.max(...catalogPrices);

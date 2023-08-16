@@ -3,7 +3,7 @@ import { commentsAPI } from '../../api/api';
 export const GET_COMMENTS = 'GET_COMMENTS';
 export const GET_COMMENTS_SUCCESS = 'GET_COMMENTS_SUCCESS';
 export const GET_COMMENTS_ERROR = 'GET_COMMENTS_ERROR';
-export const getCommentsAsync = (id) => {
+export const getCommentsData = (id) => {
   return (dispatch) => {
     dispatch({ type: GET_COMMENTS });
     commentsAPI

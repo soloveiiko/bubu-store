@@ -35,7 +35,6 @@ const PriceRange = ({ min, max, onChange, onPriceFilter }) => {
   const handlerPrice = () => {
     onPriceFilter({ min: minVal, max: maxVal });
   };
-
   return (
     <div className="range-price">
       <div className="thumbs">
@@ -71,6 +70,7 @@ const PriceRange = ({ min, max, onChange, onPriceFilter }) => {
         <div className="slider-values">
           <div className="slider-left-value">
             <input
+              type="number"
               value={minVal}
               min={min}
               max={max}
@@ -82,6 +82,7 @@ const PriceRange = ({ min, max, onChange, onPriceFilter }) => {
           -
           <div className="slider-right-value">
             <input
+              type="number"
               value={maxVal}
               min={min - 1}
               max={max}
