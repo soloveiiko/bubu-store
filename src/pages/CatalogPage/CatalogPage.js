@@ -15,15 +15,29 @@ const CatalogPage = () => {
     isAvailable: false,
     isDiscount: false,
   });
+  const [selectedFilters, setSelectedFilters] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProducers, setSelectedProducers] = useState([]);
   const [selectedSort, setSelectedSort] = useState('1');
   const [visibleProducts, setVisibleProducts] = useState(16);
+  const [mobile, setMobile] = useState(false);
+  const [tablet, setTablet] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const products = useSelector((state) => state.products);
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
-
+  useEffect(() => {
+    const handleResize = () => {
+      setMobile(window.innerWidth < 768);
+      setTablet(window.innerWidth < 1200);
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -172,10 +186,53 @@ const CatalogPage = () => {
     setVisibleProducts(visibleProducts + 10);
   };
 
+  const toggleIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
+  const handleApplyFilters = (
+    selectedCategory,
+    isAvailable,
+    isDiscount,
+    selectedProducers,
+    minPriceFilter,
+    maxPriceFilter
+  ) => {
+    const appliedFilters = {
+      category: selectedCategory,
+      isAvailable: isAvailable,
+      isDiscount: isDiscount,
+      selectedProducers: selectedProducers,
+      minPrice: minPriceFilter,
+      maxPrice: maxPriceFilter,
+    };
+    setSelectedFilters(appliedFilters);
+    console.log(appliedFilters);
+  };
+  const handleRemoveFilter = (filterKey) => {
+    setSelectedFilters((prevFilters) => ({
+      ...prevFilters,
+      [filterKey]: undefined,
+    }));
+
+    if (filterKey === 'category') {
+      handleCategoryFilter(undefined);
+    } else if (filterKey === 'isAvailable') {
+      handleAvailableFilter(false);
+    } else if (filterKey === 'isDiscount') {
+      handleDiscountFilter(false);
+    } else if (filterKey === 'selectedProducers') {
+      setSelectedProducers([]);
+    } else if (filterKey === 'minPrice') {
+      handlePriceFilter({ min: undefined, max: selectedFilters.maxPrice });
+    } else if (filterKey === 'maxPrice') {
+      handlePriceFilter({ min: selectedFilters.minPrice, max: undefined });
+    }
+  };
   return (
     <div className="catalog-page">
       <Breadcrumbs />
-      <SortBy onSortChange={handleSortChange} />
+      <h2 className="headline">{selectedCatalog.name}</h2>
+      <SortBy onSortChange={handleSortChange} isMobile={mobile} />
       <Filter
         catalog={selectedCatalog}
         producers={filterData.producer}
@@ -189,6 +246,13 @@ const CatalogPage = () => {
         onDiscountFilter={handleDiscountFilter}
         onProducerFilter={handleProducerFilter}
         onPriceFilter={handlePriceFilter}
+        isTablet={tablet}
+        isOpen={isOpen}
+        toggleIsOpen={toggleIsOpen}
+        onApplyFilters={handleApplyFilters}
+        selectedFilters={selectedFilters}
+        handleRemoveFilter={handleRemoveFilter}
+        selectedCategory={filterData.selectedCategory}
       />
       <CatalogList
         filter={filter}

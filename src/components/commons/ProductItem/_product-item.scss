@@ -1,54 +1,77 @@
 .product-item {
   position: relative;
   overflow: hidden;
-  max-width: 235px;
+  width: 100%;
+  max-width: 150px;
+
   .percentage-difference {
+    font-size: 14px;
     position: absolute;
+    z-index: 2;
     top: 5px;
     left: 5px;
-    font-size: 14px;
-    color: $white;
-    background-color: $discount;
-    padding: 6px;
-    border-radius: 8px;
     width: 45px;
-    z-index: 10;
+    padding: 6px;
+    color: $white;
+    border-radius: 8px;
+    background-color: $discount;
   }
+
   .img-container {
     position: relative;
-    width: 100%;
-    padding-bottom: 100%;
     overflow: hidden;
+    width: 100%;
     margin-bottom: 15px;
+    padding-bottom: 100%;
+
     img {
       position: absolute;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
+
   .full-name {
     font-size: 14px;
     font-weight: 300;
     margin-bottom: 15px;
 
   }
+
   .prev-price {
+    font-size: 12px;
     font-weight: 700;
-      font-size: 12px;
-    text-decoration: line-through;
     margin-bottom: 5px;
+    text-decoration: line-through;
+
     span {
       font-weight: 300;
     }
   }
+
   .curr-price {
-    color: $discount;
     font-weight: 700;
+    color: $discount;
 
     span {
-      color: $discount;
       font-weight: 300;
+      color: $discount;
     }
+  }
+
+  .price {
+    font-size: 17px;
+    font-weight: 700;
+  }
+}
+@include sm {
+  .product-item {
+    max-width: 200px;
+  }
+}
+@include md {
+  .product-item {
+    max-width: 265px;
   }
 }

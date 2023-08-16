@@ -1,0 +1,14 @@
+.close-toggle {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.close-toggle-accent {
+  color: $accent;
+  font-size: 16px;
+}
+.close-toggle-white {
+  color: $white;
+  position: absolute;
+  font-size: 20px;
+}

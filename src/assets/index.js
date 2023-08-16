@@ -64,8 +64,10 @@ import comparisonGray from './images/icons/actions/сomparisonGray.svg';
 import location from './images/icons/actions/location.svg';
 import default1 from './images/description/default1.jpg';
 import default2 from './images/description/default2.jpg';
+import filter from './images/icons/actions/filter.svg';
 
 export {
+  filter,
   ball,
   sumish,
   krislo,

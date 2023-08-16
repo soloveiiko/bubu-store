@@ -1,0 +1,35 @@
+.catalog-list {
+  .sorted-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    & > * {
+      flex: 1 1 calc(50% - 30px);
+      max-width: calc(50% - 30px);
+    }
+  }
+}
+
+@include md {
+  .catalog-list {
+    .sorted-products {
+
+      & > * {
+        flex: 1 1 calc(33.33% - 30px);
+        max-width: calc(33.33% - 30px);
+      }
+    }
+  }
+}
+@include lg {
+  .catalog-list {
+    .sorted-products {
+
+      & > * {
+        flex: 1 1 calc(25% - 30px);
+        max-width: calc(25% - 30px);
+      }
+    }
+  }
+}

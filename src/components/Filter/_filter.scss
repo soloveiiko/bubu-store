@@ -3,15 +3,72 @@
   flex-direction: column;
   row-gap: 30px;
 
-  .filter-container {
-    & > *:not(:last-child) {
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-bottom: 0.5px solid  $lightgrey;
+  &.open {
+    .filter-container {
+      display: block;
+    }
+
+    .close-toggle-white {
+      top: 15px;
+      left: 260px;
+      display: block;
     }
   }
 
-  .categories-filter, .producer-filter{
+  .close-toggle-white {
+    display: none
+  }
+
+  .filter-button {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: $accent;
+
+    span {
+      color: $white;
+    }
+  }
+
+  .tablet-filter {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  .filter-container {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    display: none;
+    max-width: 260px;
+    padding: 30px 15px;
+    background-color: $white;
+
+    & > *:not(:last-child) {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 0.5px solid $lightgrey;
+    }
+  }
+
+  .apply-filters-button button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    text-transform: uppercase;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    background-color: $accent;
+  }
+
+  .categories-filter, .producer-filter {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -33,36 +90,38 @@
     align-items: center;
     column-gap: 20px;
   }
+
   input[type="checkbox"] {
     position: relative;
     width: 20px;
     height: 20px;
     margin: 0;
     padding: 0;
-    border-radius: 2px;
     border: 1px solid $gray;
+    border-radius: 2px;
 
     &:checked {
       &::before {
         position: absolute;
-        left: 6px;
+        z-index: 10;
         top: 6px;
+        left: 6px;
         width: 10px;
         height: 10px;
         content: '';
-        background-color: $accent;
-        z-index: 10;
         border-radius: 2px;
+        background-color: $accent;
       }
+
       &::after {
         position: absolute;
+        z-index: 5;
         width: 19px;
         height: 19px;
         content: '';
-        background-color: $white;
         border: 1px solid $gray;
         border-radius: 2px;
-        z-index: 5;
+        background-color: $white;
       }
     }
   }
@@ -76,9 +135,20 @@
   .categories-filter-item {
     cursor: pointer;
   }
+
   .price-filter {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+  }
+}
+
+@include xl {
+  .filter {
+
+    .filter-container {
+      position: static;
+      display: block;
+    }
   }
 }

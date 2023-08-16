@@ -1,0 +1,15 @@
+.applied-filters {
+  display: flex;
+  column-gap: 10px;
+
+  .applied-filters-item {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    padding: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    border: 1px solid $morelightgrey;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,10 @@
+.breadcrumbs {
+  a {
+    color: $accent;
+  }
+}
+@include xl {
+  .breadcrumbs {
+    grid-column: 1/3;
+  }
+}

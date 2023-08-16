@@ -47,12 +47,20 @@ const ProductItem = ({ product }) => {
         {renderPhotos()}
         <div className="full-name">{product.fullName}</div>
       </Link>
-      <div className={product.discount ? 'prev-price' : 'price'}>
-        {product.price} <span>грн</span>
-      </div>
-      <div className="curr-price">
-        {product.discount.price} <span>грн</span>
-      </div>
+      {product.discount.isDiscount ? (
+        <>
+          <div className="prev-price">
+            {product.price} <span>грн</span>
+          </div>
+          <div className="curr-price">
+            {product.discount.price} <span>грн</span>
+          </div>
+        </>
+      ) : (
+        <div className="price">
+          {product.price} <span>грн</span>
+        </div>
+      )}
     </div>
   );
 };

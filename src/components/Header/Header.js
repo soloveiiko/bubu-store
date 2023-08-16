@@ -8,6 +8,7 @@ import UserPanel from './UserPanel/UserPanel';
 import { SocialNetwork } from '../commons';
 import { Link } from 'react-router-dom';
 import { logoWhite } from './../../assets';
+import CloseButton from '../commons/CloseButton/CloseButton';
 
 const Header = () => {
   const [mobile, setMobile] = useState(false);
@@ -48,9 +49,7 @@ const Header = () => {
           </div>
           {isOpen && (
             <div className="toggle-menu">
-              <button className="close-toggle-menu" onClick={toggleMenu}>
-                &#9587;
-              </button>
+              <CloseButton onClick={toggleMenu} />
               <CatalogMenu isMobile={mobile} toggleMenu={toggleMenu} />
               <Navbar />
               <div className="tools">

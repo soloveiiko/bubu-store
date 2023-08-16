@@ -1,9 +1,31 @@
 .catalog-page {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  .sorted-products {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  row-gap: 25px;
+}
+
+@include lg {
+  .catalog-page {
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 30px;
+
+    & > * {
+      width: 100%;
+    }
+  }
+  .headline {
+    width: fit-content;
+  }
+  .sort-by {
+    margin: 0 0 0 auto;
+  }
+}
+
+@include xl {
+  .catalog-page {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    column-gap: 30px;
   }
 }

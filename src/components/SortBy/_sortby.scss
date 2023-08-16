@@ -1,0 +1,73 @@
+.sort-by {
+  width: fit-content;
+
+  .sort-by-select {
+    position: relative;
+    cursor: pointer;
+    &.open .sort-by-options {
+      display: block;
+      opacity: 1;
+    }
+  }
+  .selected-item {
+    display: flex;
+    column-gap: 15px;
+    svg {
+      margin-top: 2px;
+      font-size: 12px;
+    }
+  }
+
+  .sort-by-options {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid $accent;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 100;
+  }
+
+  .sort-by-select.open .sort-by-options {
+   display: block;
+    opacity: 1;
+  }
+
+  .sort-by-option {
+    padding: 8px 16px;
+    display: block;
+    cursor: pointer;
+    color: black;
+    transition: background-color 0.2s ease-in-out;
+    white-space: nowrap;
+  }
+
+  .sort-by-option.selected {
+    color: $accent;
+  }
+
+  .sort-by-select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+}
+@include md {
+  .sort-by {
+    .sort-by-list {
+      display: flex;
+      column-gap: 15px;
+    }
+.sort-by-item {
+  color: $gray;
+  text-decoration: underline;
+  &.selected {
+    color: black;
+    text-decoration: none;
+  }
+}
+  }
+}
