@@ -1,9 +1,22 @@
 import { PrevArrow, NextArrow } from './Arrows';
+import CloseButton from './CloseButton/CloseButton';
+import Pagination from './Pagination/Pagination';
 import PerDifference from './PerDifference/PerDifference';
+import ProductItem from './ProductItem/ProductItem';
 import ProductsSlider from './ProductsSlider/ProductsSlider';
 import SendButton from './SendButton/SendButton';
 import ShowMore from './ShowMore/ShowMore';
 import SocialNetwork from './SocialNetwork/SocialNetwork';
-import ProductItem from './ProductItem/ProductItem';
 
-export { PrevArrow, NextArrow, PerDifference, ProductsSlider, SendButton, ShowMore, SocialNetwork, ProductItem };
+export {
+  PrevArrow,
+  NextArrow,
+  PerDifference,
+  ProductsSlider,
+  SendButton,
+  ShowMore,
+  SocialNetwork,
+  ProductItem,
+  CloseButton,
+  Pagination,
+};
