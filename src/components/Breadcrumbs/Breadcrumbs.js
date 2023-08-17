@@ -5,10 +5,12 @@ const Breadcrumbs = ({ catalogName, catalogId, isProduct = false }) => {
   return (
     <div className="breadcrumbs">
       {isProduct ? (
-        <>
-          <Link to="/">Головна ></Link>
-          <Link to={`/catalog/${catalogId}`}>{catalogName} ></Link>
-        </>
+        <div className="container">
+          <div className="product-breadcrumbs">
+            <Link to="/">Головна ></Link>
+            <Link to={`/catalog/${catalogId}`}>{catalogName} ></Link>
+          </div>
+        </div>
       ) : (
         <Link to="/">Головна ></Link>
       )}

@@ -25,6 +25,7 @@
 @import './../../components/CatalogList/catalog-list';
 @import './../../components/Filter/AppliedFilters/applied-filters';
 @import './../../components/Product/product';
+@import './../../components/ProductDescription/product-description';
 @import './../../components/commons/ShowMore/show-more';
 @import './../../components/commons/CloseButton/close-button';
 @import './../../components/commons/ProductsSlider/product-slider';
@@ -70,6 +71,9 @@ html {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
 }
 
 .content {
@@ -77,12 +81,6 @@ html {
   padding: 15px 0 40px;
   grid-column: 1/3;
   grid-row: 2/3;
-}
-
-.promotion-slider, .popular-category, .brands-slider, .browsing-history-slider {
-  display: flex;
-  flex-direction: column;
-  row-gap: 40px;
 }
 
 a,

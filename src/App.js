@@ -11,9 +11,7 @@ function App() {
     <div className="bubu-store">
       <Header />
       <div className="content">
-        <div className="container">
-          <AppRoutes />
-        </div>
+        <AppRoutes />
       </div>
       <Subscription />
       <Footer />

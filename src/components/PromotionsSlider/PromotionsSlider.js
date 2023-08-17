@@ -8,11 +8,13 @@ const PromotionsSlider = () => {
 
   return (
     <div className="promotion-slider">
-      <div className="title">
-        <h2 className="headline">Акція!</h2>
-        <span className="mark-title">Sale</span>
+      <div className="container">
+        <div className="title">
+          <h2 className="headline">Акція!</h2>
+          <span className="mark-title">Sale</span>
+        </div>
+        <ProductsSlider products={isDiscountProducts} numSlides={numSlides} />
       </div>
-      <ProductsSlider products={isDiscountProducts} numSlides={numSlides} />
     </div>
   );
 };

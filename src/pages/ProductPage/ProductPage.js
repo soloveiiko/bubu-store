@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { BrowsingHistory, Product, ProductCharacteristics, ProductDescription } from '../../components';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsData } from '../../redux/products/action';
-import ProductReviews from '../../components/ProductReviews/ProductReviews';
 import { getCommentsData } from '../../redux/comments/action';
-import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
-import AddReview from '../../components/AddReview/AddReview';
 import { getCatalogData } from '../../redux/catalogs/action';
+import {
+  AddReview,
+  AlsoBuySlider,
+  BrowsingHistory,
+  Breadcrumbs,
+  Product,
+  ProductDescription,
+  ProductCharacteristics,
+  ProductReviews,
+} from '../../components';
 
 const ProductPage = () => {
   const [visibleReviews, setVisibleReviews] = useState(6);
+  const [tablet, setTablet] = useState(false);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   const comments = useSelector((state) => state.comments.comments);
@@ -18,6 +25,17 @@ const ProductPage = () => {
   const catalogsList = useSelector((state) => state.catalog.catalogs);
   const { id } = useParams();
   const productId = id;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setTablet(window.innerWidth < 1200);
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     dispatch(getProductsData());
@@ -29,13 +47,15 @@ const ProductPage = () => {
   };
   const product = products.products.find((product) => product.id === productId);
   const selectedCatalog = catalogsList.find((catalog) => catalog.name === product.catalog);
+
   return (
     <>
       {product && selectedCatalog && comments ? (
         <div className="product-page">
           <Breadcrumbs isProduct={true} catalogName={product.catalog} catalogId={selectedCatalog.id} />
           <Product product={product} comments={comments} />
-          <ProductDescription product={product} />
+          <AlsoBuySlider products={products.products} selectedCatalog={selectedCatalog} />
+          <ProductDescription product={product} isTablet={tablet} />
           <ProductCharacteristics product={product} />
           <ProductReviews
             product={product}

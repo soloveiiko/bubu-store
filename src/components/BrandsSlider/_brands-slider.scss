@@ -3,40 +3,45 @@
     position: relative;
     width: 100%;
     height: 100%;
+
     img {
       width: 100%;
       height: 100%;
     }
   }
+
   .mynext-arrow {
-    top: -76px;
+    top: -66px;
     right: 0;
   }
-  .description {
+
+  .brands-description {
     position: relative;
     display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    padding: 20px 0;
     overflow: hidden;
+    flex-direction: column;
+    width: 100%;
     max-width: 1000px;
-    width: 100%;
     margin: 0 auto;
+    padding: 20px 0;
+    row-gap: 15px;
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      content: "";
+      background: linear-gradient(transparent, white);
+    }
   }
-  .description::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background: linear-gradient(transparent, white);
-  }
+
   .more-link {
     font-weight: 700;
-    text-decoration-line: underline;
-    color: $accent;
+    margin-top: -20px;
     text-align: center;
-    margin-top: -40px;
+    color: $accent;
+    text-decoration-line: underline;
   }
 }

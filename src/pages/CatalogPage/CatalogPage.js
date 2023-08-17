@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Filter, SortBy } from '../../components';
 import { useDispatch, useSelector } from 'react-redux';
+import { getCatalogData } from '../../redux/catalogs/action';
+import { updateFilter } from '../../redux/filter/action';
 import { getProductsData } from '../../redux/products/action';
 import { fetchProducerData } from '../../api/api';
-import { updateFilter } from '../../redux/filter/action';
-import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
-import CatalogList from '../../components/CatalogList/CatalogList';
-import { getCatalogData } from '../../redux/catalogs/action';
+import { Filter, SortBy, CatalogList, Breadcrumbs } from '../../components';
 
 const CatalogPage = () => {
   const [filterData, setFilterData] = useState({
@@ -232,37 +230,39 @@ const CatalogPage = () => {
   };
   return (
     <div className="catalog-page">
-      <Breadcrumbs />
-      <h2 className="headline">{selectedCatalog.name}</h2>
-      <SortBy onSortChange={handleSortChange} isMobile={mobile} />
-      <Filter
-        catalog={selectedCatalog}
-        producers={filterData.producer}
-        isAvailable={filterData.isAvailable}
-        isDiscount={filterData.isDiscount}
-        minPrice={minPrice}
-        maxPrice={maxPrice}
-        selectedProducers={selectedProducers}
-        onCategoryFilter={handleCategoryFilter}
-        onAvailableFilter={handleAvailableFilter}
-        onDiscountFilter={handleDiscountFilter}
-        onProducerFilter={handleProducerFilter}
-        onPriceFilter={handlePriceFilter}
-        isTablet={tablet}
-        isOpen={isOpen}
-        toggleIsOpen={toggleIsOpen}
-        onApplyFilters={handleApplyFilters}
-        selectedFilters={selectedFilters}
-        handleRemoveFilter={handleRemoveFilter}
-        selectedCategory={filterData.selectedCategory}
-      />
-      <CatalogList
-        filter={filter}
-        visibleProducts={visibleProducts}
-        filterData={filterData}
-        catalogProducts={catalogProducts}
-        handleShowMore={handleShowMore}
-      />
+      <div className="container">
+        <Breadcrumbs />
+        <h2 className="headline">{selectedCatalog.name}</h2>
+        <SortBy onSortChange={handleSortChange} isMobile={mobile} />
+        <Filter
+          catalog={selectedCatalog}
+          producers={filterData.producer}
+          isAvailable={filterData.isAvailable}
+          isDiscount={filterData.isDiscount}
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          selectedProducers={selectedProducers}
+          onCategoryFilter={handleCategoryFilter}
+          onAvailableFilter={handleAvailableFilter}
+          onDiscountFilter={handleDiscountFilter}
+          onProducerFilter={handleProducerFilter}
+          onPriceFilter={handlePriceFilter}
+          isTablet={tablet}
+          isOpen={isOpen}
+          toggleIsOpen={toggleIsOpen}
+          onApplyFilters={handleApplyFilters}
+          selectedFilters={selectedFilters}
+          handleRemoveFilter={handleRemoveFilter}
+          selectedCategory={filterData.selectedCategory}
+        />
+        <CatalogList
+          filter={filter}
+          visibleProducts={visibleProducts}
+          filterData={filterData}
+          catalogProducts={catalogProducts}
+          handleShowMore={handleShowMore}
+        />
+      </div>
     </div>
   );
 };

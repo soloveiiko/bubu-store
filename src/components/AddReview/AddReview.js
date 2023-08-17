@@ -20,8 +20,8 @@ const AddReview = () => {
     setImages(newImages);
   };
   return (
-    <form>
-      <div>
+    <form className="add-review">
+      <div className="title">
         <h2 className="headline">Ваш відгук</h2>
         <button>&#9587;</button>
       </div>

@@ -1,20 +1,27 @@
 import { SignIn, SignUp } from './Auth';
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
-import Subscription from './Subscription/Subscription';
-import DiscountSlider from './DiscountSlider/DiscountSlider';
-import PromotionsSlider from './PromotionsSlider/PromotionsSlider';
-import PopularCategory from './PopularCategory/PopularCategory';
+import AddReview from './AddReview/AddReview';
+import AlsoBuySlider from './AlsoBuySlider/AlsoBuySlider';
 import BrandsSlider from './BrandsSlider/BrandsSlider';
+import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import BrowsingHistory from './BrowsingHistory/BrowsingHistory';
-import Filter from './Filter/Filter';
-import SortBy from './SortBy/SortBy';
 import CatalogList from './CatalogList/CatalogList';
+import DiscountSlider from './DiscountSlider/DiscountSlider';
+import Filter from './Filter/Filter';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
+import PopularCategory from './PopularCategory/PopularCategory';
 import Product from './Product/Product';
-import ProductDescription from './ProductDescription/ProductDescription';
 import ProductCharacteristics from './ProductCharacteristics/ProductCharacteristics';
+import ProductDescription from './ProductDescription/ProductDescription';
+import ProductReviews from './ProductReviews/ProductReviews';
+import PromotionsSlider from './PromotionsSlider/PromotionsSlider';
+import SortBy from './SortBy/SortBy';
+import Subscription from './Subscription/Subscription';
 
 export {
+  Breadcrumbs,
+  AddReview,
+  ProductReviews,
   SignIn,
   SignUp,
   Header,
@@ -31,4 +38,5 @@ export {
   Product,
   ProductDescription,
   ProductCharacteristics,
+  AlsoBuySlider,
 };

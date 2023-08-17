@@ -3,6 +3,10 @@
   flex-direction: column;
   margin-top: 15px;
   row-gap: 25px;
+
+  .breadcrumbs {
+    margin-bottom: -10px;
+  }
 }
 
 @include lg {
