@@ -5,16 +5,10 @@
   max-width: 150px;
 
   .percentage-difference {
-    font-size: 14px;
+    @include discount;
     position: absolute;
-    z-index: 2;
     top: 5px;
     left: 5px;
-    width: 45px;
-    padding: 6px;
-    color: $white;
-    border-radius: 8px;
-    background-color: $discount;
   }
 
   .img-container {
@@ -40,24 +34,13 @@
   }
 
   .prev-price {
+    @include prev-price;
     font-size: 12px;
-    font-weight: 700;
     margin-bottom: 5px;
-    text-decoration: line-through;
-
-    span {
-      font-weight: 300;
-    }
   }
 
   .curr-price {
-    font-weight: 700;
-    color: $discount;
-
-    span {
-      font-weight: 300;
-      color: $discount;
-    }
+    @include curr-price;
   }
 
   .price {
@@ -65,11 +48,13 @@
     font-weight: 700;
   }
 }
+
 @include sm {
   .product-item {
     max-width: 200px;
   }
 }
+
 @include md {
   .product-item {
     max-width: 265px;

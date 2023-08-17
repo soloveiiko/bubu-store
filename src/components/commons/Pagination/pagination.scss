@@ -23,4 +23,7 @@
   .selected_page {
     border-color: $accent;
   }
+  .mynext-arrow, .myprev-arrow{
+    position: static;
+  }
 }

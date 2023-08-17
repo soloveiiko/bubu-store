@@ -20,17 +20,10 @@
   }
 
   .filter-button {
-    display: flex;
-    align-items: center;
+    @include button;
+    @include accent-button;
     width: fit-content;
-    padding: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: $accent;
-
-    span {
-      color: $white;
-    }
+    font-weight: 400;
   }
 
   .tablet-filter {
@@ -56,16 +49,11 @@
   }
 
   .apply-filters-button button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include button;
+    @include accent-button;
     width: 100%;
-    padding: 20px;
     text-transform: uppercase;
-    color: $white;
-    border: none;
     border-radius: 5px;
-    background-color: $accent;
   }
 
   .categories-filter, .producer-filter {

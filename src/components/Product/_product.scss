@@ -1,7 +1,13 @@
 .product {
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
+  row-gap: 20px;
+
+  .product-information {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+  }
 
   .product-action {
     display: flex;
@@ -75,9 +81,222 @@
       span {
         font-size: 14px;
         font-weight: 300;
-        text-decoration: underline;
         margin-left: 5px;
+        text-decoration: underline;
       }
+    }
+  }
+
+  .slick-slider {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 1fr 5fr;
+  }
+
+  .slick-list {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  .slick-dots {
+    position: static;
+    height: 200px;
+    padding-right: 10px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    & > *:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    .slick-active {
+      overflow: hidden;
+      border: 1px solid $accent;
+      border-radius: 10px;
+    }
+
+    li {
+      width: 100%;
+      height: auto;
+      margin: 0;
+
+      button {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+        padding: 0;
+
+        &::before {
+          display: none;
+        }
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+
+  .mynext-arrow, .myprev-arrow {
+    font-size: 40px;
+    top: 40%;
+    filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, 0.10));
+
+  }
+
+  .myprev-arrow {
+    left: 80px;
+  }
+
+  .mynext-arrow {
+    right: 20px;
+  }
+
+  .slick-slide {
+    img {
+      width: 100%;
+    }
+  }
+
+  .colors, .sex {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .colors-list, .sex-list {
+    display: flex;
+    column-gap: 15px;
+  }
+
+  .colors {
+
+    .blue, .red, .green {
+      font-size: 0;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .blue {
+      background-color: #34CBFF;
+    }
+
+    .red {
+      background-color: #FF3636;
+    }
+
+    .green {
+      background-color: #4AFF3A;
+    }
+  }
+
+  .sex-list button {
+    @include button;
+    font-size: 14px;
+    padding: 10px 13px;
+    border: 1px solid $lightgrey;
+    background-color: $white;
+
+    &.selected {
+      border: 1px solid $accent;
+      background-color: $lightpurple;
+    }
+  }
+
+  .title {
+    font-weight: 300;
+    color: $gray;
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  .prev-price {
+    @include prev-price;
+    font-size: 18px;
+  }
+
+  .curr-price {
+    @include curr-price;
+    font-size: 18px;
+  }
+
+  .percentage-difference {
+    @include discount;
+  }
+
+  .origin-price {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .buy-product {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  .in-basket {
+    @include button;
+    @include accent-button;
+    padding: 30px;
+    text-transform: uppercase;
+  }
+
+  .in-one-click {
+    @include button;
+    @include white-button;
+    padding: 30px 14px;
+  }
+
+  .pick-up-today {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    border-radius: 10px;
+    background-color: $lightpurple;
+    row-gap: 20px;
+  }
+
+  .in-store {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .location {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 10px;
+
+    .address {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 20px;
+    }
+  }
+
+  .pick-up-today-button a {
+    font-weight: 700;
+    color: $accent;
+    text-decoration-line: underline;
+  }
+
+  .additional-information {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    a {
+      color: $gray;
+      font-weight: 300;
+      text-decoration-line: underline;
     }
   }
 }

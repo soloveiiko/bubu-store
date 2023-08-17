@@ -47,10 +47,10 @@ const Filter = (props) => {
       {props.isTablet && (
         <div className="tablet-filter">
           <CloseButton onClick={props.toggleIsOpen} />
-          <div className="filter-button" onClick={props.toggleIsOpen}>
+          <button className="filter-button" onClick={props.toggleIsOpen}>
             <img src={filter} alt="Filter" />
-            <span>Фільтр</span>
-          </div>
+            Фільтр
+          </button>
           <AppliedFilters selectedFilters={props.selectedFilters} handleRemoveFilter={props.handleRemoveFilter} />
         </div>
       )}

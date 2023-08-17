@@ -1,7 +1,5 @@
 .show-more {
-  padding: 20px;
+  @include button;
+  @include white-button;
   border-radius: 5px;
-  border: 1px solid $accent;
-  background-color: $white;
-  color: $accent;
 }

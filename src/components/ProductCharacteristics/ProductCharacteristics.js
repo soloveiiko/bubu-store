@@ -10,7 +10,7 @@ const ProductCharacteristics = ({ product }) => {
       <div>
         Кольори:
         {Object.values(colors).map((colorValue, index) => (
-          <div key={index}>{colorValue}</div>
+          <div key={index}>{colorValue.name}</div>
         ))}
       </div>
       <div>

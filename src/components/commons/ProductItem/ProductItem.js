@@ -38,11 +38,7 @@ const ProductItem = ({ product }) => {
   };
   return (
     <div className="product-item">
-      {product.discount.isDiscount && (
-        <div className="percentage-difference">
-          <PerDifference product={product} />
-        </div>
-      )}
+      {product.discount.isDiscount && <PerDifference product={product} />}
       <Link to={`/product/${product.id}`} className="product-link" onMouseUp={() => onClickDis(product)}>
         {renderPhotos()}
         <div className="full-name">{product.fullName}</div>
