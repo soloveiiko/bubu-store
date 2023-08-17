@@ -291,9 +291,8 @@
   }
 
   .pick-up-today-button a {
-    font-weight: 700;
-    color: $accent;
-    text-decoration-line: underline;
+    @include accent-underline;
+    font-size: 14px;
   }
 
   .additional-information {

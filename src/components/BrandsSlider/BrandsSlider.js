@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { brandsList } from '../../utils/data';
-import { NextArrow } from '../commons';
+import { MoreDetails, NextArrow } from '../commons';
 
 const BrandsSlider = () => {
   const numSlides = brandsList.length;
@@ -66,9 +65,7 @@ const BrandsSlider = () => {
             автокрісла, дитячий транспорт, іграшки, дитячий одяг.
           </p>
         </div>
-        <Link className="more-link" to="#">
-          Докладніше
-        </Link>
+        <MoreDetails />
       </div>
     </div>
   );

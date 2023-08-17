@@ -55,14 +55,18 @@ const ProductPage = () => {
           <Breadcrumbs isProduct={true} catalogName={product.catalog} catalogId={selectedCatalog.id} />
           <Product product={product} comments={comments} />
           <AlsoBuySlider products={products.products} selectedCatalog={selectedCatalog} />
-          <ProductDescription product={product} isTablet={tablet} />
-          <ProductCharacteristics product={product} />
-          <ProductReviews
-            product={product}
-            comments={comments}
-            onShowMore={handleShowMore}
-            visibleReviews={visibleReviews}
-          />
+          <div className="information-container">
+            <div className="container">
+              <ProductDescription product={product} isTablet={tablet} />
+              <ProductCharacteristics product={product} isTablet={tablet} />
+              <ProductReviews
+                product={product}
+                comments={comments}
+                onShowMore={handleShowMore}
+                visibleReviews={visibleReviews}
+              />
+            </div>
+          </div>
           {recentlyViewedProducts.length > 0 && <BrowsingHistory recentlyViewedProducts={recentlyViewedProducts} />}
           <AddReview comments={comments.comments} />
         </div>

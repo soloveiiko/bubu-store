@@ -2,4 +2,16 @@
   padding: 15px 0;
   display: flex;
   flex-direction: column;
+  .information-container {
+    padding: 50px 0;
+    background-color: $lightpurple;
+    .container {
+      row-gap: 40px;
+    }
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

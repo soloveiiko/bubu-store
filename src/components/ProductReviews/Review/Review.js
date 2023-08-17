@@ -1,9 +1,8 @@
 import React from 'react';
 
 const Review = ({ comment }) => {
-  // console.log(comment);
   return (
-    <div>
+    <div className="comments-item">
       <div className="date">{comment.date ? comment.date : '11.08.23'}</div>
       <div className="name">{comment.name}</div>
       <div className="stars">{comment.stars ? comment.stars : '5'}</div>

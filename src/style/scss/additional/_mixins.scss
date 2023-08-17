@@ -10,12 +10,14 @@
   cursor: pointer;
   white-space: nowrap;
 }
+
 @mixin accent-button {
   background-color: $accent;
   border: none;
   color: $white;
   font-weight: 700;
 }
+
 @mixin white-button {
   background-color: $white;
   color: $accent;
@@ -25,6 +27,13 @@
 
 @mixin button-hover {
   background-color: $red;
+}
+
+@mixin accent-underline {
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: $accent;
 }
 
 @mixin input-sm {
