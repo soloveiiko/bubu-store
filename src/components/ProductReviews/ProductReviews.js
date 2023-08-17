@@ -3,7 +3,7 @@ import Review from './Review/Review';
 
 const ProductReviews = ({ comments, visibleReviews, onShowMore }) => {
   return (
-    <div className="product-comments">
+    <div className="product-reviews">
       <div className="container">
         {comments ? (
           <div className="comments">
