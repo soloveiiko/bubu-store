@@ -1,6 +1,7 @@
 .comments-item {
   display: flex;
   align-items: flex-start;
+  align-self: start;
   flex-direction: column;
   padding: 30px;
   border-radius: 10px;
@@ -74,3 +75,14 @@
     }
   }
 }
+@include md {
+  .comments-item {
+    width: calc(50% - 15px);
+  }
+}
+@include xl {
+  .comments-item {
+    width: calc(32.47% - 10px);
+  }
+}
+

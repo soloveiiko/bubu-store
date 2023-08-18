@@ -11,10 +11,9 @@
     row-gap: 25px;
   }
 
-  .product-action {
+  .product-top-block {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: flex-start;
     gap: 20px;
 
@@ -22,6 +21,11 @@
       font-size: 18px;
       font-weight: 700;
       width: 100%;
+    }
+
+    .product-action {
+      display: flex;
+      gap: 20px;
     }
 
     .like-product, .compare-product {
@@ -107,6 +111,7 @@
     top: 0;
     bottom: 0;
     overflow-y: scroll;
+    width: 62px;
     padding-right: 10px;
     grid-column: 1/2;
     grid-row: 1/2;
@@ -267,6 +272,7 @@
   .in-basket {
     @include button;
     @include accent-button;
+    width: 100%;
     padding: 30px;
     text-transform: uppercase;
   }
@@ -274,6 +280,7 @@
   .in-one-click {
     @include button;
     @include white-button;
+    width: 100%;
     padding: 30px 14px;
   }
 
@@ -311,12 +318,101 @@
   .additional-information {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    gap: 20px;
 
     a {
       font-weight: 300;
       color: $gray;
       text-decoration-line: underline;
+    }
+  }
+}
+
+@include md {
+  .product {
+    .product-top-block {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      .product-name {
+        width: auto;
+      }
+    }
+
+    .buy-product {
+      width: 70%;
+    }
+
+    .additional-information {
+      flex-direction: row;
+    }
+
+    .slick-dots {
+      width: 92px;
+
+      li button {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    .myprev-arrow {
+      left: 110px;
+    }
+  }
+}
+
+@include lg {
+  .product {
+    .container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px 30px;
+    }
+
+    .about-product {
+      width: 100%;
+    }
+
+    .slick-slider {
+      width: calc(50% - 15px);
+    }
+    .slick-track, .slick-slide div {
+      height: 100%;
+    }
+    .img-container {
+      position: relative;
+      display: flex !important;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      img {
+        //width: 500px;
+        //margin-right: 100px;
+        scale: 1.2;
+        object-fit: contain;
+      }
+    }
+
+
+    .product-information {
+      width: calc(50% - 15px);
+    }
+
+    .buy-product {
+      width: 100%;
+    }
+
+    .in-basket, .in-one-click {
+      padding: 25px 14px;
+    }
+  }
+}
+@include xl {
+  .product {
+    .buy-product {
+      width: 70%;
     }
   }
 }

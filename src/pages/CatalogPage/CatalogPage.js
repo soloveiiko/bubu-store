@@ -229,8 +229,8 @@ const CatalogPage = () => {
     }
   };
   return (
-    <div className="catalog-page">
-      <div className="container">
+    <div className="container">
+      <div className="catalog-page">
         <Breadcrumbs />
         <h2 className="headline">{selectedCatalog.name}</h2>
         <SortBy onSortChange={handleSortChange} isMobile={mobile} />

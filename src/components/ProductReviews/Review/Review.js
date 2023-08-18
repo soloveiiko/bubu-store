@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
 import { review1, review2, review3 } from '../../../assets';
 
@@ -7,11 +7,31 @@ const Review = ({ comment }) => {
     ? Array.from({ length: comment.stars }).map((_, index) => <AiFillStar key={index} />)
     : Array.from({ length: 5 }).map((_, index) => <AiFillStar key={index} />);
   const reviewImg = [review1, review2, review3, review1, review1];
-  const maxVisibleImages = 3;
+  const [maxVisibleImages, setMaxVisibleImages] = useState(3);
   const [showAllImages, setShowAllImages] = useState(false);
+  // const [moreImage, setMoreImage] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (768 >= window.innerWidth >= 480) {
+        setMaxVisibleImages(4);
+      } else if (window.innerWidth >= 1000) {
+        setMaxVisibleImages(4);
+      } else {
+        setMaxVisibleImages(3);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const toggleImageDisplay = () => {
     setShowAllImages(true);
+    setMaxVisibleImages(reviewImg.length);
   };
   const displayedImages = showAllImages ? reviewImg : reviewImg.slice(0, maxVisibleImages);
 

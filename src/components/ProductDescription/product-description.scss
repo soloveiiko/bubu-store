@@ -2,9 +2,11 @@
   .text {
     line-height: 25px;
   }
+
   .description-list {
     gap: 20px;
   }
+
   .img-container {
     display: flex;
     overflow: hidden;
@@ -17,7 +19,18 @@
       object-fit: cover;
     }
   }
+
   .more-details {
     margin: 0 auto;
+  }
+}
+
+@include sm {
+  .description {
+
+    .img-container {
+      width: 340px;
+      height: auto;
+    }
   }
 }

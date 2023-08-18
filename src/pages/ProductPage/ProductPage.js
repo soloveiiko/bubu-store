@@ -17,7 +17,8 @@ import {
 
 const ProductPage = () => {
   const [visibleReviews, setVisibleReviews] = useState(6);
-  const [tablet, setTablet] = useState(false);
+  const [lessThan1200, setLessThan1200] = useState(false);
+  const [greaterThan768, setGreaterThan768] = useState(false);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   const comments = useSelector((state) => state.comments.comments);
@@ -28,7 +29,8 @@ const ProductPage = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setTablet(window.innerWidth < 1200);
+      setLessThan1200(window.innerWidth < 1200);
+      setGreaterThan768(window.innerWidth >= 768);
     };
     window.addEventListener('resize', handleResize);
     handleResize();
@@ -54,12 +56,12 @@ const ProductPage = () => {
         <div className="product-page">
           <Breadcrumbs isProduct={true} catalogName={product.catalog} catalogId={selectedCatalog.id} />
           <div className="product-container">
-            <Product product={product} comments={comments} />
+            <Product product={product} comments={comments} isGreater={greaterThan768} />
             <AlsoBuySlider products={products.products} selectedCatalog={selectedCatalog} />
             <div className="information-container">
               <div className="container">
-                <ProductDescription product={product} isTablet={tablet} />
-                <ProductCharacteristics product={product} isTablet={tablet} />
+                <ProductDescription product={product} isTablet={lessThan1200} />
+                <ProductCharacteristics product={product} isTablet={lessThan1200} />
                 <ProductReviews
                   product={product}
                   comments={comments}

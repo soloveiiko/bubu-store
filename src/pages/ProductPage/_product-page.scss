@@ -3,6 +3,7 @@
   flex-direction: column;
   padding: 15px 0;
   row-gap: 20px;
+
   .product-container {
     display: flex;
     flex-direction: column;
@@ -41,12 +42,12 @@
     &.open {
 
       .description-list, .characteristics-list {
-        background-color: $white;
         display: flex;
-        padding: 35px 30px;
-        flex-direction: column;
         align-items: flex-start;
+        flex-direction: column;
+        padding: 35px 30px;
         border-radius: 10px;
+        background-color: $white;
       }
 
       .title {
@@ -57,5 +58,33 @@
       }
     }
   }
+}
 
+@include sm {
+  .product-page .information-container {
+    padding: 60px 0 90px;
+  }
+}
+
+@include md {
+  .product-page {
+    .information-container {
+      padding: 60px 0 70px;
+    }
+
+    .product-container {
+      row-gap: 50px;
+    }
+  }
+}
+
+@include xl {
+  .product-page {
+    .information-container {
+      .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+  }
 }

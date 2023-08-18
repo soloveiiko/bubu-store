@@ -6,9 +6,11 @@ import PerDifference from '../commons/PerDifference/PerDifference';
 import { Link } from 'react-router-dom';
 import { NextArrow, PrevArrow } from '../commons';
 
-const Product = ({ product, comments }) => {
-  const [selectedSex, setSelectedSex] = useState('');
-  const [selectedColor, setSelectedColor] = useState('');
+const Product = ({ product, comments, isGreater }) => {
+  const defaultSex = Object.keys(product.characteristics.sex)[0];
+  const defaultColor = Object.keys(product.characteristics.colors)[0];
+  const [selectedSex, setSelectedSex] = useState(product.characteristics.sex[defaultSex]);
+  const [selectedColor, setSelectedColor] = useState(product.characteristics.colors[defaultColor]);
   const settings = {
     customPaging: function (i) {
       return (
@@ -31,14 +33,16 @@ const Product = ({ product, comments }) => {
   return (
     <div className="product">
       <div className="container">
-        <div className="product-action">
+        <div className="product-top-block">
           <h2 className="product-name">{product.fullName}</h2>
-          <div className="like-product">
-            <img src={favoriteAccent} alt="Like" />У вибране
-          </div>
-          <div className="compare-product">
-            <img src={comparisonGray} alt="Like" />
-            Порівняти
+          <div className="product-action">
+            <div className="like-product">
+              <img src={favoriteAccent} alt="Like" />У вибране
+            </div>
+            <div className="compare-product">
+              <img src={comparisonGray} alt="Like" />
+              Порівняти
+            </div>
           </div>
         </div>
         <div className="about-product">
@@ -52,13 +56,13 @@ const Product = ({ product, comments }) => {
           <div className="product-code">Код: {product.code}</div>
           <div className="comments">
             4.5 <AiFillStar />
-            <span>({comments.length})</span>
+            {isGreater ? <span>{comments.length} відгуків</span> : <span>({comments.length})</span>}
           </div>
         </div>
         <Slider {...settings}>
-          {product.photos.blue.map((el, index) => (
-            <div key={index}>
-              <img src={el} alt="Item" />
+          {product.photos.blue.map((img, index) => (
+            <div className="img-container" key={index}>
+              <img src={img} alt="Item" />
             </div>
           ))}
         </Slider>

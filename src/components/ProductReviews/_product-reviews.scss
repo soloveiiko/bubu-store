@@ -51,3 +51,21 @@
     margin: 0 auto;
   }
 }
+@include md {
+  .product-reviews {
+    .comments-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+    }
+  }
+}
+@include xl {
+  .product-reviews {
+    .comments-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
