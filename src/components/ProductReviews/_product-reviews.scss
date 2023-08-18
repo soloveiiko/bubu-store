@@ -1,3 +1,53 @@
 .product-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 
+  .comments-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .rating-title {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .rating-value {
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: $accent;
+    svg {
+      font-size: 20px;
+      &>* {
+      color: $accent;
+      }
+    }
+  }
+
+  .write-review {
+    button {
+      @include button;
+      @include accent-button;
+      font-size: 14px;
+      padding: 30px;
+    }
+  }
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+  .more-details {
+    margin: 0 auto;
+  }
 }

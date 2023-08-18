@@ -179,13 +179,26 @@
 
   .colors {
 
-    .blue, .red, .green {
+    .color {
       font-size: 0;
+      position: relative;
       width: 30px;
       height: 30px;
       cursor: pointer;
       border: none;
       border-radius: 10px;
+
+      &.selected::after {
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 38px;
+        height: 38px;
+        content: '';
+        border: 1px solid $accent;
+        border-radius: 13px;
+
+      }
     }
 
     .blue {
@@ -205,7 +218,7 @@
     @include button;
     font-size: 14px;
     padding: 10px 13px;
-    border: 1px solid $lightgrey;
+    border: 1px solid $lightgray;
     background-color: $white;
 
     &.selected {

@@ -8,6 +8,7 @@ import { NextArrow, PrevArrow } from '../commons';
 
 const Product = ({ product, comments }) => {
   const [selectedSex, setSelectedSex] = useState('');
+  const [selectedColor, setSelectedColor] = useState('');
   const settings = {
     customPaging: function (i) {
       return (
@@ -66,7 +67,11 @@ const Product = ({ product, comments }) => {
             <h5 className="title">Колір:</h5>
             <div className="colors-list">
               {Object.values(colors).map((color, index) => (
-                <button key={index} className={color.class}>
+                <button
+                  key={index}
+                  className={`color ${color.class} ${color === selectedColor ? 'selected' : ''}`}
+                  onClick={() => setSelectedColor(color)}
+                >
                   {color.name}
                 </button>
               ))}

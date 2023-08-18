@@ -8,10 +8,13 @@ const ProductReviews = ({ comments, visibleReviews, onShowMore }) => {
       {comments ? (
         <>
           <div className="comments-title">
-            <h2 className="headline">Відгуки({comments.length})</h2>
-            <span className="rating">
-              Рейтинг: 4.5 <AiFillStar />
-            </span>
+            <h2 className="headline">Відгуки ({comments.length})</h2>
+            <div className="rating">
+              <span className="rating-title">Рейтинг: </span>{' '}
+              <span className="rating-value">
+                4.5 <AiFillStar />
+              </span>
+            </div>
           </div>
           <div className="write-review">
             <button>+ Написати відгук</button>

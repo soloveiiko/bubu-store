@@ -56,6 +56,10 @@ import huggies from './images/brands/huggies.jpg';
 import pampers from './images/brands/pampers.jpg';
 import playdoh from './images/brands/playdoh.jpg';
 import lego from './images/brands/lego.jpg';
+// Review
+import review1 from './images/review/review1.jpg';
+import review2 from './images/review/review2.jpg';
+import review3 from './images/review/review3.jpg';
 // Others
 import footerImg from './images/footer-img.png';
 import defaultImg from './images/default.jpeg';
@@ -67,6 +71,9 @@ import default2 from './images/description/default2.jpg';
 import filter from './images/icons/actions/filter.svg';
 
 export {
+  review1,
+  review2,
+  review3,
   filter,
   ball,
   sumish,
