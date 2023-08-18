@@ -4,12 +4,12 @@ import { RiArrowUpSLine } from 'react-icons/ri';
 import { MoreDetails } from '../commons';
 
 const ProductDescription = ({ product, isTablet }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const toggleIsOpen = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="description">
+    <div className={`description ${isOpen ? 'open' : ''}`}>
       <div className="title" onClick={toggleIsOpen}>
         <h2 className="headline">Опис</h2>
         {isTablet && <RiArrowUpSLine />}
@@ -17,19 +17,19 @@ const ProductDescription = ({ product, isTablet }) => {
       {product.description.length > 0 ? (
         <>{product.description}</>
       ) : (
-        <div className={`description-list ${isOpen ? 'open' : ''}`}>
-          <div>
+        <div className="description-list">
+          <div className="text">
             Ключові особливості колекції m/type PRO зосереджені на зручність для батьків і комфорт для дітей. Ця модель
             дозволяє однаково насолоджуватися прогулянками міськими вуличками і лісовими стежками.
           </div>
-          <div>
+          <div className="img-container">
             <img src={default1} alt="Default" />
           </div>
-          <div>
+          <div className="text">
             Легке зняття люльки. Для цього досить і однієї руки. Адже система пам'яті адаптерів буде утримувати кнопки
             натиснутими, поки люльку не знімуть.
           </div>
-          <div>
+          <div className="img-container">
             <img src={default2} alt="Default" />
           </div>
           <MoreDetails />

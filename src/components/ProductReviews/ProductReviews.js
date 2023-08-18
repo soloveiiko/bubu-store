@@ -20,8 +20,12 @@ const ProductReviews = ({ comments, visibleReviews, onShowMore }) => {
             {comments.slice(0, visibleReviews).map((el) => (
               <Review key={el.id} comment={el} />
             ))}
-            {comments.length > 6 && <button onClick={onShowMore}>Показати більше</button>}
           </div>
+          {comments.length > 2 && (
+            <div className="more-details" onClick={onShowMore}>
+              Показати більше
+            </div>
+          )}
         </>
       ) : (
         <div>Loading ...</div>
