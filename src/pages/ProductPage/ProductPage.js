@@ -14,6 +14,7 @@ import {
   ProductCharacteristics,
   ProductReviews,
 } from '../../components';
+import BasketNotification from '../../components/commons/BasketNotification/BasketNotification';
 
 const ProductPage = () => {
   const [visibleReviews, setVisibleReviews] = useState(6);
@@ -76,6 +77,7 @@ const ProductPage = () => {
             </div>
             {recentlyViewedProducts.length > 0 && <BrowsingHistory recentlyViewedProducts={recentlyViewedProducts} />}
             <AddReview isOpenForm={isOpenForm} handleOpenForm={onOpenForm} />
+            <BasketNotification />
           </div>
         </div>
       ) : (
