@@ -4,7 +4,7 @@ import StarRating from './StarRating/StarRating';
 import { ImagesField } from '../commons';
 import Inputs, { emailField, nameField } from '../commons/Inputs/Inputs';
 
-const AddReview = () => {
+const AddReview = ({ isOpenForm, handleOpenForm }) => {
   const [credentials, setCredentials] = useState({
     [nameField.name]: '',
     [emailField.name]: '',
@@ -34,30 +34,32 @@ const AddReview = () => {
     setImages(newImages);
   };
   return (
-    <form className="add-review">
-      <div className="add-review__title">
-        <h2 className="add-review__headline headline">Ваш відгук</h2>
-        <CloseButton onClick={() => console.log('click')} isAccent={true} />
-      </div>
-      <div className="add-review__mark mark">
-        <h4 className="mark__title">Оцінка:</h4>
-        <StarRating />
-      </div>
-      <div className="add-review__body">
-        {inputs.map((input, index) => (
-          <Inputs
-            className="add-review__input"
-            key={index}
-            {...input}
-            value={credentials[input.name]}
-            onChange={onChangeInput}
-          />
-        ))}
-        <textarea className="add-review__textarea" placeholder="Ваш коментар"></textarea>
-        <ImagesField handleChange={onChangeImage} imageURLs={imageURLs} cancelImage={onCancelImage} />
-      </div>
-      <button className="add-review__btn">Залишити</button>
-    </form>
+    <div className={`form-container ${isOpenForm ? 'open' : ''}`}>
+      <form className="add-review">
+        <div className="add-review__title">
+          <h2 className="add-review__headline headline">Ваш відгук</h2>
+          <CloseButton onClick={handleOpenForm} isAccent={true} />
+        </div>
+        <div className="add-review__mark mark">
+          <h4 className="mark__title">Оцінка:</h4>
+          <StarRating />
+        </div>
+        <div className="add-review__body">
+          {inputs.map((input, index) => (
+            <Inputs
+              className="add-review__input"
+              key={index}
+              {...input}
+              value={credentials[input.name]}
+              onChange={onChangeInput}
+            />
+          ))}
+          <textarea className="add-review__textarea" placeholder="Ваш коментар"></textarea>
+          <ImagesField handleChange={onChangeImage} imageURLs={imageURLs} cancelImage={onCancelImage} />
+        </div>
+        <button className="add-review__btn">Залишити</button>
+      </form>
+    </div>
   );
 };
 

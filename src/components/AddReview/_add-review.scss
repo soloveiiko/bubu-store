@@ -1,16 +1,13 @@
 .add-review {
-  position: fixed;
   z-index: 10;
-  top: 50%;
-  left: 50%;
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  max-width: 360px;
+  //max-width: 330px;
+  margin: 0 15px;
   padding: 30px 20px;
-  transform: translate(-50%, -50%);
-  border: 1px solid $accent;
+  opacity: 1;
   background-color: $white;
   gap: 30px;
 
@@ -22,8 +19,8 @@
     gap: 30px;
   }
 
-
   &__mark {
+    font-size: 16px;
     display: flex;
     align-items: center;
     width: 100%;
@@ -41,19 +38,18 @@
 
   &__input, &__textarea {
     font-family: 'Comfortaa', cursive;
+    font-size: 14px;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     padding: 15px;
     border: 1px solid $lightgray;
     border-radius: 5px;
-
   }
 
   &__textarea {
     height: 110px;
     resize: none;
-
   }
 
   &__btn {
@@ -65,5 +61,26 @@
 
   .images-field {
     margin: 0 auto;
+  }
+}
+
+@include sm {
+  .add-review {
+    max-width: 400px;
+  }
+}
+
+@include md {
+  .add-review {
+    max-width: 500px;
+
+    &__input, &__textarea {
+      font-size: 16px;
+      padding: 20px;
+    }
+
+    &__body {
+      gap: 30px;
+    }
   }
 }

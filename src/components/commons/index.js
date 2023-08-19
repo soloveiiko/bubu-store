@@ -1,4 +1,5 @@
 import { PrevArrow, NextArrow } from './Arrows';
+import BasketNotification from './BasketNotification/BasketNotification';
 import CloseButton from './CloseButton/CloseButton';
 import ImagesField from './ImagesField/ImagesField';
 import MoreDetails from './MoreDetails/MoreDetails';
@@ -13,6 +14,7 @@ import SocialNetwork from './SocialNetwork/SocialNetwork';
 export {
   PrevArrow,
   NextArrow,
+  BasketNotification,
   CloseButton,
   ImagesField,
   MoreDetails,

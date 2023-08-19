@@ -3,7 +3,7 @@ import Review from './Review/Review';
 import { AiFillStar } from 'react-icons/ai';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
-const ProductReviews = ({ comments, visibleReviews, onShowMore }) => {
+const ProductReviews = ({ comments, visibleReviews, onShowMore, handleOpenForm }) => {
   const getGap = () => {
     if (window.innerWidth >= 768) {
       return '30px';
@@ -28,7 +28,9 @@ const ProductReviews = ({ comments, visibleReviews, onShowMore }) => {
             </div>
           </div>
           <div className="write-review">
-            <button>+ Написати відгук</button>
+            <button type="button" onClick={handleOpenForm}>
+              + Написати відгук
+            </button>
           </div>
           <div className="comments-list">
             <ResponsiveMasonry columnsCountBreakPoints={{ 360: 1, 767: 2, 1199: 3 }}>

@@ -19,6 +19,7 @@ const ProductPage = () => {
   const [visibleReviews, setVisibleReviews] = useState(6);
   const [lessThan1200, setLessThan1200] = useState(false);
   const [greaterThan768, setGreaterThan768] = useState(false);
+  const [isOpenForm, setIsOpenForm] = useState(false);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   const comments = useSelector((state) => state.comments.comments);
@@ -49,7 +50,9 @@ const ProductPage = () => {
   };
   const product = products.products.find((product) => product.id === productId);
   const selectedCatalog = catalogsList.find((catalog) => catalog.name === product.catalog);
-
+  const onOpenForm = () => {
+    setIsOpenForm(!isOpenForm);
+  };
   return (
     <>
       {product && selectedCatalog && comments ? (
@@ -63,6 +66,7 @@ const ProductPage = () => {
                 <ProductDescription product={product} isTablet={lessThan1200} />
                 <ProductCharacteristics product={product} isTablet={lessThan1200} />
                 <ProductReviews
+                  handleOpenForm={onOpenForm}
                   product={product}
                   comments={comments}
                   onShowMore={handleShowMore}
@@ -71,7 +75,7 @@ const ProductPage = () => {
               </div>
             </div>
             {recentlyViewedProducts.length > 0 && <BrowsingHistory recentlyViewedProducts={recentlyViewedProducts} />}
-            <AddReview comments={comments.comments} />
+            <AddReview isOpenForm={isOpenForm} handleOpenForm={onOpenForm} />
           </div>
         </div>
       ) : (
