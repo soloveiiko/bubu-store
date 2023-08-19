@@ -1,8 +1,11 @@
 import React from 'react';
 import Review from './Review/Review';
 import { AiFillStar } from 'react-icons/ai';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 const ProductReviews = ({ comments, visibleReviews, onShowMore }) => {
+  const breakpoints = { mobile: 0, tablet: 768, desktop: 1200 };
+
   return (
     <div className="product-reviews">
       {comments ? (
@@ -20,9 +23,13 @@ const ProductReviews = ({ comments, visibleReviews, onShowMore }) => {
             <button>+ Написати відгук</button>
           </div>
           <div className="comments-list">
-            {comments.slice(0, visibleReviews).map((el) => (
-              <Review key={el.id} comment={el} />
-            ))}
+            <ResponsiveMasonry columnsCountBreakPoints={{ 360: 1, 767: 2, 1199: 3 }}>
+              <Masonry className="comments-list-item">
+                {comments.slice(0, visibleReviews).map((el) => (
+                  <Review key={el.id} comment={el} />
+                ))}
+              </Masonry>
+            </ResponsiveMasonry>
           </div>
           {comments.length > 2 && (
             <div className="more-details" onClick={onShowMore}>

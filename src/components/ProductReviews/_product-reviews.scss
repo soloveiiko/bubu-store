@@ -1,12 +1,17 @@
 .product-reviews {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 30px;
 
   .comments-title {
     display: flex;
     align-items: center;
     gap: 20px;
+  }
+
+  .comments-list-item > div {
+    gap: 16px !important;
   }
 
   .rating {
@@ -26,10 +31,12 @@
     display: flex;
     align-items: center;
     color: $accent;
+
     svg {
       font-size: 20px;
-      &>* {
-      color: $accent;
+
+      & > * {
+        color: $accent;
       }
     }
   }
@@ -42,30 +49,30 @@
       padding: 30px;
     }
   }
-.comments-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+
+  .comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .more-details {
     margin: 0 auto;
   }
 }
+
 @include md {
   .product-reviews {
-    .comments-list {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: flex-start;
+    .comments-list-item, .comments-list-item > div {
+      gap: 30px !important;
     }
   }
 }
-@include xl {
-  .product-reviews {
-    .comments-list {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-}
+
+//@include xl {
+//  .product-reviews {
+//    .comments-list {
+//      grid-template-columns: repeat(3, 1fr);
+//    }
+//  }
+//}

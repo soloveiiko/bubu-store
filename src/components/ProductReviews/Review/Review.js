@@ -9,12 +9,13 @@ const Review = ({ comment }) => {
   const reviewImg = [review1, review2, review3, review1, review1];
   const [maxVisibleImages, setMaxVisibleImages] = useState(3);
   const [showAllImages, setShowAllImages] = useState(false);
-  // const [moreImage, setMoreImage] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
-      if (768 >= window.innerWidth >= 480) {
+      const windowWidth = window.innerWidth;
+      if (windowWidth >= 480 && windowWidth < 768) {
         setMaxVisibleImages(4);
-      } else if (window.innerWidth >= 1000) {
+      } else if (windowWidth >= 1000) {
         setMaxVisibleImages(4);
       } else {
         setMaxVisibleImages(3);

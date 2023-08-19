@@ -1,7 +1,5 @@
 .comments-item {
   display: flex;
-  align-items: flex-start;
-  align-self: start;
   flex-direction: column;
   padding: 30px;
   border-radius: 10px;
@@ -13,7 +11,6 @@
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
-    gap: 20px;
   }
 
   .stars {
@@ -44,6 +41,7 @@
     position: relative;
     display: flex;
     gap: 10px;
+    width: fit-content;
   }
 
   .show-all-images {
@@ -65,7 +63,6 @@
   .img-container {
     display: flex;
     overflow: hidden;
-    width: 100%;
     height: 100%;
     border-radius: 10px;
 
@@ -75,14 +72,18 @@
     }
   }
 }
+
 @include md {
   .comments-item {
-    width: calc(50% - 15px);
+    .show-all-images {
+
+    }
   }
 }
-@include xl {
-  .comments-item {
-    width: calc(32.47% - 10px);
-  }
-}
+
+//@include xl {
+//  .comments-item {
+//    //width: calc(32.47% - 10px);
+//  }
+//}
 

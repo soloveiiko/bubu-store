@@ -15,7 +15,7 @@
     background-color: $lightpurple;
 
     .container {
-      row-gap: 50px;
+      gap: 50px 30px;
     }
   }
 
@@ -85,6 +85,12 @@
         flex-direction: row;
         flex-wrap: wrap;
       }
+    }
+    .description {
+      width: calc(58% - 15px);
+    }
+    .product-characteristics {
+      width: calc(42% - 15px);
     }
   }
 }
