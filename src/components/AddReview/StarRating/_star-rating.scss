@@ -1,0 +1,28 @@
+.star-rating {
+  &__btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    &.on {
+      svg {
+        font-size: 30px;
+
+        & > * {
+          color: $accent;
+        }
+      }
+    }
+
+    &.off {
+      svg {
+        font-size: 30px;
+
+        & > * {
+          color: $lightgray;
+        }
+      }
+    }
+  }
+}

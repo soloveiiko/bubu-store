@@ -12,6 +12,7 @@
 }
 
 @mixin accent-button {
+  @include button;
   background-color: $accent;
   border: none;
   color: $white;
@@ -19,6 +20,7 @@
 }
 
 @mixin white-button {
+  @include button;
   background-color: $white;
   color: $accent;
   font-weight: 700;

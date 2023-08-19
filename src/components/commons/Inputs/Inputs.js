@@ -49,7 +49,7 @@ const Inputs = (props) => {
   return (
     <div className="">
       <input className="" {...inputProps} onChange={onChange} />
-      <span className="">{errorMessage}</span>
+      {/*<span className="">{errorMessage}</span>*/}
     </div>
   );
 };

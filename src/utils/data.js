@@ -129,7 +129,7 @@ export const catalogList = [
   },
   {
     id: '9',
-    name: 'clothes',
+    name: 'Дитячий одяг',
     link: '#',
     logo: clothes,
     categories: [

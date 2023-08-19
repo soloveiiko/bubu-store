@@ -1,5 +1,6 @@
 import { PrevArrow, NextArrow } from './Arrows';
 import CloseButton from './CloseButton/CloseButton';
+import ImagesField from './ImagesField/ImagesField';
 import MoreDetails from './MoreDetails/MoreDetails';
 import Pagination from './Pagination/Pagination';
 import PerDifference from './PerDifference/PerDifference';
@@ -13,6 +14,7 @@ export {
   PrevArrow,
   NextArrow,
   CloseButton,
+  ImagesField,
   MoreDetails,
   Pagination,
   PerDifference,

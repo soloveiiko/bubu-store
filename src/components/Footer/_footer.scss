@@ -6,6 +6,7 @@
 
   .container {
     padding: 0;
+    gap: 0;
   }
 
   .top-block {
@@ -48,8 +49,12 @@
     align-content: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 144px;
+    height: 155px;
     gap: 15px 40px;
+  }
+
+  .catalog-item {
+    width: 150px;
   }
 
   .copyright {
@@ -74,8 +79,14 @@
 }
 
 @include sm {
-  .footer .information-list, .footer .catalog-list {
-    column-gap: 90px;
+  .footer {
+    .information-list, .catalog-list {
+      column-gap: 90px;
+    }
+
+    .catalog-item {
+      width: auto;
+    }
   }
 }
 

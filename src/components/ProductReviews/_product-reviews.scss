@@ -10,10 +10,6 @@
     gap: 20px;
   }
 
-  //.comments-list-item > div {
-  //  gap: 16px !important;
-  //}
-
   .rating {
     display: flex;
     align-items: center;
@@ -60,19 +56,3 @@
     margin: 0 auto;
   }
 }
-
-//@include md {
-//  .product-reviews {
-//    .comments-list-item, .comments-list-item > div {
-//      gap: 30px !important;
-//    }
-//  }
-//}
-
-//@include xl {
-//  .product-reviews {
-//    .comments-list {
-//      grid-template-columns: repeat(3, 1fr);
-//    }
-//  }
-//}

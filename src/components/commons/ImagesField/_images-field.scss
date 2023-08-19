@@ -1,0 +1,81 @@
+.images-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+  align-items: flex-start;
+  overflow: hidden;
+
+  &__input {
+    font-size: 0;
+    position: relative;
+    width: 110px;
+    height: 16px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 16px;
+      height: 15px;
+      content: '';
+      background-color: $white;
+      background-image: url("./../../assets/images/icons/add-img.svg");
+      background-position: center;
+      background-size: cover;
+    }
+
+    &::after {
+      @include accent-underline;
+      font-size: 14px;
+      font-weight: 500;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      display: inline-block;
+      content: 'Додати фото';
+      background-color: $white;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 2px;
+    gap: 15px;
+    width: 100%;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__img-container {
+    display: flex;
+    overflow: hidden;
+    width: 79px;
+    height: 79px;
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .close-toggle {
+    font-size: 15px;
+    position: absolute;
+    top: -2px;
+    right: -3px;
+    width: 29px;
+    height: 29px;
+    border-radius: 50px;
+    background-color: $accent;
+  }
+}
