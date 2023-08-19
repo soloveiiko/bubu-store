@@ -3,6 +3,9 @@
   overflow: hidden;
   width: 100%;
   max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
 
   .percentage-difference {
     @include discount;
@@ -29,14 +32,15 @@
   .full-name {
     font-size: 14px;
     font-weight: 300;
-    margin-bottom: 15px;
-
   }
-
+.prices {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
   .prev-price {
     @include prev-price;
     font-size: 12px;
-    margin-bottom: 5px;
   }
 
   .curr-price {
@@ -46,6 +50,21 @@
   .price {
     font-size: 17px;
     font-weight: 700;
+  }
+
+  .not-available {
+    font-size: 15px;
+    font-weight: 400;
+    color: #F91111;
+  }
+  .action-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .buy-product {
+    @include accent-button;
+    border-radius: 5px;
   }
 }
 
@@ -58,5 +77,9 @@
 @include md {
   .product-item {
     max-width: 265px;
+    .prices {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 }

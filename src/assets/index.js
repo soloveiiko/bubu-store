@@ -14,6 +14,9 @@ import searchLight from './images/icons/search/search-light.svg';
 import comparison from './images/icons/actions/сomparison.svg';
 import favorite from './images/icons/actions/favorite.svg';
 import cart from './images/icons/actions/cart.svg';
+import comparisonAccent from './images/icons/actions/сomparison-accent.svg';
+import favoriteAccent from './images/icons/actions/favoriteAccent.svg';
+import comparisonGray from './images/icons/actions/сomparisonGray.svg';
 // Backgrounds
 import bgLoginTop from './images/background/bg-login-top.png';
 import bgLoginBottom from './images/background/bg-login-bottom.png';
@@ -63,14 +66,13 @@ import review3 from './images/review/review3.jpg';
 // Others
 import footerImg from './images/footer-img.png';
 import defaultImg from './images/default.jpeg';
-import favoriteAccent from './images/icons/actions/favoriteAccent.svg';
-import comparisonGray from './images/icons/actions/сomparisonGray.svg';
 import location from './images/icons/actions/location.svg';
 import default1 from './images/description/default1.jpg';
 import default2 from './images/description/default2.jpg';
 import filter from './images/icons/actions/filter.svg';
 
 export {
+  comparisonAccent,
   review1,
   review2,
   review3,
