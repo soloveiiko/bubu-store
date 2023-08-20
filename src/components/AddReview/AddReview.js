@@ -57,7 +57,7 @@ const AddReview = ({ isOpenForm, handleOpenForm }) => {
           <textarea className="add-review__textarea" placeholder="Ваш коментар"></textarea>
           <ImagesField handleChange={onChangeImage} imageURLs={imageURLs} cancelImage={onCancelImage} />
         </div>
-        <button className="add-review__btn">Залишити</button>
+        <button className="add-review__btn accent-btn">Залишити</button>
       </form>
     </div>
   );

@@ -4,7 +4,6 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  //max-width: 330px;
   margin: 0 15px;
   padding: 30px 20px;
   opacity: 1;
@@ -53,10 +52,7 @@
   }
 
   &__btn {
-    @include accent-button;
-    font-weight: 300;
     width: 100%;
-    padding: 30px;
   }
 
   .images-field {
