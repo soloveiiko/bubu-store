@@ -1,34 +1,47 @@
 @mixin button {
   font-family: "Comfortaa", cursive;
-  font-size: 15px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
   column-gap: 5px;
-  border-radius: 10px;
   cursor: pointer;
   white-space: nowrap;
+  line-height: normal;
+}
+@mixin button-sm {
+  @include button;
+  font-size: 14px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+@mixin button-md {
+  @include button;
+  font-size: 15px;
+  border-radius: 10px;
 }
 
 @mixin accent-button {
   @include button;
   background-color: $accent;
-  border: none;
+  border: 1px solid $accent;
   color: $white;
-  font-weight: 700;
+}
+
+@mixin accent-button-hover {
+  background: $red;
 }
 
 @mixin white-button {
   @include button;
   background-color: $white;
-  color: $accent;
-  font-weight: 700;
   border: 1px solid $accent;
+  color: $accent;
 }
 
-@mixin button-hover {
-  background-color: $red;
+@mixin white-button-hover {
+  background-color: $lightPurple;
 }
 
 @mixin accent-underline {
@@ -39,68 +52,97 @@
   cursor: pointer;
 }
 
-@mixin input-sm {
-  padding: 10px;
-  border: 1px solid $lightgray;
-  border-radius: 10px;
-  color: $gray;
-  font-weight: 300;
-  font-size: 13px;
-  outline: none;
+@mixin accent-underline-hover {
+  color: $red;
 }
 
-@mixin input-xl {
-  padding: 20px;
+@mixin input {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 300;
   border: 1px solid $lightgray;
   border-radius: 5px;
   color: $gray;
-  font-weight: 300;
-  font-size: 15px;
   outline: none;
 }
 
-@mixin input-clicked {
-  border-color: $gray;
-  color: #000000;
+@mixin input-white {
+  font-family: 'Comfortaa', cursive;
+  font-size: 15px;
+  font-weight: 300;
+  border: 1px solid $white;
+  border-radius: 10px;
+  background-color: $semiTransparentWhite;
+  padding: 15px;
+  color: $white;
+  outline: none;
+  &::placeholder {
+    color: $white;
+    font-size: 13px;
+  }
+  &:focus {
+    border: 3px solid $white;
+    color: $white;
+  }
+}
+
+@mixin input-sm {
+  @include input;
+  padding: 10px;
+  font-size: 14px;
+  &::placeholder {
+    color: $gray;
+  }
+  &:focus {
+    border: 1px solid $gray;
+    color: $gray;
+  }
+}
+
+@mixin input-md {
+  @include input;
+  padding: 15px;
+  font-size: 15px;
 }
 
 @mixin input-error {
   border-color: $error;
 }
-
-@mixin headline {
-  font-weight: 700;
-  font-size: 20px;
-  text-transform: uppercase;
-}
-
-@mixin headline-mobile {
-  font-weight: 700;
+@mixin headline-sm {
   font-size: 18px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
-@mixin subtitle {
-  font-weight: 500;
-  font-size: 17px;
+@mixin headline-md {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-@mixin subtitle-mobile {
-  font-weight: 500;
+@mixin subtitle-sm {
+  font-family: 'Comfortaa', cursive;
   font-size: 16px;
+  font-weight: 500;
 }
+
+@mixin subtitle-md {
+  font-size: 17px;
+  font-weight: 500;
+}
+
 
 @mixin discount {
   font-size: 14px;
   z-index: 2;
-  width: 45px;
-  padding: 6px;
+  width: 44px;
+  padding: 5px;
   color: #ffffff;
   border-radius: 8px;
   background-color: #F99C11;
 }
 
 @mixin prev-price {
+  font-size: 12px;
   font-weight: 700;
   text-decoration: line-through;
   span {
@@ -109,6 +151,7 @@
 }
 
 @mixin curr-price {
+  font-size: 15px;
   font-weight: 700;
   color: $discount;
   span {

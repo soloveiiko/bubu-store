@@ -4,14 +4,7 @@ import { catalogList } from '../../utils/data';
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 
 const CatalogMenu = (props) => {
-  const [isOpenCatalog, setIsOpenCatalog] = useState(false);
   const [itemStates, setItemStates] = useState({});
-  const toggleButton = () => {
-    setIsOpenCatalog((isOpenCatalog) => !isOpenCatalog);
-  };
-  const closeCatalog = () => {
-    setIsOpenCatalog(false);
-  };
   const toggleSubCatalog = (itemKey) => {
     setItemStates((prevState) => ({
       ...prevState,
@@ -20,17 +13,17 @@ const CatalogMenu = (props) => {
   };
 
   return (
-    <div className={`catalog ${isOpenCatalog ? 'open' : ''}`}>
-      <button className="catalog-button" onClick={toggleButton}>
+    <div className={`catalog ${props.isOpenCatalog ? 'open' : ''}`}>
+      <button className="catalog-button" onClick={props.toggleButton}>
         <span className="catalog-logo"></span>
-        Каталог
+        <span className="subtitle">Каталог</span>
       </button>
       {props.isMobile ? (
         <>
-          {isOpenCatalog && (
+          {props.isOpenCatalog && (
             <div className="catalog-container">
-              <button className="close-btn" onClick={closeCatalog}>
-                <MdOutlineArrowBackIosNew className="catalog-arrow" /> Меню
+              <button className="close-btn" onClick={props.toggleButton}>
+                <MdOutlineArrowBackIosNew className="catalog-arrow" /> <span className="subtitle">Меню</span>
               </button>
               <ul className="catalog-list">
                 {catalogList.map((el) => (
@@ -40,7 +33,8 @@ const CatalogMenu = (props) => {
                     {itemStates[el.id] && (
                       <div className="subcatalog">
                         <button className="close-btn" onClick={() => toggleSubCatalog({})}>
-                          <MdOutlineArrowBackIosNew className="catalog-arrow" /> Каталог
+                          <MdOutlineArrowBackIosNew className="catalog-arrow" />{' '}
+                          <span className="subtitle">Каталог</span>
                         </button>
                         <ul className="subcatalog-list">
                           {el.categories.map((item) => (
@@ -59,7 +53,7 @@ const CatalogMenu = (props) => {
         </>
       ) : (
         <>
-          {isOpenCatalog && (
+          {props.isOpenCatalog && (
             <div className="catalog-container">
               <ul className="catalog-list">
                 {catalogList.map((el) => (

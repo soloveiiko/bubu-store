@@ -1,5 +1,3 @@
-.show-more {
-  @include button;
-  @include white-button;
+.show-more.white-btn {
   border-radius: 5px;
 }

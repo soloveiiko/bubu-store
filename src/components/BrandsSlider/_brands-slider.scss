@@ -1,7 +1,8 @@
 .brands-slider {
+  display: flex;
+  flex-direction: column;
   .img-container {
     position: relative;
-    width: 100%;
     height: 100%;
 
     img {
@@ -11,8 +12,8 @@
   }
 
   .mynext-arrow {
-    top: -66px;
-    right: 0;
+    top: -64px;
+    right: -8px;
   }
 
   .brands-description {
@@ -21,8 +22,8 @@
     overflow: hidden;
     flex-direction: column;
     width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 1010px;
+    margin: -8px auto 0;
     padding: 20px 0;
     row-gap: 15px;
 
@@ -37,8 +38,27 @@
     }
   }
 
-  .more-details {
+  .more-actions {
     margin-top: -20px;
     text-align: center;
+  }
+}
+@include lg {
+  .brands-slider .more-actions {
+    &:hover {
+      @include accent-underline-hover;
+    }
+  }
+}
+@include xl {
+  .brands-slider {
+    gap: 30px;
+    .brands-description {
+      padding: 35px 0 0;
+      row-gap: 20px;
+    }
+    .more-actions {
+      margin-top: 0;
+    }
   }
 }

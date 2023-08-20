@@ -20,10 +20,7 @@
   }
 
   .filter-button {
-    @include button;
-    @include accent-button;
     width: fit-content;
-    font-weight: 400;
   }
 
   .tablet-filter {
@@ -48,12 +45,9 @@
     }
   }
 
-  .apply-filters-button button {
-    @include button;
-    @include accent-button;
+  .apply-filters-button .accent-btn {
     width: 100%;
     text-transform: uppercase;
-    border-radius: 5px;
   }
 
   .categories-filter, .producer-filter {

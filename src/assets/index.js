@@ -63,6 +63,9 @@ import lego from './images/brands/lego.jpg';
 import review1 from './images/review/review1.jpg';
 import review2 from './images/review/review2.jpg';
 import review3 from './images/review/review3.jpg';
+// Social
+import facebookIcon from './images/social/facebook.svg';
+import googleIcon from './images/social/google.svg';
 // Others
 import footerImg from './images/footer-img.png';
 import defaultImg from './images/default.jpeg';
@@ -72,6 +75,8 @@ import default2 from './images/description/default2.jpg';
 import filter from './images/icons/actions/filter.svg';
 
 export {
+  googleIcon,
+  facebookIcon,
   comparisonAccent,
   review1,
   review2,

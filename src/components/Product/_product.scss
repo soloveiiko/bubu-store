@@ -64,11 +64,11 @@
 
     .not-available {
       color: $accent;
-      background-color: $lightpurple;
+      background-color: $lightPurple;
     }
 
     .product-code {
-      background-color: $morelightgrey;
+      background-color: $moreLightGray;
     }
 
     .comments {
@@ -196,13 +196,14 @@
       &.selected::after {
         position: absolute;
         top: -5px;
-        left: -5px;
+        left: -5.5px;
+        bottom: -5px;
+        right: -5px;
         width: 38px;
         height: 38px;
         content: '';
         border: 1px solid $accent;
         border-radius: 13px;
-
       }
     }
 
@@ -220,15 +221,14 @@
   }
 
   .sex-list button {
-    @include button;
+    @include white-button;
+    color: black;
     font-size: 14px;
     padding: 10px 13px;
-    border: 1px solid $lightgray;
-    background-color: $white;
 
     &.selected {
       border: 1px solid $accent;
-      background-color: $lightpurple;
+      background-color: $lightPurple;
     }
   }
 
@@ -269,19 +269,10 @@
     column-gap: 10px;
   }
 
-  .in-basket {
-    @include button;
-    @include accent-button;
-    width: 100%;
-    padding: 30px;
-    text-transform: uppercase;
-  }
-
-  .in-one-click {
-    @include button;
-    @include white-button;
+  .in-basket, .in-one-click  {
     width: 100%;
     padding: 30px 14px;
+    text-transform: uppercase;
   }
 
   .pick-up-today {
@@ -289,13 +280,8 @@
     flex-direction: column;
     padding: 30px 20px;
     border-radius: 10px;
-    background-color: $lightpurple;
+    background-color: $lightPurple;
     row-gap: 20px;
-  }
-
-  .in-store {
-    font-size: 16px;
-    font-weight: 500;
   }
 
   .location {
@@ -341,7 +327,7 @@
     }
 
     .buy-product {
-      width: 70%;
+      width: 65%;
     }
 
     .additional-information {
@@ -393,6 +379,11 @@
       }
     }
 
+    .pick-up-today-button a, .additional-information a {
+      &:hover {
+        @include accent-underline-hover;
+      }
+    }
 
     .product-information {
       width: calc(50% - 15px);
@@ -400,11 +391,9 @@
 
     .buy-product {
       width: 100%;
+      column-gap: 20px;
     }
 
-    .in-basket, .in-one-click {
-      padding: 25px 14px;
-    }
   }
 }
 @include xl {

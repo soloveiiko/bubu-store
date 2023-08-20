@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { default1, default2 } from '../../assets';
 import { RiArrowUpSLine } from 'react-icons/ri';
-import { MoreDetails } from '../commons';
+import { MoreActions } from '../commons';
 
 const ProductDescription = ({ product, isTablet }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -32,7 +32,7 @@ const ProductDescription = ({ product, isTablet }) => {
           <div className="img-container">
             <img src={default2} alt="Default" />
           </div>
-          <MoreDetails />
+          <MoreActions title="Докладніше" />
         </div>
       )}
     </div>

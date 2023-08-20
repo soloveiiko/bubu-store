@@ -3,6 +3,7 @@ import Inputs, { emailField, nameField, numberField, passwordField } from '../co
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signUpUserAsync } from '../../redux/auth/action';
+import SocialLogin from './SocialLogin';
 
 const SignUp = () => {
   const [credentials, setCredentials] = useState({
@@ -41,20 +42,12 @@ const SignUp = () => {
         {inputs.map((input, index) => (
           <Inputs key={index} {...input} value={credentials[input.name]} onChange={onChangeInput} />
         ))}
-        <button>Send</button>
-        <br />
-        <Link to="/signin">У мене є акаунт</Link>
+        <button className="login-form__send-btn accent-btn">Зареєструватись</button>
+        <Link className="login-form__link white-btn" to="/signin">
+          У мене є акаунт
+        </Link>
       </form>
-      <div>
-        <div>Або</div>
-        <h3>Увійти за допомогою:</h3>
-        <button>
-          <img src="" alt="google" />
-        </button>
-        <button>
-          <img src="" alt="facebook" />
-        </button>
-      </div>
+      <SocialLogin />
     </>
   );
 };

@@ -77,9 +77,9 @@ const ProductItem = ({ product }) => {
           {product.price} <span>грн</span>
         </div>
       )}
-      {hover && product.isAvailable && greaterThan1000 && (
+      {hover && product.isAvailable && greaterThan1000 ? (
         <div className="action-container">
-          <button className="buy-product">Купити</button>
+          <button className="buy-product accent-btn">Купити</button>
           <div>
             <img src={favoriteAccent} alt="Like" />
           </div>
@@ -87,6 +87,8 @@ const ProductItem = ({ product }) => {
             <img src={comparisonAccent} alt="Comparison" />
           </div>
         </div>
+      ) : (
+        ''
       )}
       {!product.isAvailable && <div className="not-available">Немає в наявності</div>}
     </div>

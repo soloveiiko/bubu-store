@@ -3,6 +3,7 @@ import { footerImg } from '../../assets';
 import { SendButton } from '../commons';
 
 const Subscription = () => {
+  console.log('visible');
   return (
     <div className="subscription">
       <div className="container">

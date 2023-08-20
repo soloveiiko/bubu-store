@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 1px;
+    padding: 15px 1px;
 
     .logo {
       width: 90px;
@@ -22,8 +22,14 @@
         height: 100%;
       }
     }
+    .right-block {
+      display: flex;
+      align-items: center;
+      gap: 0 15px;
+    }
 
-    .right-block, .left-block {
+     .left-block {
+       align-items: center;
       display: flex;
       gap: 0 10px;
     }
@@ -127,7 +133,9 @@
   .header {
 
     .top-block {
-
+      padding: 20px 0;
+      gap: 30px;
+      justify-content: left;
       .logo {
         width: 138px;
         height: 32px;
@@ -136,7 +144,8 @@
       .tools {
         align-items: center;
         flex-direction: row;
-        gap: 0 30px;
+        gap: 0 20px;
+        margin: 0 0 0 auto;
       }
     }
 

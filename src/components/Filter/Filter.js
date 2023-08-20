@@ -47,7 +47,7 @@ const Filter = (props) => {
       {props.isTablet && (
         <div className="tablet-filter">
           <CloseButton onClick={props.toggleIsOpen} />
-          <button className="filter-button" onClick={props.toggleIsOpen}>
+          <button className="filter-button accent-btn" onClick={props.toggleIsOpen}>
             <img src={filter} alt="Filter" />
             Фільтр
           </button>
@@ -61,7 +61,7 @@ const Filter = (props) => {
               className={`title-wrapper ${categoriesOpen ? 'open' : ''}`}
               onClick={() => toggleIsOpen(setCategoriesOpen, categoriesOpen)}
             >
-              <h4 className="title">Категорія</h4>
+              <h4 className="subtitle">Категорія</h4>
               <RiArrowUpSLine />
             </div>
           </div>
@@ -99,7 +99,7 @@ const Filter = (props) => {
               className={`title-wrapper ${priceOpen ? 'open' : ''}`}
               onClick={() => toggleIsOpen(setPriceOpen, priceOpen)}
             >
-              <h4 className="title">Ціна</h4>
+              <h4 className="subtitle">Ціна</h4>
               <RiArrowUpSLine />
             </div>
           </div>
@@ -121,7 +121,7 @@ const Filter = (props) => {
               className={`title-wrapper ${producerOpen ? 'open' : ''}`}
               onClick={() => toggleIsOpen(setProducerOpen, producerOpen)}
             >
-              <h4 className="title">Виробник</h4>
+              <h4 className="subtitle">Виробник</h4>
               <RiArrowUpSLine />
             </div>
           </div>
@@ -144,7 +144,9 @@ const Filter = (props) => {
         </div>
         {props.isTablet && (
           <div className="apply-filters-button">
-            <button onClick={applyFilters}>Застосувати</button>
+            <button className="accent-btn" onClick={applyFilters}>
+              Застосувати
+            </button>
           </div>
         )}
       </div>

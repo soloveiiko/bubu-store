@@ -1,8 +1,11 @@
 .promotion-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   .title {
     display: flex;
     align-items: center;
-    column-gap: 15px;
+    column-gap: 13px;
   }
   .mark-title {
     color: $discount;

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import Inputs, { mixField, passwordField } from '../commons/Inputs/Inputs';
 import { Link, useNavigate } from 'react-router-dom';
 import { getUserDataAsync } from '../../redux/auth/action';
+import SocialLogin from './SocialLogin';
 
 const SignIn = () => {
   const [credentials, setCredentials] = useState({
@@ -52,21 +53,14 @@ const SignIn = () => {
         {inputs.map((input, index) => (
           <Inputs key={index} {...input} value={credentials[input.name]} onChange={onChangeInput} />
         ))}
-        <div className="reset-password">Забули пароль?</div>
-        <button>Send</button>
-        <br />
-        <Link to="/signup">У мене немає акаунта</Link>
+        <div className="login-form__reset-password">Забули пароль?</div>
+        <button className="login-form__send-btn accent-btn">Увійти</button>
+        <Link className="login-form__link white-btn" to="/signup">
+          У мене немає акаунта
+        </Link>
       </form>
-      <div>
-        <div>Або</div>
-        <h3>Увійти за допомогою:</h3>
-        <button>
-          <img src="" alt="google" />
-        </button>
-        <button>
-          <img src="" alt="facebook" />
-        </button>
-      </div>
+      <div className="marker">Або</div>
+      <SocialLogin />
     </>
   );
 };

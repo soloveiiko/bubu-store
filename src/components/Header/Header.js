@@ -10,11 +10,19 @@ import { Link } from 'react-router-dom';
 import { logoWhite } from './../../assets';
 import CloseButton from '../commons/CloseButton/CloseButton';
 
-const Header = () => {
+const Header = ({ location }) => {
   const [mobile, setMobile] = useState(false);
   const [searchButton, setSearchButton] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenNavbar, setIsOpenNavbar] = useState(false);
+  const [isOpenCatalog, setIsOpenCatalog] = useState(false);
   useEffect(() => {
+    const path = location.pathname;
+    if (path === '/' && window.innerWidth >= 1200) {
+      setIsOpenCatalog(true);
+    } else {
+      setIsOpenCatalog(false);
+    }
+    console.log('isOpenCatalog', isOpenCatalog);
     const handleResize = () => {
       setMobile(window.innerWidth <= 1199);
       setSearchButton(window.innerWidth < 768);
@@ -24,9 +32,9 @@ const Header = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  }, [window.location.pathname]);
+  const toggleButton = (setItem, item) => {
+    setItem(!item);
   };
 
   return (
@@ -35,7 +43,7 @@ const Header = () => {
         <div className="container">
           <div className="top-block">
             <div className="left-block">
-              <button className="toggle-menu-btn" onClick={toggleMenu}>
+              <button className="toggle-menu-btn" onClick={() => toggleButton(setIsOpenNavbar, isOpenNavbar)}>
                 <span className="toggle-item"></span>
               </button>
               <Link to="/" className="logo">
@@ -47,10 +55,16 @@ const Header = () => {
               <UserActions />
             </div>
           </div>
-          {isOpen && (
+          {isOpenNavbar && (
             <div className="toggle-menu">
-              <CloseButton onClick={toggleMenu} />
-              <CatalogMenu isMobile={mobile} toggleMenu={toggleMenu} />
+              <CloseButton onClick={() => toggleButton(setIsOpenNavbar, isOpenNavbar)} />
+              <CatalogMenu
+                isMobile={mobile}
+                toggleMenu={() => toggleButton(setIsOpenNavbar, isOpenNavbar)}
+                toggleButton={() => toggleButton(setIsOpenCatalog, isOpenCatalog)}
+                isOpenCatalog={isOpenCatalog}
+              />
+
               <Navbar />
               <div className="tools">
                 <div className="number">(063) 128-46-09</div>
@@ -76,7 +90,11 @@ const Header = () => {
             </div>
           </div>
           <div className="bottom-block">
-            <CatalogMenu isMobile={mobile} />
+            <CatalogMenu
+              isMobile={mobile}
+              toggleButton={() => toggleButton(setIsOpenCatalog, isOpenCatalog)}
+              isOpenCatalog={isOpenCatalog}
+            />
             <Search />
             <UserActions />
           </div>

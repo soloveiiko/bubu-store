@@ -1,16 +1,25 @@
 .login-page {
-  .background {
-    position: absolute;
-    left: 0;
-    right: 0;
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  &__background {
+    width: 100%;
   }
-  .background-top {
-    top: 0;
-  }
-  .background-bottom {
-    bottom: 0;
-  }
-  .login-container {
-    padding: 300px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    //width: fit-content;
+    padding: 15px 0;
+    gap: 30px;
   }
 }

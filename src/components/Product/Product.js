@@ -4,7 +4,7 @@ import { favoriteAccent, comparisonGray, cart, location } from '../../assets';
 import Slider from 'react-slick';
 import PerDifference from '../commons/PerDifference/PerDifference';
 import { Link } from 'react-router-dom';
-import { NextArrow, PrevArrow } from '../commons';
+import { MoreActions, NextArrow, PrevArrow } from '../commons';
 
 const Product = ({ product, comments, isGreater }) => {
   const defaultSex = Object.keys(product.characteristics.sex)[0];
@@ -87,7 +87,7 @@ const Product = ({ product, comments, isGreater }) => {
               {Object.values(sex).map((sexValue, index) => (
                 <button
                   key={index}
-                  className={`sex-button ${sexValue === selectedSex ? 'selected' : ''}`}
+                  className={`white-btn sex-button ${sexValue === selectedSex ? 'selected' : ''}`}
                   onClick={() => setSelectedSex(sexValue)}
                 >
                   {sexValue}
@@ -113,20 +113,20 @@ const Product = ({ product, comments, isGreater }) => {
             )}
           </div>
           <div className="buy-product">
-            <button className="in-basket">
+            <button className="in-basket accent-btn">
               <img src={cart} alt="Купити" />
               Купити
             </button>
-            <button className="in-one-click">Купити в 1 клік</button>
+            <button className="in-one-click white-btn">Купити в 1 клік</button>
           </div>
           <div className="pick-up-today">
-            <div className="in-store">Ви з Одеси? Заберіть товар у магазині</div>
+            <div className="subtitle">Ви з Одеси? Заберіть товар у магазині</div>
             <div className="location">
               <img src={location} alt="Location" />
               <div className="address">Одеса, вул. Михайлівська, 8 (10:00-19:00 щодня)</div>
             </div>
             <div className="pick-up-today-button">
-              <Link to="#">Забрати сьогодні</Link>
+              <MoreActions title="Забрати сьогодні" />
             </div>
           </div>
           <div className="additional-information">

@@ -28,7 +28,7 @@ const ProductReviews = ({ comments, visibleReviews, onShowMore, handleOpenForm }
             </div>
           </div>
           <div className="write-review">
-            <button type="button" onClick={handleOpenForm}>
+            <button className="accent-btn" type="button" onClick={handleOpenForm}>
               + Написати відгук
             </button>
           </div>
@@ -42,7 +42,7 @@ const ProductReviews = ({ comments, visibleReviews, onShowMore, handleOpenForm }
             </ResponsiveMasonry>
           </div>
           {comments.length > 2 && (
-            <div className="more-details" onClick={onShowMore}>
+            <div className="more-actions" onClick={onShowMore}>
               Показати більше
             </div>
           )}

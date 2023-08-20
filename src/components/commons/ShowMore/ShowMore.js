@@ -2,7 +2,7 @@ import React from 'react';
 
 const ShowMore = ({ onClick }) => {
   return (
-    <button className="show-more" onClick={() => onClick()}>
+    <button className="show-more white-btn" onClick={() => onClick()}>
       Показати ще
     </button>
   );

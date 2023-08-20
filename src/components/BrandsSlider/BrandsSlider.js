@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { brandsList } from '../../utils/data';
-import { MoreDetails, NextArrow } from '../commons';
+import { MoreActions, NextArrow } from '../commons';
 
 const BrandsSlider = () => {
   const numSlides = brandsList.length;
@@ -65,7 +65,7 @@ const BrandsSlider = () => {
             автокрісла, дитячий транспорт, іграшки, дитячий одяг.
           </p>
         </div>
-        <MoreDetails />
+        <MoreActions title="Докладніше" />
       </div>
     </div>
   );

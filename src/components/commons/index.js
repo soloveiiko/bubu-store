@@ -2,7 +2,7 @@ import { PrevArrow, NextArrow } from './Arrows';
 import BasketNotification from './BasketNotification/BasketNotification';
 import CloseButton from './CloseButton/CloseButton';
 import ImagesField from './ImagesField/ImagesField';
-import MoreDetails from './MoreDetails/MoreDetails';
+import MoreActions from './MoreActions/MoreActions';
 import Pagination from './Pagination/Pagination';
 import PerDifference from './PerDifference/PerDifference';
 import ProductItem from './ProductItem/ProductItem';
@@ -17,7 +17,7 @@ export {
   BasketNotification,
   CloseButton,
   ImagesField,
-  MoreDetails,
+  MoreActions,
   Pagination,
   PerDifference,
   ProductItem,

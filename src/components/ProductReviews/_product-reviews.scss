@@ -38,10 +38,7 @@
   }
 
   .write-review {
-    button {
-      @include button;
-      @include accent-button;
-      font-size: 14px;
+    .accent-btn {
       padding: 30px;
     }
   }
@@ -52,7 +49,7 @@
     gap: 16px;
   }
 
-  .more-details {
+  .more-actions {
     margin: 0 auto;
   }
 }

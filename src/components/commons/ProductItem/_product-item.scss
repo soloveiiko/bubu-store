@@ -1,24 +1,24 @@
 .product-item {
   position: relative;
+  display: flex;
   overflow: hidden;
+  flex-direction: column;
   width: 100%;
   max-width: 150px;
-  display: flex;
-  flex-direction: column;
   gap: 13px;
 
   .percentage-difference {
     @include discount;
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 6px;
+    left: 4px;
   }
 
   .img-container {
     position: relative;
     overflow: hidden;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 21px;
     padding-bottom: 100%;
 
     img {
@@ -33,11 +33,13 @@
     font-size: 14px;
     font-weight: 300;
   }
-.prices {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
+
+  .prices {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
   .prev-price {
     @include prev-price;
     font-size: 12px;
@@ -53,18 +55,14 @@
   }
 
   .not-available {
-    font-size: 15px;
     font-weight: 400;
     color: #F91111;
   }
+
   .action-container {
     display: flex;
     align-items: center;
     gap: 15px;
-  }
-  .buy-product {
-    @include accent-button;
-    border-radius: 5px;
   }
 }
 
@@ -77,9 +75,27 @@
 @include md {
   .product-item {
     max-width: 265px;
+
     .prices {
-      flex-direction: row;
       align-items: center;
+      flex-direction: row;
+    }
+  }
+}
+
+@include xl {
+  .product-item {
+    gap: 18px;
+    .percentage-difference {
+      top: 7px;
+      left: 11px;
+      width: 48px;
+      padding: 8px;
+      border-radius: 5px;
+    }
+
+    .img-container {
+      margin-bottom: 0;
     }
   }
 }

@@ -47,8 +47,8 @@ const Inputs = (props) => {
   const { errorMessage, onChange, id, ...inputProps } = props;
 
   return (
-    <div className="">
-      <input className="" {...inputProps} onChange={onChange} />
+    <div className="input-container">
+      <input {...inputProps} onChange={onChange} />
       {/*<span className="">{errorMessage}</span>*/}
     </div>
   );

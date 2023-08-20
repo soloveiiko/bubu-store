@@ -32,7 +32,7 @@ const UserPanel = () => {
           <Link className="profile" to="/profile">
             Кабінет
           </Link>
-          <button onClick={logoutClick}>Log Out</button>
+          {/*<button onClick={logoutClick}>Log Out</button>*/}
         </div>
       )}
     </div>
