@@ -24,15 +24,17 @@ const UserPanel = () => {
     <div className="user-panel">
       <img src={user} alt="login" />
       {!isAuth ? (
-        <Link className="profile" to="/signin">
+        <Link className="user-panel__profile" to="/signin">
           Вхід
         </Link>
       ) : (
         <div>
-          <Link className="profile" to="/profile">
+          <Link className="user-panel__profile" to="/profile">
             Кабінет
           </Link>
-          {/*<button onClick={logoutClick}>Log Out</button>*/}
+          <button className="user-panel__logout" onClick={logoutClick}>
+            Log Out
+          </button>
         </div>
       )}
     </div>
