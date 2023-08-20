@@ -34,3 +34,8 @@
     }
   }
 }
+@include xl {
+  .description .description-list {
+    gap: 30px;
+  }
+}

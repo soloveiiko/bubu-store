@@ -55,9 +55,9 @@ const ProductPage = () => {
     setIsOpenForm(!isOpenForm);
   };
   return (
-    <>
+    <div className="product-page">
       {product && selectedCatalog && comments ? (
-        <div className="product-page">
+        <>
           <Breadcrumbs isProduct={true} catalogName={product.catalog} catalogId={selectedCatalog.id} />
           <div className="product-container">
             <Product product={product} comments={comments} isGreater={greaterThan768} />
@@ -79,11 +79,11 @@ const ProductPage = () => {
             <AddReview isOpenForm={isOpenForm} handleOpenForm={onOpenForm} />
             <BasketNotification />
           </div>
-        </div>
+        </>
       ) : (
-        <div>Loading ...</div>
+        <div className="container">Loading ...</div>
       )}
-    </>
+    </div>
   );
 };
 

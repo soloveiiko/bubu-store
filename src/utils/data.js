@@ -40,7 +40,8 @@ export const catalogList = [
       { id: '1', name: 'Коляски 2 в 1', link: '#' },
       { id: '2', name: 'Зимові конверти', link: '#' },
       { id: '3', name: 'Аксесуари та комплектуючі', link: '#' },
-      { id: '4', name: 'Муфти', link: '#' },
+      { id: '4', name: 'Муфти для двійні', link: '#' },
+      { id: '5', name: 'Муфти', link: '#' },
     ],
   },
   {
@@ -65,6 +66,7 @@ export const catalogList = [
       { id: '2', name: 'Зимові конверти', link: '#' },
       { id: '3', name: 'Аксесуари та комплектуючі', link: '#' },
       { id: '4', name: 'Муфти', link: '#' },
+      { id: '5', name: 'Муфти', link: '#' },
     ],
   },
   {

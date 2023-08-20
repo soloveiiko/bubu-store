@@ -7,7 +7,7 @@
   .product-container {
     display: flex;
     flex-direction: column;
-    row-gap: 60px;
+    row-gap: 75px;
   }
 
   .information-container {
@@ -80,10 +80,13 @@
 
 @include xl {
   .product-page {
+    padding: 0;
     .information-container {
+      padding: 80px 0 70px;
       .container {
         flex-direction: row;
         flex-wrap: wrap;
+        gap: 48px 30px;
       }
     }
     .description {

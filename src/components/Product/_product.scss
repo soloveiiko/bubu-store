@@ -2,13 +2,13 @@
   margin-bottom: 30px;
 
   .container {
-    row-gap: 20px;
+    row-gap: 17px;
   }
 
   .product-information {
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
+    row-gap: 26px;
   }
 
   .product-top-block {
@@ -48,7 +48,7 @@
   .about-product {
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 12px;
 
     .available, .not-available, .product-code {
       display: block;
@@ -152,17 +152,18 @@
 
   .mynext-arrow, .myprev-arrow {
     font-size: 40px;
-    top: 40%;
+    top: 50%;
+    transform: translateY(-50%);
     filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, 0.10));
 
   }
 
   .myprev-arrow {
-    left: 80px;
+    left: 70px;
   }
 
   .mynext-arrow {
-    right: 20px;
+    right: 8px;
   }
 
   .slick-slide {
@@ -174,7 +175,7 @@
   .colors, .sex {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 9px;
   }
 
   .colors-list, .sex-list {
@@ -224,7 +225,8 @@
     @include white-button;
     color: black;
     font-size: 14px;
-    padding: 10px 13px;
+    padding: 13px;
+    border-radius: 10px;
 
     &.selected {
       border: 1px solid $accent;
@@ -241,7 +243,7 @@
   .price {
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 20px;
   }
 
   .prev-price {
@@ -251,11 +253,14 @@
 
   .curr-price {
     @include curr-price;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .percentage-difference {
     @include discount;
+    border-radius: 5px;
+    width: 46px;
+    padding: 7px;
   }
 
   .origin-price {
@@ -271,7 +276,7 @@
 
   .in-basket, .in-one-click  {
     width: 100%;
-    padding: 30px 14px;
+    padding: 26px 14px;
     text-transform: uppercase;
   }
 
@@ -323,6 +328,7 @@
 
       .product-name {
         width: auto;
+        font-size: 20px;
       }
     }
 
@@ -398,13 +404,50 @@
 }
 @include xl {
   .product {
+    .about-product {
+      column-gap: 24px;
+      .comments span {
+        margin-left: 10px;
+      }
+    }
+    .pick-up-today-button a {
+      font-size: 15px;
+    }
+    .pick-up-today {
+      padding: 30px 25px;
+      row-gap: 23px;
+    }
     .buy-product {
       width: 70%;
+      gap: 20px;
+    }
+    .in-one-click {
+      width: calc(53% - 10px);
+    }
+    .in-basket {
+      width: calc(47% - 10px);
+    }
+    .pick-up-today {
+
     }
     .img-container {
       img {
         scale: 1;
       }
+    }
+    .colors, .sex {
+      row-gap: 13px;
+    }
+    .product-information {
+      row-gap: 30px;
+      margin-top: 10px;
+    }
+    .slick-slider {
+      margin-top: 10px;
+    }
+    .product-top-block .product-action {
+      gap: 27px;
+      margin-right: 20px;
     }
   }
 }
