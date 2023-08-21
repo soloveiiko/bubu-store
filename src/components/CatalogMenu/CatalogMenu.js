@@ -40,7 +40,7 @@ const CatalogMenu = (props) => {
                         <ul className="subcatalog__list">
                           {el.categories.map((item) => (
                             <li key={item.id} className="subcatalog__item" onClick={props.toggleMenu}>
-                              <Link to={item.link}>{item.name}</Link>
+                              <Link to={`catalog/${el.id}`}>{item.name}</Link>
                             </li>
                           ))}
                         </ul>
