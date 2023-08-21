@@ -60,7 +60,7 @@ const CatalogPage = () => {
   const { id } = useParams();
   const catalogId = id;
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="container">Loading...</div>;
   }
   console.log('catalogsList', catalogsList);
   const selectedCatalog = catalogsList.find((catalog) => catalog.id === catalogId);

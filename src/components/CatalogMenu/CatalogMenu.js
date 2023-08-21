@@ -59,7 +59,7 @@ const CatalogMenu = (props) => {
               <ul className="catalog-menu__list">
                 {catalogList.map((el) => (
                   <li key={el.id} className="catalog-menu__item">
-                    <Link to={el.link}>
+                    <Link to={`catalog/${el.id}`}>
                       <img src={el.logo} alt={el.name} />
                       <span>{el.name}</span>
                     </Link>
