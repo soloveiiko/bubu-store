@@ -4,7 +4,6 @@ import { ProductsSlider } from '../commons';
 const AlsoBuySlider = ({ products, selectedCatalog }) => {
   const catalogProducts = products.filter((product) => product.catalog === selectedCatalog.name);
   const numSlides = catalogProducts.length;
-  console.log(catalogProducts);
   return (
     <div className="also-buy-slider">
       <div className="also-buy-slider__container container">

@@ -32,8 +32,6 @@ const Product = ({ product, comments, isGreater }) => {
   const { colors, sex } = product.characteristics;
   const selectedPhotos = product.photos[selectedColor.class.toLowerCase()];
 
-  console.log(product.photos[selectedColor.class.toLowerCase()]);
-
   return (
     <div className="product">
       <div className="product__container container">

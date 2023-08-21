@@ -22,7 +22,6 @@ const Header = ({ location }) => {
     } else {
       setIsOpenCatalog(false);
     }
-    console.log('isOpenCatalog', isOpenCatalog);
     const handleResize = () => {
       setMobile(window.innerWidth <= 1199);
       setSearchButton(window.innerWidth < 768);

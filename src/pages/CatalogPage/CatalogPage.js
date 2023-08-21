@@ -62,7 +62,6 @@ const CatalogPage = () => {
   if (isLoading) {
     return <div className="container">Loading...</div>;
   }
-  console.log('catalogsList', catalogsList);
   const selectedCatalog = catalogsList.find((catalog) => catalog.id === catalogId);
   const catalogProducts = products.products.filter((product) => product.catalog === selectedCatalog.name);
   const catalogPrices = catalogProducts.map((product) => product.price);
@@ -206,7 +205,6 @@ const CatalogPage = () => {
       maxPrice: maxPriceFilter,
     };
     setSelectedFilters(appliedFilters);
-    console.log(appliedFilters);
   };
   const handleRemoveFilter = (filterKey) => {
     setSelectedFilters((prevFilters) => ({
