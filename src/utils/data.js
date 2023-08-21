@@ -235,7 +235,11 @@ export const productsList = [
       isDiscount: true,
       price: 150,
     },
-    images: [krislo, krislo, krislo, krislo],
+    photos: {
+      blue: [krislo, krislo, krislo, krislo],
+      red: [krislo, krislo, krislo, krislo],
+      green: [krislo, krislo],
+    },
     characteristics: {
       producer: 'BabyOno',
       country: 'Польща',
@@ -335,7 +339,7 @@ export const productsList = [
       green: [ball, ball],
     },
     characteristics: {
-      producer: 'BabyOno',
+      producer: 'Anex',
       country: 'Польща',
       colors: {
         blue: { name: 'Голубий', class: 'blue' },
@@ -369,6 +373,39 @@ export const productsList = [
     },
     characteristics: {
       producer: 'BabyOno',
+      country: 'Польща',
+      colors: {
+        blue: { name: 'Голубий', class: 'blue' },
+        red: { name: 'Червоний', class: 'red' },
+        green: { name: 'Зелений', class: 'green' },
+      },
+      sex: { male: 'Хлопчик', female: 'Дівчинка' },
+      weight: '14 кг',
+      size: '108.5х60х124.5 см',
+    },
+    description: [],
+  },
+  {
+    id: '7',
+    isAvailable: true,
+    fullName: 'Автокрісла Same Toy IQ Ball Cube',
+    name: 'Автокрісла',
+    code: 'EP-01',
+    catalog: 'Автокрісла',
+    category: 'Коляски 2 в 1',
+    producer: 'Anex',
+    price: 2200,
+    discount: {
+      isDiscount: true,
+      price: 1500,
+    },
+    photos: {
+      blue: [ball, ball],
+      red: [ball, ball],
+      green: [ball, ball],
+    },
+    characteristics: {
+      producer: 'Anex',
       country: 'Польща',
       colors: {
         blue: { name: 'Голубий', class: 'blue' },

@@ -28,7 +28,11 @@ const Product = ({ product, comments, isGreater }) => {
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
+
   const { colors, sex } = product.characteristics;
+  const selectedPhotos = product.photos[selectedColor.class.toLowerCase()];
+
+  console.log(product.photos[selectedColor.class.toLowerCase()]);
 
   return (
     <div className="product">
@@ -60,9 +64,9 @@ const Product = ({ product, comments, isGreater }) => {
           </div>
         </div>
         <Slider {...settings}>
-          {product.photos.blue.map((img, index) => (
+          {selectedPhotos.map((img, index) => (
             <div className="product__img-container img-container" key={index}>
-              <img src={img} alt="Item" />
+              <img src={img} alt={`Product ${index}`} />
             </div>
           ))}
         </Slider>
