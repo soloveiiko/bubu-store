@@ -4,7 +4,7 @@
   row-gap: 30px;
 
   &.open {
-    &__container {
+    .filter__container {
       display: block;
     }
 
@@ -113,6 +113,11 @@
         border-radius: 2px;
         background-color: $white;
       }
+    }
+  }
+  &__tablet {
+    .accent-btn {
+      padding: 18px;
     }
   }
 }

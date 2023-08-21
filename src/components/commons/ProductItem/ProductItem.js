@@ -29,20 +29,20 @@ const ProductItem = ({ product }) => {
 
       if (imagesForColor && imagesForColor.length > 0) {
         return (
-          <div className="img-container">
+          <div className="product-item__img-container img-container">
             <img src={imagesForColor[0]} alt={firstColor} />
           </div>
         );
       }
     } else if (product.images.length > 0) {
       return (
-        <div className="img-container">
+        <div className="product-item__img-container img-container">
           <img src={product.images[0]} alt={product.name} />
         </div>
       );
     }
     return (
-      <div className="img-container">
+      <div className="product-item__img-container img-container">
         <img src={defaultImg} alt="Product" />
       </div>
     );
@@ -59,12 +59,12 @@ const ProductItem = ({ product }) => {
   return (
     <div className="product-item" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       {product.discount.isDiscount && <PerDifference product={product} />}
-      <Link to={`/product/${product.id}`} className="product-link" onMouseUp={() => onClickDis(product)}>
+      <Link to={`/product/${product.id}`} className="product-item__link" onMouseUp={() => onClickDis(product)}>
         {renderPhotos()}
-        <div className="full-name">{product.fullName}</div>
+        <div className="product-item__full-name">{product.fullName}</div>
       </Link>
       {product.discount.isDiscount ? (
-        <div className="prices">
+        <div className="product-item__prices">
           <div className="prev-price">
             {product.price} <span>грн</span>
           </div>
@@ -73,13 +73,13 @@ const ProductItem = ({ product }) => {
           </div>
         </div>
       ) : (
-        <div className="price">
+        <div className="product-item__price">
           {product.price} <span>грн</span>
         </div>
       )}
       {hover && product.isAvailable && greaterThan1000 ? (
-        <div className="action-container">
-          <button className="buy-product accent-btn">Купити</button>
+        <div className="product-item__action-container">
+          <button className="product-item__buy-product accent-btn">Купити</button>
           <div>
             <img src={favoriteAccent} alt="Like" />
           </div>
@@ -90,7 +90,7 @@ const ProductItem = ({ product }) => {
       ) : (
         ''
       )}
-      {!product.isAvailable && <div className="not-available">Немає в наявності</div>}
+      {!product.isAvailable && <div className="product-item__not-available">Немає в наявності</div>}
     </div>
   );
 };

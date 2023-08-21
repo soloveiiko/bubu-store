@@ -20,15 +20,15 @@ const SortBy = ({ onSortChange, isMobile }) => {
   return (
     <div className="sort-by">
       {isMobile ? (
-        <div className={`sort-by-select ${isOpen ? 'open' : ''}`} tabIndex="0">
-          <span className="selected-item" onClick={toggleIsOpen}>
+        <div className={`sort-by__select ${isOpen ? 'open' : ''}`} tabIndex="0">
+          <span className="sort-by__selected-item" onClick={toggleIsOpen}>
             {sortByList.find((el) => el.id === selectedSort)?.name}
             <SlArrowDown />
           </span>
-          <ul className="sort-by-options">
+          <ul className="sort-by__options">
             {sortByList.map((el) => (
               <li
-                className={`sort-by-option ${selectedSort === el.id ? 'selected' : ''}`}
+                className={`sort-by__option ${selectedSort === el.id ? 'selected' : ''}`}
                 key={el.id}
                 onClick={() => handleSortChange(el.id)}
               >
@@ -38,10 +38,10 @@ const SortBy = ({ onSortChange, isMobile }) => {
           </ul>
         </div>
       ) : (
-        <ul className="sort-by-list">
+        <ul className="sort-by__list">
           {sortByList.map((el) => (
             <li
-              className={`sort-by-item ${selectedSort === el.id ? 'selected' : ''}`}
+              className={`sort-by__item ${selectedSort === el.id ? 'selected' : ''}`}
               key={el.id}
               onClick={() => handleSortChange(el.id)}
             >

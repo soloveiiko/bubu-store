@@ -5,15 +5,27 @@
   border-radius: 10px;
   background-color: $white;
   gap: 20px;
+  &__body,&__name,&__date {
+    font-size: 15px;
+  }
+  &__name,&__date {
+    font-weight: 400;
+  }
+  &__date {
+    color: $lightgray;
+  }
 
-  .user-review {
+  &__user {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
   }
 
-  .stars {
+  &__name,&__date {
+  }
+
+  &__stars {
     white-space: nowrap;
 
     svg {
@@ -25,26 +37,26 @@
     }
   }
 
-  .date, .name, .review-body {
-    font-size: 15px;
-  }
-
-  .date {
-    color: $lightgray;
-  }
-
-  .date, .name {
-    font-weight: 400;
-  }
-
-  .images {
+  &__images {
     position: relative;
     display: flex;
     gap: 10px;
     width: fit-content;
   }
 
-  .show-all-images {
+  &__img-container {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__show-all-img {
     font-size: 15px;
     font-weight: 400;
     position: absolute;
@@ -59,23 +71,9 @@
     border-radius: 10px;
     background-color: $white;
   }
-
-  .img-container {
-    display: flex;
-    overflow: hidden;
-    height: 100%;
-    border-radius: 10px;
-
-    img {
-      width: 100%;
-      object-fit: cover;
-    }
-  }
 }
 @include xl {
   .comments-item {
     gap: 15px;
   }
 }
-
-

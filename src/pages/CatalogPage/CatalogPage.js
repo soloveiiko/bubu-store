@@ -17,7 +17,7 @@ const CatalogPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProducers, setSelectedProducers] = useState([]);
   const [selectedSort, setSelectedSort] = useState('1');
-  const [visibleProducts, setVisibleProducts] = useState(16);
+  const [visibleProducts, setVisibleProducts] = useState(3);
   const [mobile, setMobile] = useState(false);
   const [tablet, setTablet] = useState(false);
   const [isOpen, setIsOpen] = useState(false);

@@ -22,11 +22,11 @@ const Pagination = ({ totalItemsCount, pageSize, currentPage, paginate, prevPage
   return (
     <div className="pagination">
       {currentPage > 1 && <PrevArrow onClick={handlePrevClick} />}
-      <ul className="pagination-list">
+      <ul className="pagination__list">
         {paginationRange.map((p) => {
           if (p === DOTS) {
             return (
-              <li key={p} className="dots">
+              <li key={p} className="pagination__dots">
                 &#8230;
               </li>
             );
@@ -36,7 +36,7 @@ const Pagination = ({ totalItemsCount, pageSize, currentPage, paginate, prevPage
               key={p}
               id={p}
               onClick={() => paginate(p)}
-              className={`pagination-item ${currentPage === p ? 'selected_page' : ''}`}
+              className={`pagination__item ${currentPage === p ? 'selected_page' : ''}`}
             >
               {p}
             </li>

@@ -38,24 +38,24 @@ const Review = ({ comment }) => {
 
   return (
     <div className="comments-item">
-      <div className="date">{comment.date ? comment.date : '11.08.23'}</div>
-      <div className="user-review">
-        <div className="name">{comment.name}</div>
-        <div className="stars">{comment.stars ? comment.stars : stars}</div>
+      <div className="comments-item__date">{comment.date ? comment.date : '11.08.23'}</div>
+      <div className="comments-item__user">
+        <div className="comments-item__name">{comment.name}</div>
+        <div className="comments-item__stars">{comment.stars ? comment.stars : stars}</div>
       </div>
-      <div className="review-body">{comment.body}</div>
-      <div className="images">
+      <div className="comments-item__body">{comment.body}</div>
+      <div className="comments-item__images">
         {comment.images ? (
           comment.images.map((el, index) => <img key={index} src={el} alt="Comment" />)
         ) : (
           <>
             {displayedImages.map((img, index) => (
-              <div key={index} className="img-container">
+              <div key={index} className="comments-item__img-container img-container">
                 <img src={img} alt="Review" />
               </div>
             ))}
             {reviewImg.length > maxVisibleImages && displayedImages.length < reviewImg.length && (
-              <button className="show-all-images" onClick={toggleImageDisplay}>{`+${
+              <button className="comments-item__show-all-img" onClick={toggleImageDisplay}>{`+${
                 reviewImg.length - displayedImages.length
               }`}</button>
             )}

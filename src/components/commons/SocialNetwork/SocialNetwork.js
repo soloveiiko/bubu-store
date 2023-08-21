@@ -9,9 +9,9 @@ const socialNetworkList = [
 const SocialNetwork = () => {
   return (
     <div className="social-network">
-      <ul className="social-network-list">
+      <ul className="social-network__list">
         {socialNetworkList.map((el) => (
-          <li key={el.id} className="social-network-item">
+          <li key={el.id} className="social-network__item">
             <Link to={el.link}>
               <img src={el.logo} alt={el.name} />
             </Link>

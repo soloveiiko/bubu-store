@@ -3,6 +3,7 @@
   &__sorted-products {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 30px;
 
     & > * {
@@ -24,6 +25,7 @@
 @include md {
   .catalog-list {
     &__sorted-products {
+      justify-content: start;
 
       & > * {
         flex: 1 1 calc(33.33% - 30px);

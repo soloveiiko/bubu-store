@@ -3,13 +3,13 @@
   align-items: center;
   column-gap: 5px;
 
-  .pagination-list {
+  &__list {
     display: flex;
     align-items: center;
     column-gap: 5px;
   }
 
-  .pagination-item {
+  &__item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +23,8 @@
   .selected_page {
     border-color: $accent;
   }
-  .mynext-arrow, .myprev-arrow{
+
+  .mynext-arrow, .myprev-arrow {
     position: static;
   }
 }

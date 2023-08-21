@@ -1,17 +1,22 @@
 .sort-by {
   width: fit-content;
 
-  .sort-by-select {
+  &__select {
     position: relative;
     cursor: pointer;
 
-    &.open .sort-by-options {
+    &.open .sort-by__options {
       display: block;
       opacity: 1;
     }
+
+    &:focus {
+      border-color: #007bff;
+      outline: none;
+    }
   }
 
-  .selected-item {
+  &__selected-item {
     display: flex;
     column-gap: 15px;
 
@@ -21,7 +26,7 @@
     }
   }
 
-  .sort-by-options {
+  &__options {
     position: absolute;
     z-index: 100;
     top: 25px;
@@ -35,38 +40,31 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  .sort-by-select.open .sort-by-options {
-    display: block;
-    opacity: 1;
-  }
-
-  .sort-by-option {
+  &__option {
     display: block;
     padding: 8px 16px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     white-space: nowrap;
     color: black;
+
+    &.selected {
+      color: $accent;
+    }
   }
 
-  .sort-by-option.selected {
-    color: $accent;
-  }
-
-  .sort-by-select:focus {
-    border-color: #007bff;
-    outline: none;
+  &__list {
   }
 }
 
 @include md {
   .sort-by {
-    .sort-by-list {
+    &__list {
       display: flex;
       column-gap: 15px;
     }
 
-    .sort-by-item {
+    &__item {
       cursor: pointer;
       text-decoration: underline;
       color: $gray;
@@ -83,11 +81,17 @@
   }
 }
 
+@include lg {
+  .sort-by {
+    margin: 0 0 0 auto;
+  }
+}
+
 @include xl {
   .sort-by {
     align-self: center;
 
-    .sort-by-list {
+    &__list {
       margin-right: 10px;
       column-gap: 20px;
     }
