@@ -1,11 +1,12 @@
 .main-page {
   display: flex;
   flex-direction: column;
-  row-gap: 58px;
-  max-width: 1360px;
   width: 100%;
+  max-width: 1360px;
   margin: 0 auto;
+  row-gap: 58px;
 }
+
 @include xl {
   .main-page {
     row-gap: 78px;
