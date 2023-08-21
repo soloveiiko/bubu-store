@@ -26,7 +26,8 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git commit -am "Update CSS"
+        git config --local user.email "m.soloveiiko@gmail.com"
+        git config --local user.name "soloveiiko"
+        git add src/style/css
+        git commit -m "Update CSS"
         git push
