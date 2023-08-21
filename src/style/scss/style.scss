@@ -127,13 +127,16 @@ h6 {
 .headline {
   @include headline-sm;
 }
+
 .subtitle {
   @include subtitle-sm;
 }
+
 .accent-btn {
   @include button-sm;
   @include accent-button;
 }
+
 .white-btn {
   @include button-sm;
   @include white-button;
@@ -160,11 +163,11 @@ li {
   .subtitle {
     @include subtitle-md;
   }
-  .accent-btn,.white-btn {
+  .accent-btn, .white-btn {
     @include button-md;
   }
-
 }
+
 @include lg {
   .accent-btn:hover {
     @include accent-button-hover;
