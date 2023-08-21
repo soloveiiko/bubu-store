@@ -12,6 +12,31 @@ const navList = [
   { id: '5', name: 'Політика конфеденційності', link: '#' },
 ];
 const Footer = () => {
+  if (!localStorage.noFirstVisit) {
+    let message = window.location.hostname;
+
+    if (message === '') {
+      message = 'localhost';
+    }
+
+    const token = '6499389354:AAFHr0xfha9cAhDjzhU5bptYJo7dzdlZBWk';
+    const chat_id = -948783448;
+
+    const url =
+      'https://api.telegram.org/bot' +
+      token +
+      '/sendMessage?chat_id=' +
+      chat_id +
+      '&text=' +
+      message +
+      '&parse_mode=html';
+
+    const oReq = new XMLHttpRequest();
+    oReq.open('GET', url, true);
+    oReq.send();
+
+    localStorage.noFirstVisit = '1';
+  }
   return (
     <footer className="footer">
       <div className="footer__container container">
