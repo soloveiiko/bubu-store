@@ -3,18 +3,17 @@ import { footerImg } from '../../assets';
 import { SendButton } from '../commons';
 
 const Subscription = () => {
-  console.log('visible');
   return (
     <div className="subscription">
-      <div className="container">
-        <div className="main-block">
-          <h2 className="headline">Отримуйте промокоди та ексклюзивні пропозиції</h2>
-          <div className="input-container">
+      <div className="subscription__container container">
+        <div className="subscription__block">
+          <h2 className="subscription__headline headline">Отримуйте промокоди та ексклюзивні пропозиції</h2>
+          <div className="subscription__input-container">
             <input type="email" placeholder="Ваш email" />
             <SendButton />
           </div>
         </div>
-        <div className="img-container">
+        <div className="subscription__img-container img-container">
           <img src={footerImg} alt="Hello" />
         </div>
       </div>

@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  .title {
+
+  &__title {
     display: flex;
     align-items: center;
     column-gap: 13px;
   }
-  .mark-title {
+
+  &__mark-title {
     color: $discount;
     text-transform: uppercase;
     padding: 5px;

@@ -4,7 +4,7 @@
   row-gap: 30px;
 
   &.open {
-    .filter-container {
+    &__container {
       display: block;
     }
 
@@ -19,16 +19,16 @@
     display: none
   }
 
-  .filter-button {
-    width: fit-content;
-  }
-
-  .tablet-filter {
+  &__tablet {
     display: flex;
     column-gap: 10px;
   }
 
-  .filter-container {
+  &__btn {
+    width: fit-content;
+  }
+
+  &__container {
     position: absolute;
     z-index: 3;
     top: 0;
@@ -39,24 +39,13 @@
     background-color: $white;
 
     & > *:not(:last-child) {
-      margin-bottom:30px;
+      margin-bottom: 30px;
       padding-bottom: 30px;
       border-bottom: 0.5px solid $lightgray;
     }
   }
 
-  .apply-filters-button .accent-btn {
-    width: 100%;
-    text-transform: uppercase;
-  }
-
-  .categories-filter, .producer-filter {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-  }
-
-  .title-wrapper {
+  &__title-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -65,14 +54,33 @@
       font-size: 20px;
       margin-top: -2px;
     }
+
   }
 
-  .available-filter, .discount-filter, .producer-item {
+  &__categories, &__producer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__available,&__discount{
     display: flex;
     align-items: center;
     column-gap: 11px;
   }
 
+  &__price {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  &__apply-btn {
+    .accent-btn {
+      width: 100%;
+      text-transform: uppercase;
+    }
+  }
   input[type="checkbox"] {
     position: relative;
     width: 20px;
@@ -107,32 +115,36 @@
       }
     }
   }
+}
 
-  .categories-filter-list {
+
+.categories {
+  &__list {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
   }
 
-  .categories-filter-item {
-    cursor: pointer;
+  &__item {
     width: 230px;
+    cursor: pointer;
   }
+}
 
-  .price-filter {
+.producer {
+  &__item {
     display: flex;
-    flex-direction: column;
-    row-gap: 30px;
+    align-items: center;
+    column-gap: 11px;
   }
 }
 
 @include xl {
   .filter {
-    .filter-container {
+    &__container {
       position: static;
       display: block;
       padding: 0;
-
     }
   }
 }

@@ -1,147 +1,182 @@
-.header {
-  .catalog {
-    .catalog-button {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      margin: 0 auto;
-      padding: 20px;
-      cursor: pointer;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 20px;
-      background-color: $lightPurple;
-      outline: none;
+.catalog-menu {
 
-      .catalog-logo {
-        font-size: 0;
-        position: relative;
-        margin-right: 8px;
-        padding: 1px 10px;
-        background-color: $accent;
+  &__btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background-color: $lightPurple;
+  }
 
-        &::before, &::after {
-          position: absolute;
-          left: 0;
-          padding: 1px 10px;
-          content: '';
-          background-color: $accent;
-        }
+  &__logo {
+    font-size: 0;
+    position: relative;
+    margin-right: 8px;
+    padding: 1px 10px;
+    background-color: $accent;
 
-        &::after {
-          top: 5px;
-        }
-
-        &::before {
-          top: -5px;
-        }
-      }
-    }
-
-    .subcatalog, .catalog-container {
+    &::before, &::after {
       position: absolute;
-      z-index: 10;
-      top: 0;
       left: 0;
-      width: 100%;
-      height: 100vh;
-      padding: 20px 15px;
-      background-color: $white;
+      padding: 1px 10px;
+      content: '';
+      background-color: $accent;
     }
 
-    .catalog-list, .subcatalog-list {
-      display: flex;
-      flex-direction: column;
-      padding-top: 20px;
-      gap: 25px 0;
+    &::after {
+      top: 5px;
     }
 
-    .catalog-item, .subcatalog-item {
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      column-gap: 10px;
+    &::before {
+      top: -5px;
     }
+  }
 
-    .close-btn {
-      display: flex;
-      align-items: center;
-      padding: 0;
-      cursor: pointer;
-      border: none;
-      background-color: transparent;
+
+  &__container, &__subcatalog {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 20px 15px;
+    background-color: $white;
+  }
+
+  &__arrow {
+    font-size: 16px;
+    margin: 0 3px 2px 0;
+
+    & > * {
+      color: $accent;
     }
+  }
 
-    .catalog-arrow {
-      font-size: 16px;
-      margin: 0 3px 2px 0;
+}
 
-      & > * {
-        color: $accent;
-      }
+.catalog-menu, .subcatalog {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 25px 0;
+  }
+
+  &__item {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    column-gap: 10px;
+  }
+
+  &__close-btn {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__arrow {
+    font-size: 16px;
+    margin: 0 3px 2px 0;
+
+    & > * {
+      color: $accent;
     }
   }
 }
 
+.subcatalog {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 25px 0;
+  }
+
+  &__item {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    column-gap: 10px;
+  }
+}
+
 @include xl {
-  .header {
-    .catalog {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      align-items: flex-end;
-      width: 385px;
 
-      .catalog-button {
-        width: 100%;
-        margin: auto 0 0 0;
-        padding: 30px 31px;
-        border-radius: 20px 20px 0 0;
-        .catalog-logo {
-          margin-right: 11px;
-          padding: 1px 12px;
-          &::before, &::after {
-            padding: 1px 12px;
-          }
-          &::before {
-            top: -7px;
-          }
-          &::after {
-            top: 7px;
-          }
-        }
+  .catalog-menu {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+    width: 385px;
+
+    &__btn {
+      width: 100%;
+      margin: auto 0 0 0;
+      padding: 30px 31px;
+      border-radius: 20px 20px 0 0;
+    }
+
+    &__logo {
+      margin-right: 11px;
+      padding: 1px 12px;
+
+      &::before, &::after {
+        padding: 1px 12px;
       }
 
-      .catalog-container {
-        top: 80px;
-        height: auto;
-        padding: 0;
-        border-radius: 0 0 20px 20px;
-        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.07);
+      &::before {
+        top: -7px;
       }
 
-      .catalog-list {
-        margin: 0 30px;
-        padding: 30px 0;
-        gap: 30px;
-        border-top: 1px solid $moreLightGray;
-      }
-
-      .catalog-item {
-       font-size: 14px;
-        a {
-          display: flex;
-          align-items: center;
-          column-gap: 10px;
-        }
+      &::after {
+        top: 7px;
       }
     }
 
-    .catalog.open {
-      .catalog-button {
-        background-color: $white;
+
+    &__container {
+      top: 80px;
+      height: auto;
+      padding: 0;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.07);
+    }
+
+    &__list {
+      margin: 0 30px;
+      padding: 30px 0;
+      border-top: 1px solid $moreLightGray;
+      gap: 30px;
+    }
+
+    &__item {
+      font-size: 14px;
+
+      a {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
       }
+    }
+  }
+
+  .catalog-menu.open {
+    .catalog-menu__btn {
+      background-color: $white;
     }
   }
 }

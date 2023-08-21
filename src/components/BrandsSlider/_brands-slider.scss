@@ -1,7 +1,8 @@
 .brands-slider {
   display: flex;
   flex-direction: column;
-  .img-container {
+
+  &__img-container {
     position: relative;
     height: 100%;
 
@@ -11,12 +12,7 @@
     }
   }
 
-  .mynext-arrow {
-    top: -64px;
-    right: -8px;
-  }
-
-  .brands-description {
+  &__description {
     position: relative;
     display: flex;
     overflow: hidden;
@@ -38,25 +34,36 @@
     }
   }
 
+  .mynext-arrow {
+    top: -64px;
+    right: -8px;
+  }
+
   .more-actions {
     margin-top: -20px;
     text-align: center;
   }
 }
+
 @include lg {
-  .brands-slider .more-actions {
-    &:hover {
-      @include accent-underline-hover;
+  .brands-slider {
+    .more-actions {
+      &:hover {
+        @include accent-underline-hover;
+      }
     }
   }
 }
+
 @include xl {
   .brands-slider {
     gap: 30px;
-    .brands-description {
+
+    &__description {
       padding: 35px 0 0;
       row-gap: 20px;
     }
+
     .more-actions {
       margin-top: 0;
     }

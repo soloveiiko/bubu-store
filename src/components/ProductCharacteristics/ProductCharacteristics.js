@@ -8,40 +8,40 @@ const ProductCharacteristics = ({ product, isTablet }) => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className={`product-characteristics ${isOpen ? 'open' : ''}`}>
-      <div className="title" onClick={toggleIsOpen}>
-        <h2 className="headline">Характеристики</h2>
+    <div className={`product-characteristics ${isTablet && isOpen ? 'open' : ''}`}>
+      <div className="product-characteristics__main-title" onClick={toggleIsOpen}>
+        <h2 className="product-characteristics__headline headline">Характеристики</h2>
         {isTablet && <RiArrowUpSLine />}
       </div>
-      <div className="characteristics-list">
-        <div className="characteristics-item producer">
-          <span className="characteristics-title">Виробник:</span>
+      <div className="product-characteristics__list">
+        <div className="product-characteristics__item producer-item">
+          <span className="product-characteristics__title">Виробник:</span>
 
-          <span className="characteristics-value">{producer}</span>
+          <span className="product-characteristics__value">{producer}</span>
         </div>
-        <div className="characteristics-item country">
-          <span className="characteristics-title">Країна:</span>
-          <span className="characteristics-value">{country}</span>
+        <div className="product-characteristics__item country-item">
+          <span className="product-characteristics__title">Країна:</span>
+          <span className="product-characteristics__value">{country}</span>
         </div>
-        <div className="characteristics-item colors">
-          <span className="characteristics-title">Колір:</span>
-          <span className="characteristics-value">{Object.values(colors)[0].name}</span>
+        <div className="product-characteristics__item colors-item">
+          <span className="product-characteristics__title">Колір:</span>
+          <span className="product-characteristics__value">{Object.values(colors)[0].name}</span>
         </div>
-        <div className="characteristics-item sex">
-          <span className="characteristics-title">Стать:</span>
-          <span className="characteristics-value">
+        <div className="product-characteristics__item sex-item">
+          <span className="product-characteristics__title">Стать:</span>
+          <span className="product-characteristics__value">
             {Object.values(sex).map((sexValue, index) => (
               <div key={index}>{sexValue}</div>
             ))}
           </span>
         </div>
-        <div className="characteristics-item weight">
-          <span className="characteristics-title">Вага:</span>
-          <span className="characteristics-value">{weight}</span>
+        <div className="product-characteristics__item weight-item">
+          <span className="product-characteristics__title">Вага:</span>
+          <span className="product-characteristics__value">{weight}</span>
         </div>
-        <div className="characteristics-item size">
-          <span className="characteristics-title">Розмір:</span>
-          <span className="characteristics-value">{size}</span>
+        <div className="product-characteristics__item size-item">
+          <span className="product-characteristics__title">Розмір:</span>
+          <span className="product-characteristics__value">{size}</span>
         </div>
       </div>
     </div>

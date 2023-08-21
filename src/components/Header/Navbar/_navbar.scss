@@ -2,13 +2,13 @@
   padding-bottom: 30px;
   border-bottom: 1px solid #FFC5D6;
 
-  .menu-list {
+  &__list {
     display: flex;
     flex-direction: column;
     gap: 20px 0;
   }
 
-  .menu-item {
+  &__item {
     a {
       white-space: nowrap;
       color: $white;
@@ -21,7 +21,7 @@
     padding-bottom: 0;
     border: none;
 
-    .menu-list {
+    &__list {
       flex-direction: row;
       gap: 0 14px;
     }

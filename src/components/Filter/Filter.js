@@ -45,37 +45,37 @@ const Filter = (props) => {
   return (
     <div className={`filter ${props.isOpen ? 'open' : ''}`}>
       {props.isTablet && (
-        <div className="tablet-filter">
+        <div className="filter__tablet">
           <CloseButton onClick={props.toggleIsOpen} />
-          <button className="filter-button accent-btn" onClick={props.toggleIsOpen}>
+          <button className="filter__btn accent-btn" onClick={props.toggleIsOpen}>
             <img src={filter} alt="Filter" />
             Фільтр
           </button>
           <AppliedFilters selectedFilters={props.selectedFilters} handleRemoveFilter={props.handleRemoveFilter} />
         </div>
       )}
-      <div className="filter-container">
-        <div className="categories-filter">
-          <div className="filter-item">
+      <div className="filter__container">
+        <div className="filter__categories categories">
+          <div className="filter__item">
             <div
-              className={`title-wrapper ${categoriesOpen ? 'open' : ''}`}
+              className={`filter__title-wrapper ${categoriesOpen ? 'open' : ''}`}
               onClick={() => toggleIsOpen(setCategoriesOpen, categoriesOpen)}
             >
-              <h4 className="subtitle">Категорія</h4>
+              <h4 className="filter__subtitle subtitle">Категорія</h4>
               <RiArrowUpSLine />
             </div>
           </div>
           {categoriesOpen && (
-            <ul className="categories-filter-list">
+            <ul className="categories__list">
               {props.catalog.categories.map((el) => (
-                <li key={el.id} className="categories-filter-item" onClick={() => handleCategoryFilter(el)}>
+                <li key={el.id} className="categories__item" onClick={() => handleCategoryFilter(el)}>
                   {el.name}
                 </li>
               ))}
             </ul>
           )}
         </div>
-        <div className="available-filter">
+        <div className="filter__available">
           <input
             type="checkbox"
             id="isAvailable"
@@ -84,7 +84,7 @@ const Filter = (props) => {
           />
           <label htmlFor="isAvailable">В наявності</label>
         </div>
-        <div className="discount-filter">
+        <div className="filter__discount">
           <input
             type="checkbox"
             id="isDiscount"
@@ -93,13 +93,13 @@ const Filter = (props) => {
           />
           <label htmlFor="isDiscount">Зі знижкою</label>
         </div>
-        <div className="price-filter">
-          <div className="filter-item">
+        <div className="filter__price">
+          <div className="filter__item">
             <div
-              className={`title-wrapper ${priceOpen ? 'open' : ''}`}
+              className={`filter__title-wrapper ${priceOpen ? 'open' : ''}`}
               onClick={() => toggleIsOpen(setPriceOpen, priceOpen)}
             >
-              <h4 className="subtitle">Ціна</h4>
+              <h4 className="filter__subtitle subtitle">Ціна</h4>
               <RiArrowUpSLine />
             </div>
           </div>
@@ -115,13 +115,13 @@ const Filter = (props) => {
             />
           )}
         </div>
-        <div className="producer-filter">
-          <div className="filter-item">
+        <div className="filter__producer producer">
+          <div className="filter__item">
             <div
-              className={`title-wrapper ${producerOpen ? 'open' : ''}`}
+              className={`filter__title-wrapper ${producerOpen ? 'open' : ''}`}
               onClick={() => toggleIsOpen(setProducerOpen, producerOpen)}
             >
-              <h4 className="subtitle">Виробник</h4>
+              <h4 className="filter__subtitle subtitle">Виробник</h4>
               <RiArrowUpSLine />
             </div>
           </div>
@@ -129,7 +129,7 @@ const Filter = (props) => {
             <>
               {' '}
               {props.producers.map((el) => (
-                <div className="producer-item" key={el.id}>
+                <div className="producer__item" key={el.id}>
                   <input
                     type="checkbox"
                     id={el.code}
@@ -143,7 +143,7 @@ const Filter = (props) => {
           )}
         </div>
         {props.isTablet && (
-          <div className="apply-filters-button">
+          <div className="filter__apply-btn">
             <button className="accent-btn" onClick={applyFilters}>
               Застосувати
             </button>

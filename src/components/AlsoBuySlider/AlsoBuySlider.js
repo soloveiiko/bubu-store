@@ -6,9 +6,9 @@ const AlsoBuySlider = ({ products, selectedCatalog }) => {
   const numSlides = products.length;
   return (
     <div className="also-buy-slider">
-      <div className="container">
-        <div className="title">
-          <h2 className="headline">З цим також купляють</h2>
+      <div className="also-buy-slider__container container">
+        <div className="also-buy-slider__title">
+          <h2 className="also-buy-slider__headline headline">З цим також купляють</h2>
         </div>
         <ProductsSlider products={catalogProducts} numSlides={numSlides} />
       </div>

@@ -4,39 +4,34 @@
   background-color: $accent;
   grid-column: 1/3;
   grid-row: 1/2;
+
   .container {
     gap: 0;
   }
 
-  .top-block {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 1px;
-
-    .logo {
-      width: 90px;
-      height: 20px;
-
-      img {
-        height: 100%;
-      }
+  &__block {
+    &_top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 1px;
     }
-    .right-block {
+
+    &_left {
+      display: flex;
+      align-items: center;
+      gap: 0 10px;
+    }
+
+    &_right {
       display: flex;
       align-items: center;
       gap: 0 15px;
     }
 
-     .left-block {
-       align-items: center;
-      display: flex;
-      gap: 0 10px;
-    }
-
   }
 
-  .toggle-menu-btn {
+  &__toggle-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,47 +41,41 @@
     cursor: pointer;
     border: none;
     background: transparent;
+  }
 
-    .toggle-item {
-      font-size: 0;
-      position: relative;
-      width: 100%;
-      margin: 0;
-      padding: 1px 15px;
-      cursor: pointer;
+  &__toggle-item {
+    font-size: 0;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 1px 15px;
+    cursor: pointer;
+    background-color: $white;
+
+    &::before, &::after {
+      position: absolute;
+      left: 0;
+      content: '';
       background-color: $white;
+    }
 
-      &::before, &::after {
-        position: absolute;
-        left: 0;
-        content: '';
-        background-color: $white;
-      }
+    &::before {
+      top: -7px;
+      padding: 1px 15px;
+    }
 
-      &::before {
-        top: -7px;
-        padding: 1px 15px;
-      }
-
-      &::after {
-        top: 7px;
-        padding: 1px 7.5px;
-      }
+    &::after {
+      top: 7px;
+      padding: 1px 7.5px;
     }
   }
 
-  .toggle-menu {
-    position: absolute;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 266px;
-    height: 100vh;
-    padding: 20px 15px;
-    background-color: $accent;
+  &__logo {
+    width: 90px;
+    height: 20px;
 
-    & > *:not(:first-child, :last-child) {
-      margin-bottom: 30px;
+    img {
+      height: 100%;
     }
   }
 
@@ -94,14 +83,29 @@
     top: 30px;
     right: -35px;
   }
+}
 
-  .tools {
-    display: flex;
-    flex-direction: column;
-    gap: 30px 0;
+.toggle-menu {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 266px;
+  height: 100vh;
+  padding: 20px 15px;
+  background-color: $accent;
+
+  & > *:not(:first-child, :last-child) {
+    margin-bottom: 30px;
   }
+}
 
-  .number {
+.tools {
+  display: flex;
+  flex-direction: column;
+  gap: 30px 0;
+
+  &__number {
     font-size: 17px;
     font-weight: 500;
     white-space: nowrap;
@@ -110,20 +114,15 @@
 }
 
 @include md {
-  @media (min-width: #{$screen-md-min}) {
-    .header {
 
-      .top-block {
+  .header {
+    &__block {
+      &_top, &_left, &_right {
         gap: 0 15px;
+      }
 
-        .left-block {
-          gap: 0 15px;
-        }
-
-        .right-block {
-          width: 100%;
-          gap: 0 15px;
-        }
+      &_right {
+        width: 100%;
       }
     }
   }
@@ -131,28 +130,29 @@
 
 @include xl {
   .header {
-
-    .top-block {
-      padding: 20px 0;
-      gap: 30px;
-      justify-content: left;
-      .logo {
-        width: 138px;
-        height: 32px;
+    &__block {
+      &_top {
+        justify-content: left;
+        padding: 20px 0;
+        gap: 30px;
       }
 
-      .tools {
-        align-items: center;
-        flex-direction: row;
-        gap: 0 20px;
-        margin: 0 0 0 auto;
+      &_bottom {
+        display: flex;
+        gap: 0 30px;
       }
     }
 
-    .bottom-block {
-      display: flex;
-      gap: 0 30px;
+    &__logo {
+      width: 138px;
+      height: 32px;
     }
+  }
+  .tools {
+    align-items: center;
+    flex-direction: row;
+    margin: 0 0 0 auto;
+    gap: 0 20px;
   }
 }
 

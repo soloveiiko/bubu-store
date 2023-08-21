@@ -32,48 +32,50 @@ const Product = ({ product, comments, isGreater }) => {
 
   return (
     <div className="product">
-      <div className="container">
-        <div className="product-top-block">
-          <h2 className="product-name">{product.fullName}</h2>
-          <div className="product-action">
-            <div className="like-product">
+      <div className="product__container container">
+        <div className="product__block_top">
+          <h2 className="product__name">{product.fullName}</h2>
+          <div className="product__action">
+            <div className="product__like">
               <img src={favoriteAccent} alt="Like" />У вибране
             </div>
-            <div className="compare-product">
+            <div className="product__compare">
               <img src={comparisonGray} alt="Like" />
               Порівняти
             </div>
           </div>
         </div>
-        <div className="about-product">
-          <div className="available-container">
+        <div className="product__about">
+          <div className="product__available-container">
             {product.isAvailable ? (
-              <span className="available">В наявності </span>
+              <span className="product__available">В наявності </span>
             ) : (
-              <span className="not-available">Немає</span>
+              <span className="product__not-available">Немає</span>
             )}
           </div>
-          <div className="product-code">Код: {product.code}</div>
-          <div className="comments">
+          <div className="product__code">Код: {product.code}</div>
+          <div className="product__comments">
             4.5 <AiFillStar />
             {isGreater ? <span>{comments.length} відгуків</span> : <span>({comments.length})</span>}
           </div>
         </div>
         <Slider {...settings}>
           {product.photos.blue.map((img, index) => (
-            <div className="img-container" key={index}>
+            <div className="product__img-container img-container" key={index}>
               <img src={img} alt="Item" />
             </div>
           ))}
         </Slider>
-        <div className="product-information">
-          <div className="colors">
-            <h5 className="title">Колір:</h5>
-            <div className="colors-list">
+        <div className="product__information product-information">
+          <div className="product-information__colors">
+            <h5 className="product-information__title">Колір:</h5>
+            <div className="product-information__colors-list">
               {Object.values(colors).map((color, index) => (
                 <button
                   key={index}
-                  className={`color ${color.class} ${color === selectedColor ? 'selected' : ''}`}
+                  className={`product-information__color-btn ${color.class} ${
+                    color === selectedColor ? 'selected' : ''
+                  }`}
                   onClick={() => setSelectedColor(color)}
                 >
                   {color.name}
@@ -81,13 +83,13 @@ const Product = ({ product, comments, isGreater }) => {
               ))}
             </div>
           </div>
-          <div className="sex">
-            <h5 className="title">Стать:</h5>
-            <div className="sex-list">
+          <div className="product-information__sex">
+            <h5 className="product-information__title">Стать:</h5>
+            <div className="product-information__sex-list">
               {Object.values(sex).map((sexValue, index) => (
                 <button
                   key={index}
-                  className={`white-btn sex-button ${sexValue === selectedSex ? 'selected' : ''}`}
+                  className={`white-btn product-information__sex-btn  ${sexValue === selectedSex ? 'selected' : ''}`}
                   onClick={() => setSelectedSex(sexValue)}
                 >
                   {sexValue}
@@ -95,7 +97,7 @@ const Product = ({ product, comments, isGreater }) => {
               ))}
             </div>
           </div>
-          <div className="price">
+          <div className="product-information__price">
             {product.discount.isDiscount ? (
               <>
                 <span className="prev-price">
@@ -112,24 +114,24 @@ const Product = ({ product, comments, isGreater }) => {
               </>
             )}
           </div>
-          <div className="buy-product">
-            <button className="in-basket accent-btn">
+          <div className="product__buy">
+            <button className="product__in-basket accent-btn">
               <img src={cart} alt="Купити" />
               Купити
             </button>
-            <button className="in-one-click white-btn">Купити в 1 клік</button>
+            <button className="product__in-one-click white-btn">Купити в 1 клік</button>
           </div>
-          <div className="pick-up-today">
-            <div className="subtitle">Ви з Одеси? Заберіть товар у магазині</div>
-            <div className="location">
+          <div className="product__pick-up-today">
+            <div className="product__subtitle subtitle">Ви з Одеси? Заберіть товар у магазині</div>
+            <div className="product__location">
               <img src={location} alt="Location" />
-              <div className="address">Одеса, вул. Михайлівська, 8 (10:00-19:00 щодня)</div>
+              <div className="product__address">Одеса, вул. Михайлівська, 8 (10:00-19:00 щодня)</div>
             </div>
-            <div className="pick-up-today-button">
+            <div className="product__pick-up-today-btn">
               <MoreActions title="Забрати сьогодні" />
             </div>
           </div>
-          <div className="additional-information">
+          <div className="product__additional-information">
             <Link to="#">Оплата і доставка</Link>
             <Link to="#">Повернення і обмін</Link>
             <Link to="#">Контакти</Link>

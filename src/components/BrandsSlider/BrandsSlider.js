@@ -38,16 +38,16 @@ const BrandsSlider = () => {
   };
   return (
     <div className="brands-slider">
-      <div className="container">
-        <h2 className="headline">Популярні бренди</h2>
+      <div className="brands-slider__container container">
+        <h2 className="brands-slider__headline headline">Популярні бренди</h2>
         <Slider {...settings}>
           {brandsList.map((el) => (
-            <div key={el.id} className="img-container">
+            <div key={el.id} className="brands-slider__img-container img-container">
               <img src={el.image} alt={el.name} />
             </div>
           ))}
         </Slider>
-        <div className="brands-description">
+        <div className="brands-slider__description">
           <p>
             Інтернет-магазин дитячих товарів Бу-Бу - зона комфорту малюків і їх батьків. Наш асортимент розроблений в
             діапазоні "від народження до школи", завдяки чому кожен етап розвитку вашої дитини буде максимально

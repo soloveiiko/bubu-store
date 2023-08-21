@@ -10,14 +10,14 @@ const Search = ({ isButton = false }) => {
     <div className="search">
       {!isButton ? (
         <>
-          <input type="text" placeholder="Я шукаю..." />
-          <span className="img-container">
+          <input className="search__input" type="text" placeholder="Я шукаю..." />
+          <span className="search__img-container img-container">
             <img src={searchLight} alt="Search" />
           </span>
         </>
       ) : (
         <>
-          <div onClick={toggleSearch} className="img-container">
+          <div onClick={toggleSearch} className="search__img-container img-container">
             <img src={searchBold} alt="Search" />
           </div>
           {isOpen && <input type="text" placeholder="Я шукаю..." />}

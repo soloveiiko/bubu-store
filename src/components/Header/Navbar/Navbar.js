@@ -10,9 +10,9 @@ const navList = [
 const Navbar = () => {
   return (
     <nav className="main-menu">
-      <ul className="menu-list">
+      <ul className="main-menu__list">
         {navList.map((el) => (
-          <li key={el.id} className="menu-item">
+          <li key={el.id} className="main-menu__item">
             <NavLink to={el.link}>{el.name}</NavLink>
           </li>
         ))}

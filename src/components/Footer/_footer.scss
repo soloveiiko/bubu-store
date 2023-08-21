@@ -9,48 +9,57 @@
     gap: 0;
   }
 
-  .top-block {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 32px;
+  &__block {
+    &_top {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 32px;
 
-    & > * {
-      width: 100%;
+      & > * {
+        width: 100%;
+      }
     }
   }
 
-  .contacts {
+  &__contacts {
     display: flex;
     flex-direction: column;
     padding: 40px 16px;
     background-color: $red;
     gap: 15px 0;
-
-    .email, .address {
-      color: $white;
-    }
   }
 
-  .catalog {
-    padding: 0 15px;
-  }
-
-  .information {
+  &__information {
     padding: 45px 15px;
   }
 
-  .information, .catalog {
+  &__catalog {
+    padding: 0 15px;
+  }
+
+  &__catalog, &__information {
+
     display: flex;
     flex-direction: column;
     max-height: 260px;
     gap: 20px;
   }
 
-  .headline, .catalog-item a span, .information-item a {
+  .headline {
     color: $white;
   }
+}
 
-  .information-list, .catalog-list {
+.contacts {
+
+  &__email, &__address {
+    color: $white;
+  }
+}
+
+.contact-information, .catalog-footer {
+
+  &__list {
     display: flex;
     align-content: flex-start;
     flex-direction: column;
@@ -59,38 +68,56 @@
     gap: 15px 25px;
   }
 
-  .catalog-item {
-    width: 150px;
-  }
+  &__item {
+    a {
+      color: $white;
 
-  .copyright {
-    padding: 0 15px;
-
-    p {
-      font-size: 14px;
-      color: #F3A8BF;
-    }
-
-    .cards {
-      display: flex;
-      margin-top: 13px;
-      gap: 0 10px;
-
-      img {
-        width: auto;
-        border-radius: 10px;
+      span {
+        color: $white;
       }
     }
   }
 }
 
+.catalog-footer {
+  &__headline {
+    color: $white;
+  }
+
+  &__item {
+    width: 150px;
+  }
+}
+
+.copyright {
+  padding: 0 15px;
+
+  p {
+    font-size: 14px;
+    color: #F3A8BF;
+  }
+
+  &__cards {
+    display: flex;
+    margin-top: 13px;
+    gap: 0 10px;
+
+    img {
+      width: auto;
+      border-radius: 10px;
+    }
+  }
+}
+
 @include sm {
-  .footer {
-    .information-list, .catalog-list {
+  .contact-information, .catalog-footer {
+
+    &__list {
       column-gap: 90px;
     }
-
-    .catalog-item {
+  }
+  .catalog-footer {
+    &__item {
       width: auto;
     }
   }
@@ -98,33 +125,38 @@
 
 @include md {
   .footer {
-    .top-block {
-      flex-direction: row;
-      flex-wrap: wrap;
-      row-gap: 30px;
+    &__block {
+      &_top {
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 30px;
 
-      & > * {
-        width: auto;
+        & > * {
+          width: auto;
+        }
       }
     }
 
-    .contacts {
+    &__contacts {
       width: 100%;
     }
 
-    .information {
+    &__information {
       padding: 0 50px 0 15px;
     }
 
-    .catalog {
+    &__catalog {
       padding: 0 15px 0 0;
     }
+  }
+  .contact-information, .catalog-footer {
 
-    .information-list, .catalog-list {
+    &__list {
       column-gap: 50px;
     }
   }
 }
+
 
 @include xl {
   .footer {
@@ -135,28 +167,26 @@
       padding: 0 15px;
     }
 
-    .top-block {
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin-bottom: 45px;
+    &__block {
+      &_top {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 45px;
 
-      & > * {
-        width: auto;
+        & > * {
+          width: auto;
+        }
       }
     }
 
-    .contacts {
+    &__contacts {
       margin-right: 130px;
       padding: 30px;
       border-radius: 20px;
       background-color: $red;
-
-      .address {
-        max-width: 250px;
-      }
     }
 
-    .information {
+    &__information {
       padding: 0 100px 0 0;
     }
 
@@ -166,6 +196,19 @@
       .cards {
         margin-top: 11px;
       }
+    }
+  }
+  .contacts {
+
+    &__address {
+      max-width: 250px;
+    }
+  }
+  .copyright {
+    padding: 0;
+
+    &__cards {
+      margin-top: 11px;
     }
   }
 }

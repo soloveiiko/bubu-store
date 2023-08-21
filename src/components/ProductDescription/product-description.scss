@@ -1,13 +1,13 @@
 .description {
-  .text {
-    line-height: 25px;
-  }
-
-  .description-list {
+  &__list {
     gap: 20px;
   }
 
-  .img-container {
+  &__text {
+    line-height: 25px;
+  }
+
+  &__img-container {
     display: flex;
     overflow: hidden;
     width: 100%;
@@ -19,23 +19,23 @@
       object-fit: cover;
     }
   }
-
   .more-actions {
     margin: 0 auto;
   }
 }
-
 @include sm {
   .description {
 
-    .img-container {
+    &__img-container {
       width: 340px;
       height: auto;
     }
   }
 }
 @include xl {
-  .description .description-list {
-    gap: 30px;
+  .description {
+    &__list {
+      gap: 30px;
+    }
   }
 }

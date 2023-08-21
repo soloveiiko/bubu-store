@@ -2,7 +2,7 @@
   display: flex;
   column-gap: 10px;
 
-  .applied-filters-item {
+  &__item {
     display: flex;
     align-items: center;
     column-gap: 5px;

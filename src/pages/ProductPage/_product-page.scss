@@ -24,30 +24,29 @@
     flex-direction: column;
     row-gap: 20px;
 
-    .description-list, .characteristics-list {
-      display: none;
-    }
-
-    .title {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      svg {
-        font-size: 24px;
-        transform: rotate(360deg) scaleY(-1);
-      }
-    }
-
-    &.open {
-
-      .description-list, .characteristics-list {
-        display: flex;
+      &__list {
+        display: none;
         align-items: flex-start;
         flex-direction: column;
         padding: 35px 30px;
         border-radius: 10px;
         background-color: $white;
+      }
+      &__main-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+          font-size: 24px;
+          transform: rotate(360deg) scaleY(-1);
+        }
+      }
+
+    &.open {
+
+      .description__list, .product-characteristics__list {
+        display: flex;
       }
 
       .title {
@@ -94,6 +93,11 @@
     }
     .product-characteristics {
       width: calc(42% - 15px);
+    }
+    .description, .product-characteristics {
+      &__list  {
+        display: flex;
+      }
     }
   }
 }

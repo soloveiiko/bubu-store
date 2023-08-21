@@ -1,5 +1,6 @@
 .catalog-list {
-  .sorted-products {
+
+  &__sorted-products {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -9,34 +10,37 @@
       max-width: calc(50% - 15px);
     }
   }
-  .additions {
-    margin-top: 30px;
+
+  &__additions {
     display: flex;
-    flex-direction: column;
-    gap: 20px 0;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
+    margin-top: 30px;
+    gap: 20px 0;
   }
 }
 
 @include md {
   .catalog-list {
-    .sorted-products {
+    &__sorted-products {
 
       & > * {
         flex: 1 1 calc(33.33% - 30px);
         max-width: calc(33.33% - 20px);
       }
     }
-    .additions {
+
+    &__additions {
       flex-direction: row;
       justify-content: space-between;
     }
   }
 }
+
 @include lg {
   .catalog-list {
-    .sorted-products {
+    &__sorted-products {
 
       & > * {
         flex: 1 1 calc(25% - 30px);

@@ -2,25 +2,37 @@
   display: flex;
   flex-direction: column;
 
-  .category-container {
+  &__list {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
   }
 
-  .category-item {
+  &__item {
     position: relative;
     display: flex;
     overflow: hidden;
     align-items: center;
     justify-content: flex-end;
-    border-radius: 20px;
     height: 176px;
+    border-radius: 20px;
 
     img {
       width: 40%;
       margin-bottom: -15px;
     }
+  }
+
+  &__name {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    max-width: 155px;
+    padding: 6px;
+    color: $white;
+    border-radius: 10px;
   }
 
   .green {
@@ -70,39 +82,31 @@
       background-color: #3868B2;
     }
   }
+}
 
-  .category-name {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    display: flex;
-    align-items: center;
-    max-width: 155px;
-    padding: 6px;
-    color: $white;
-    border-radius: 10px;
-  }
-}
 @include sm {
-  .popular-category .category-item {
-    height: auto;
+  .popular-category {
+    &__item {
+      height: auto;
+    }
   }
 }
+
 @include md {
   .popular-category {
 
-    .category-container {
+    &__list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
 
-    .category-item {
+    &__item {
       height: auto;
 
       img {
-        margin: 0 0 auto;
         width: auto;
+        margin: 0 0 auto;
       }
     }
 
@@ -122,22 +126,26 @@
     .blue {
       grid-row: 3/5;
     }
-    .category-name {
+
+    &__name {
       max-width: 165px;
     }
   }
 }
+
 @include xl {
   .popular-category {
     gap: 30px;
 
-    .category-container {
+    &__list {
       grid-template-columns: repeat(4, 1fr);
       gap: 30px;
     }
+
     .red, .violet {
       grid-column: 4/5;
     }
+
     .red {
       grid-row: 1/2;
     }

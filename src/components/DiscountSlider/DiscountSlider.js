@@ -20,10 +20,10 @@ const DiscountSlider = () => {
   };
   return (
     <div className="discount-slider">
-      <div className="container">
+      <div className="discount-slider__container container">
         <Slider {...settings}>
           {discountList.map((slide, index) => (
-            <div className="slider-item" key={index}>
+            <div className="discount-slider__item" key={index}>
               <img src={slide.image} alt={slide.id} />
             </div>
           ))}

@@ -1,10 +1,10 @@
 .star-rating {
   &__btn {
+    padding: 0;
     cursor: pointer;
     border: none;
     outline: none;
     background-color: transparent;
-    padding: 0;
 
     &.on {
       svg {

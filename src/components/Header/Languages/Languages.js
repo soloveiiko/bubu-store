@@ -8,7 +8,7 @@ const Languages = () => {
   return (
     <div className="languages">
       {langList.map((el) => (
-        <button key={el.id} className="language-item">
+        <button key={el.id} className="languages__item">
           {el.code}
         </button>
       ))}

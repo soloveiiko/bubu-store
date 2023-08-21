@@ -6,9 +6,9 @@ const BrowsingHistory = ({ recentlyViewedProducts }) => {
 
   return (
     <div className="browsing-history-slider">
-      <div className="container">
-        <div className="title">
-          <h2 className="headline">Ви переглядали</h2>
+      <div className="browsing-history-slider__container container">
+        <div className="browsing-history-slider__title">
+          <h2 className="browsing-history-slider__headline headline">Ви переглядали</h2>
         </div>
         <ProductsSlider products={recentlyViewedProducts} numSlides={numSlides} />
       </div>

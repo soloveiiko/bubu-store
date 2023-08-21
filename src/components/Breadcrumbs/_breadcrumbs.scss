@@ -1,14 +1,17 @@
 .breadcrumbs {
   display: flex;
   column-gap: 5px;
-  .product-breadcrumbs {
+
+  &__product {
     display: flex;
     column-gap: 5px;
   }
+
   a {
     color: $accent;
   }
 }
+
 @include xl {
   .breadcrumbs {
     grid-column: 1/3;

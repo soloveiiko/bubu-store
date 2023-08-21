@@ -18,8 +18,8 @@ const CatalogList = ({ filter, visibleProducts, filterData, catalogProducts, han
   const nextPage = () => setCurrentPage((next) => next + 1);
   return (
     <div className="catalog-list">
-      <div className="catalog-list-container">
-        <div className="sorted-products">
+      <div className="catalog-list__container">
+        <div className="catalog-list__sorted-products">
           {filter.isFiltered ? (
             filter.filteredProducts.length > 0 ? (
               filter.filteredProducts
@@ -36,7 +36,7 @@ const CatalogList = ({ filter, visibleProducts, filterData, catalogProducts, han
             catalogProducts.slice(0, visibleProducts).map((el) => <ProductItem key={el.id} product={el} />)
           )}
         </div>
-        <div className="additions">
+        <div className="catalog-list__additions">
           {visibleProducts < totalVisibleProducts && <ShowMore onClick={handleShowMore} />}
           <Pagination
             totalItemsCount={totalItemsCount}

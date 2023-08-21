@@ -40,23 +40,26 @@ const Header = ({ location }) => {
   return (
     <header className="header">
       {mobile ? (
-        <div className="container">
-          <div className="top-block">
-            <div className="left-block">
-              <button className="toggle-menu-btn" onClick={() => toggleButton(setIsOpenNavbar, isOpenNavbar)}>
-                <span className="toggle-item"></span>
+        <div className="header__container container">
+          <div className="header__block_top">
+            <div className="header__block_left">
+              <button
+                className="header__toggle-btn toggle-menu-btn"
+                onClick={() => toggleButton(setIsOpenNavbar, isOpenNavbar)}
+              >
+                <span className="header__toggle-item"></span>
               </button>
-              <Link to="/" className="logo">
+              <Link to="/" className="header__logo">
                 <img src={logoWhite} alt="Bubu Store" />
               </Link>
             </div>
-            <div className="right-block">
+            <div className="header__block_right">
               {searchButton ? <Search isButton={true} /> : <Search />}
               <UserActions />
             </div>
           </div>
           {isOpenNavbar && (
-            <div className="toggle-menu">
+            <div className="header__toggle-menu toggle-menu">
               <CloseButton onClick={() => toggleButton(setIsOpenNavbar, isOpenNavbar)} />
               <CatalogMenu
                 isMobile={mobile}
@@ -66,8 +69,8 @@ const Header = ({ location }) => {
               />
 
               <Navbar />
-              <div className="tools">
-                <div className="number">(063) 128-46-09</div>
+              <div className="header__tools tools">
+                <div className="tools__number">(063) 128-46-09</div>
                 <SocialNetwork />
                 <Languages />
                 <UserPanel />
@@ -76,20 +79,20 @@ const Header = ({ location }) => {
           )}
         </div>
       ) : (
-        <div className="container">
-          <div className="top-block">
-            <Link to="/" className="logo">
+        <div className="header__container container">
+          <div className="header__block_top">
+            <Link to="/" className="header__logo">
               <img src={logoWhite} alt="Bubu Store" />
             </Link>
             <Navbar />
-            <div className="tools">
-              <div className="number">(063) 128-46-09</div>
+            <div className="header__tools tools">
+              <div className="tools__number">(063) 128-46-09</div>
               <SocialNetwork />
               <Languages />
               <UserPanel />
             </div>
           </div>
-          <div className="bottom-block">
+          <div className="header__block_bottom">
             <CatalogMenu
               isMobile={mobile}
               toggleButton={() => toggleButton(setIsOpenCatalog, isOpenCatalog)}

@@ -11,7 +11,7 @@
     height: 20px;
   }
 
-  .counter {
+  &__counter {
     font-size: 14px;
     line-height: 15px;
     position: absolute;
@@ -20,9 +20,9 @@
     display: none;
     padding: .5px 4px;
     color: $white;
-    border: 1px solid $discount;
     border-radius: 50px;
-    background-color: $discount;
+    //border: 1px solid $discount;
+    //background-color: $discount;
   }
 }
 
@@ -31,7 +31,7 @@
     margin-right: 22px;
     column-gap: 40px;
 
-    .counter {
+    &__counter {
       position: static;
       display: block;
       margin-left: 2px;
@@ -43,7 +43,8 @@
   .user-action {
     margin-right: 33px;
     column-gap: 45px;
-    .counter {
+
+    &__counter {
       margin-left: 7px;
     }
   }
