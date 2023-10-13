@@ -44,3 +44,8 @@
 ### Deployment
 
 - [Netlify](https://www.netlify.com/): A powerful platform for modern web projects.
+
+
+# Additional Features
+
+- **Responsive Design**: The site is fully responsive, ensuring a seamless experience across various devices and screen sizes.
