@@ -2,21 +2,17 @@
 
 ## Registration/Login Page
 
-...
-
 ## Home Page
 
-- Includes sliders
+- Sliders
 - Static blocks
 - Recently Viewed Products block
 
 ## Catalog Page
 
-- Includes filters and sorting options for products
+- Filters and sorting options for products
 - Custom pagination
 
 ## Product Page
-
-...
 
 ## Private and Public Routes
