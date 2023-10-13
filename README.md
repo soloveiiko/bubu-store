@@ -1,21 +1,21 @@
 # Project Overview
 
-## Registration/Login Page
+### Registration/Login Page
 
-## Home Page
+### Home Page
 
 - Sliders
 - Static blocks
 - Recently Viewed Products block
 
-## Catalog Page
+### Catalog Page
 
 - Filters and sorting options for products
 - Custom pagination
 
-## Product Page
+### Product Page
 
-## Private and Public Routes
+### Private and Public Routes
 
 
 # Technologies Used
